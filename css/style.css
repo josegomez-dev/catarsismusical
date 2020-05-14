@@ -8939,7 +8939,7 @@ padding: 8em 0; }
 }
 @keyframes anim {
 	 0%{
-        background: linear-gradient(to left ,#37052C 50%, gold 50%);
+        background: linear-gradient(to left ,gold 50%, #A99100 50%);
         background-size: 0%;
         transition: 2s ease;
         transform: rotateX(360deg);
@@ -8948,7 +8948,7 @@ padding: 8em 0; }
         opacity: 0.2;
     }
     50%{
-        background: linear-gradient(to left, yellow  50%,#37052C 50%);
+        background: linear-gradient(to left, #A99100  50%,gold 50%);
         transition: 2s ease;
         display: none;
         background-size: 10%;
@@ -8985,31 +8985,31 @@ padding: 8em 0; }
 }
 @keyframes anim3 {
 	 0%{
-        background: linear-gradient(to left ,#FF6412, #E212EB );
+        background: linear-gradient(to left ,white, whitesmoke);
         background-size: 0%;
-        transition: 2s ease;
+        transition: 5s ease;
         transform: rotateX(360deg);
         margin-left: 200px; 
         margin-top: 50px;
-        opacity: 0.3;
+        opacity: 0.1;
     }
     50%{
-        background: linear-gradient(to left , #E212EB,#FF6412);
+        background: linear-gradient(to left , #A99100, whitesmoke);
         transition: 6s ease;
         display: none;
         background-size: 100%;
         transform: rotate(180deg);
         margin-left: -200px; 
         margin-top: -50px;
-        opacity: 0.2;
+        opacity: 0.1;
     }
      100%{
-       background: linear-gradient(to left ,#FF6412, #E212EB );
+       background: linear-gradient(to left ,black, white );
         background-size: 0%;
-        transition: 2s ease;
+        transition: 5s ease;
         transform: rotateX(360deg);
         margin-left: 200px; 
         margin-top: 50px;
-        opacity: 0.4;
+        opacity: 0.1;
     }
 }
