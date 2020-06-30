@@ -9401,10 +9401,10 @@ canvas {
 
 .parallax {
   /* The image used */
-  background-image: url("https://images.unsplash.com/photo-1497616987741-7fba8102046e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+  background-image: url("./../images/logos/wp2175904.jpg");
 
   /* Set a specific height */
-  height: 500px;
+  min-height: 150px;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -9443,9 +9443,9 @@ canvas {
 
 #snow{
     background: none;
-    height: 100%;
-    left: 0;
+    height: 11%;
     position: absolute;
+    left: 0;
     top: 0;
     width: 100%;
     z-index:0;
