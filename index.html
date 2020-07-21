@@ -810,16 +810,80 @@
 
           <!-- Modal content-->
           <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Bienvenido a CATARSIS MUSICAL </h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
             <div class="modal-body">
+              <b>Trascendencia Filosófica de la Improvisación
+                Musical</b>
+              <p>
+                Una Aventura a través de las Emociones Humanas
+                basado en Filosofía Pitagórica y Teoría de Números.
+              </p>
+              <b>¡Descubramos juntos el mundo maravilloso de la improvisación!</b> <br><br>
               <video controls width="100%" height="50%" controls autoplay=" true">
                 <source src="./videos/video.mkv" type="video/ogg">
                 <source src="./videos/video.mkv" type="video/mp4">
                 Please <a href="./videos/video.mkv" download>download</a>
                 the video.
               </video>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <p> <br>
+                La música está presente en la vida de las personas de forma espiritual, ética, moral, ancestral,
+                genética, social, como
+                un estimulante y motivador, además de manera emotiva y abstracta abriendo la posibilidad de generar un
+                sentimiento
+                diferente para cada persona.
+              </p>
+              <p>
+                Es necesario la unidad para crear una relación, debe haber un punto de partida o un ente en la
+                contraparte, en cualquier
+                aspecto de comparación, debido a eso, el contenido práctico musical en este texto, viene acompañado de
+                contenido
+                relacionado a los números, conceptos prácticos y su filosofía ancestral más transparente.
+              </p>
+              <p>
+                En esencia, la música está fuertemente ligada a la matemática, esto quiere decir que las relaciones que
+                existen entre
+                los números, forman parte de la estructura musical como la conocemos, partiendo desde un ámbito
+                filosófico, hasta un
+                ámbito práctico.
+              </p>
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-7 offset-2">
+                    <div class="row align-items-end no-gutters">
+                      <div class="col-md-5">
+                        <div class="footer-author-image">
+                          <img
+                            src="https://scontent.fsyq1-1.fna.fbcdn.net/v/t1.0-9/73197772_390781731799711_7011209428372291584_o.jpg?_nc_cat=106&_nc_sid=0debeb&_nc_ohc=vIKYTp-2uQsAX-pH9TR&_nc_ht=scontent.fsyq1-1.fna&oh=4148d64a516649692c11519f4dd7561f&oe=5F3DCEF7"
+                            class="img-fluid" />
+                        </div>
+                      </div>
+                      <div class="col-md-7">
+                        <div class="footer-author">
+                          <h2 class="text-uppercase footer-getintouch">Get in touch</h2>
+                          <div class="footer-author-details">
+                            <h3 class="mb-0">
+                              <a href="#">Jose Gomez</a>
+                              <a href="#" target="_blank" class="ml-2"><i class="fab fa-linkedin"></i></a>
+                            </h3>
+                            <p class="small">Creative Technologist</p>
+                            <div class="footer-author-contacts">
+                              <a href="tel:#">+506 6240 2974</a> <br>
+                              <a class="ml-auto" href="mailto:svs@company.com"
+                                target="_blank">josegomez.dev@gmail.com</a>
+                            </div>
+                            <p class="footer-signoff">Catarsis Musical</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -828,7 +892,8 @@
     </div>
 
     <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
         <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
         <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
           stroke="#F96D00" /></svg></div>
@@ -841,7 +906,7 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
-  <!-- <script src="js/bootstrap.min.js"></script> -->
+  <script src="js/bootstrap.min.js"></script>
   <script src="js/jquery.easing.1.3.js"></script>
   <script src="js/jquery.waypoints.min.js"></script>
   <script src="js/jquery.stellar.min.js"></script>
@@ -860,6 +925,8 @@
 
   <script>
     $(document).ready(function () {
+      const opening = document.getElementById('openingTrigger');
+      opening.click();
       if (!sessionStorage.getItem('opening')) {
         sessionStorage.setItem('opening', true);
         const opening = document.getElementById('openingTrigger');

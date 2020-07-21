@@ -4413,7 +4413,7 @@ button.close {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #fff;
+  background-color: #14120E;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
@@ -4451,6 +4451,7 @@ button.close {
     margin: -1rem -1rem -1rem auto; }
 
 .modal-title {
+  color: gold;
   margin-bottom: 0;
   line-height: 1.5; }
 
@@ -8825,3 +8826,60 @@ canvas {
 
 
 
+
+
+
+
+
+
+
+.footer-author-image{
+  background: #fff;
+  box-shadow: 0 20px 30px 0 rgba(42,59,71,.28);
+  overflow: hidden;
+  width: 100%;
+  z-index: 100;
+  border-radius: 5%;
+
+  position: relative;
+  top: 0;
+  /*
+  margin-bottom: 1em;
+  left: 60px;
+  height: 360px;
+  width: 400px;
+  margin-top: 5rem;
+  */
+}
+
+.footer-getintouch{
+  margin: 0;
+  padding: 0;
+  color: #A99100;
+  margin-left: 7rem;
+}
+.footer-author{
+  width: calc(100% + 15rem);
+  bottom: -3rem;
+  z-index: 20;
+  color: #A99100;
+  position: relative;
+  left: -5rem;
+}
+
+.footer-author-details{
+  background: whitesmoke;
+  padding: 6rem 3rem;
+  padding-left: 7rem;
+  padding-top: 1rem;
+}
+.footer-author-details a{
+  color: black;
+}
+
+.footer-signoff{
+  position: absolute;
+  right: 3rem;
+  bottom: 1rem;
+  font-weight: bold;
+}
