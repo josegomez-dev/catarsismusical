@@ -4413,7 +4413,7 @@ button.close {
   flex-direction: column;
   width: 100%;
   pointer-events: auto;
-  background-color: #14120E;
+  background-color: #14120E !important;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
@@ -4451,7 +4451,7 @@ button.close {
     margin: -1rem -1rem -1rem auto; }
 
 .modal-title {
-  color: gold;
+  color: gold !important;
   margin-bottom: 0;
   line-height: 1.5; }
 
