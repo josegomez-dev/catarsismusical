@@ -7723,10 +7723,11 @@ header {
     position: relative; }
     .owl-carousel.home-slider .slider-item {
       background-size: cover;
+    overflow: scroll;
       background-repeat: no-repeat;
       background-position: center center;
       height: calc(100vh - 0);
-      min-height: 700px;
+      min-height: 820px;
       position: relative; }
       .owl-carousel.home-slider .slider-item .overlay {
         position: absolute;
