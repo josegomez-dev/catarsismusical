@@ -7723,7 +7723,6 @@ header {
     position: relative; }
     .owl-carousel.home-slider .slider-item {
       background-size: cover;
-    overflow: scroll;
       background-repeat: no-repeat;
       background-position: center center;
       height: calc(100vh - 0);
