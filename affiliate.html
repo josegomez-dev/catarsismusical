@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CATARSIS MUSICAL - Trascendencia Filosófica de la Improvisación Musical</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/ionicons.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .u-center-text {
+      text-align: center !important;
+    }
+
+    .u-margin-bottom-small {
+      margin-bottom: 1.5rem !important;
+    }
+
+    .u-margin-bottom-medium {
+      margin-bottom: 4rem !important;
+    }
+
+    .u-margin-top-big {
+      margin-top: 5rem !important;
+    }
+
+
+    .heading-primary {
+      color: #fff;
+      text-transform: uppercase;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      margin-bottom: 6rem;
+    }
+
+    .heading-primary--main {
+      display: block;
+      font-size: 6rem;
+      font-weight: 400;
+      letter-spacing: 3.5rem;
+      -webkit-animation-name: moveInLeft;
+      animation-name: moveInLeft;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+      /*
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+        */
+    }
+
+    .heading-primary--sub {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1.75rem;
+      -webkit-animation: moveInRight 1s ease-out;
+      animation: moveInRight 1s ease-out;
+    }
+
+    .heading-secondary {
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: transparent;
+      letter-spacing: 0.2rem;
+      line-height: 1;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      color: #eee;
+    }
+
+    .btn,
+    .btn:link,
+    .btn:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      border-radius: 0.5rem;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      position: relative;
+      font-size: 1.6rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px);
+      -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover::after {
+      -webkit-transform: scaleX(1.4) scaleY(1.6);
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+
+    .btn:active,
+    .btn:focus {
+      outline: none;
+      -webkit-transform: translateY(-1px);
+      transform: translateY(-1px);
+      -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    .btn--white {
+      background-color: #fff;
+      color: #777;
+    }
+
+    .btn--white::after {
+      background-color: #fff;
+    }
+
+    .btn--green {
+      background: -webkit-gradient(linear, left top, right top, from(#fc466b), to(#3f5efb));
+      background: linear-gradient(to right, #fc466b, #3f5efb);
+      color: #fff;
+    }
+
+    .btn--green::after {
+      background-color: #55c57a;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .section-plans {
+      padding: 4rem 0 4rem 0;
+    }
+
+    .card {
+      -webkit-perspective: 150rem;
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+      position: relative;
+      height: 52rem;
+    }
+
+    .card__side {
+      height: 52rem;
+      -webkit-transition: all 0.8s ease;
+      transition: all 0.8s ease;
+      position: absolute;
+      top: 0;
+      color: white;
+      left: 0;
+      width: 100%;
+
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 3px;
+      overflow: hidden;
+      -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    }
+
+    .card__side--front {
+      background-color: #fff;
+    }
+
+    .card__side--front-1 {
+      background: linear-gradient(-45deg, #f403d1, #64b5f6);
+    }
+
+    .card__side--front-2 {
+      background: linear-gradient(-45deg, #f321d7, #ffec61);
+    }
+
+    .card__side--front-3 {
+      background: linear-gradient(-45deg, #24ff72, #9a4eff);
+    }
+
+    .card__side--back {
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+    }
+
+    .card__side--back-1 {
+      background: linear-gradient(-45deg, #64b5f6, #f403d1);
+    }
+
+    .card__side--back-2 {
+      background: linear-gradient(-45deg, #ffec61, #f321d7);
+    }
+
+    .card__side--back-3 {
+      background: linear-gradient(-45deg, #9a4eff, #24ff72);
+    }
+
+    .card:hover .card__side--front-1,
+    .card:hover .card__side--front-2,
+    .card:hover .card__side--front-3 {
+      -webkit-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
+    }
+
+    .card:hover .card__side--back {
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
+    }
+
+    .card__title {
+      height: 20rem;
+      padding: 4rem 2rem 2rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+
+    .card__title--1 .fas {
+      font-size: 5rem;
+    }
+
+    .card__title--2 .fas {
+      font-size: 5rem;
+    }
+
+    .card__title--3 .fas {
+      font-size: 5rem;
+    }
+
+    .card__heading {
+      font-size: 4rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      text-align: center;
+      color: #fff;
+      width: 75%;
+    }
+
+    .card__heading-span {
+      padding: 1rem 1.5rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    .card__details {
+      padding: 0 2rem 2rem;
+    }
+
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      margin-left: 8px;
+    }
+
+    .card__details ul li {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+
+    .card__details ul li:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+
+    .card__cta {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 90%;
+      text-align: center;
+    }
+
+    .card__price-box {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 8rem;
+    }
+
+    .card__price-only {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+
+    .card__price-value {
+      font-size: 6rem;
+      font-weight: 100;
+    }
+
+    .row {
+      max-width: 114rem;
+      margin: 0 auto;
+    }
+
+    .row:not(:last-child) {
+      margin-bottom: 5rem;
+      margin-top: 5rem;
+    }
+
+    .row::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .row [class^="col-"] {
+      float: left;
+    }
+
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem;
+    }
+
+    .row .col-1-of-3 {
+      width: calc((100% - 2 * 6rem) / 3);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="KW_progressContainer">
+    <div class="KW_progressBar">
+
+    </div>
+  </div>
+  <div class="page">
+    <nav id="colorlib-main-nav" role="navigation">
+      <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
+      <div class="js-fullheight colorlib-table">
+        <!-- <div class="img"
+              style="background-image: url('./images/logos/logo-black.png'); opacity: 0.6; margin-left: 80px; ">
+            </div> -->
+        <div class="colorlib-table-cell js-fullheight">
+          <div class="row no-gutters">
+            <div class="col-md-12 text-center">
+              <h6 class="mb-4"><a href="index.html" class="logo">CATARSIS <br> MUSICAL</a></h6>
+              <ul>
+                <li><a href="index.html"><span>Home</span></a></li>
+                <!-- <li> <a href="about.html"><span>ACERCA DE</span></a></li> -->
+                <li class="active"> <a href="./academy.html"><span> <span class="icon-star"></span> <b>ACADEMIA
+                        MUSICAL</b> </span></a>
+                </li>
+                <li> <a href="blog.html"><span>BLOG</span></a></li>
+                <li> <a href="./community.html"><span> <span class="icon-star"></span> <b>COMUNIDAD</b> </span></a>
+                </li>
+                <li> <a href="./musictherapy.html"><span> <span class="icon-star"></span> <b>MUSICOTERAPIA</b>
+                    </span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div id="colorlib-page">
+      <header style="background: black;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="colorlib-navbar-brand">
+                <a class="colorlib-logo" href="index.html"><span class="logo-img"
+                    style="background-image: url(images/logos/doradeogomez.png);"></span></a>
+              </div>
+              <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+            </div>
+          </div>
+        </div>
+        <br><br>
+      </header>
+
+
+
+      <section class="ftco-section">
+        <div class="container">
+
+
+
+          <section class="ftco-section">
+            <div class="container">
+
+              <section class="section-plans" id="section-plans">
+                <div class="u-center-text u-margin-bottom-big">
+                  <h2 class="heading-secondary">
+                    Hosting Plans
+                  </h2>
+                </div>
+
+                <div class="row">
+                  <div class="col-1-of-3">
+                    <div class="card">
+                      <div class="card__side card__side--front-1">
+                        <div class="card__title card__title--1">
+                          <i class="fas fa-paper-plane"></i>
+                          <h4 class="card__heading">Basic</h4>
+                        </div>
+
+                        <div class="card__details">
+                          <ul>
+                            <li>Public Group</li>
+                            <li>eBook (Completo)</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="card__side card__side--back card__side--back-1">
+                        <div class="card__cta">
+                          <div class="card__price-box">
+                            <p class="card__price-only">Only</p>
+                            <p class="card__price-value">$2.95/mo*</p>
+                          </div>
+                          <a href="#popup" class="btn btn--white">Select</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-1-of-3">
+                    <div class="card">
+                      <div class="card__side card__side--front-2">
+                        <div class="card__title card__title--2">
+                          <i class="fas fa-plane"></i>
+                          <h4 class="card__heading">Plus</h4>
+                        </div>
+
+                        <div class="card__details">
+                          <ul>
+                            <li>Public Group</li>
+                            <li>eBook (Digital)</li>
+                            <li>Metodo Intensivo</li>
+                            <li>Juego de Mesa (Emotions Bridge Plus Vol I)</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="card__side card__side--back card__side--back-2">
+                        <div class="card__cta">
+                          <div class="card__price-box">
+                            <p class="card__price-only">Only</p>
+                            <p class="card__price-value">$5.45/mo*</p>
+                          </div>
+                          <a href="#popup" class="btn btn--white">Select</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-1-of-3">
+                    <div class="card">
+                      <div class="card__side card__side--front-3">
+                        <div class="card__title card__title--3">
+                          <i class="fas fa-rocket"></i>
+                          <h4 class="card__heading">Pro</h4>
+                        </div>
+
+                        <div class="card__details">
+                          <ul>
+                            <li>Public Group</li>
+                            <li>eBook (Copia Fisica)</li>
+                            <li>Metodo Intensivo</li>
+                            <li>Juego de Mesa (Emotions Bridge - Pro Vol I, Vol II, Vol III)</li>
+                            <li>DMs</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="card__side card__side--back card__side--back-3">
+                        <div class="card__cta">
+                          <div class="card__price-box">
+                            <p class="card__price-only">Only</p>
+                            <p class="card__price-value">$13.95/mo</p>
+                          </div>
+                          <a href="#popup" class="btn btn--white">Select</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="u-center-text u-margin-top-huge">
+                  <a href="#" class="btn btn--green">Get Started</a>
+                </div>
+              </section>
+
+
+            </div>
+          </section>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+      <footer class="ftco-footer ftco-bg-dark ftco-section">
+
+        <div class="container">
+          <br><br><br><br><br>
+          <br><br><br><br><br>
+          <div class="row mb-5 justify-content-center">
+            <div class="col-md-5 text-center">
+              <img style="margin-top: -345px;" width="300px" src="images/logos/doradeogomez.png" alt="">
+              <div class="ftco-footer-widget mb-5">
+                <ul class="ftco-footer-social list-unstyled">
+                  <li target="true" class="ftco-animate"><a href="https://www.facebook.com/musiqueandola"><span
+                        class="icon-facebook"></span></a>
+                  </li>
+                  <li class="ftco-animate"><a href="#"><span class="icon-telegram"></span></a></li>
+                  <li target="true" class="ftco-animate"><a href="https://www.pinterest.com/ggeomusic/"><span
+                        class="icon-pinterest"></span></a></li>
+                </ul>
+              </div>
+              <div class="ftco-footer-widget">
+                <h2 class="mb-3">Contactenos</h2>
+                <p class="h4 email"><a href="mailto:info.ggeomusic@gmail.com">info.ggeomusic@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p>
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | powered by
+                <a href="#" target="_blank">
+                  CATARSIS MUSICAL
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+      <!-- loader -->
+      <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+          <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+          <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+            stroke="#F96D00" /></svg></div>
+
+    </div>
+
+  </div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
+  <!-- <script src="js/google-map.js"></script> -->
+  <script src="js/main.js"></script>
+  <script>
+    const form = document.querySelector('.form');
+    const name = document.getElementById('name');
+    const number = document.getElementById('number');
+    const date = document.getElementById('date');
+    const cvv = document.getElementById('cvv');
+
+    const visa = document.querySelector('.card');
+
+    /*  SHOW ERROR  */
+    function showError(element, error) {
+      if (error === true) {
+        element.style.opacity = '1';
+      } else {
+        element.style.opacity = '0';
+      }
+    };
+
+    /*  CHANGE THE FORMAT NAME  */
+    name.addEventListener('input', function () {
+      let alert1 = document.getElementById('alert-1');
+      let error = this.value === '';
+      showError(alert1, error);
+      document.getElementById('card-name').textContent = this.value;
+    });
+
+    /*  CHANGE THE FORMAT CARD NUMBER*/
+    number.addEventListener('input', function (e) {
+      this.value = numberAutoFormat();
+
+      //show error when is different of 16 numbers and 3 white space
+      let error = this.value.length !== 19;
+      let alert2 = document.getElementById('alert-2');
+      showError(alert2, error);
+
+      document.querySelector('.card__number').textContent = this.value;
+    });
+
+    function numberAutoFormat() {
+      let valueNumber = number.value;
+      // if white space change to ''. If is not a number between 0-9 change to ''
+      let v = valueNumber.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+
+      // the value got min of 4 digits and max of 16
+      let matches = v.match(/\d{4,16}/g);
+      let match = matches && matches[0] || '';
+      let parts = [];
+
+      for (i = 0; i < match.length; i += 4) {
+        // after 4 digits add a new element to the Array
+        // e.g. "4510023" -> [4510, 023]
+        parts.push(match.substring(i, i + 4));
+      }
+
+      if (parts.length) {
+        // add a white space after 4 digits
+        return parts.join(' ');
+      } else {
+        return valueNumber;
+      }
+    };
+
+    /*  CHANGE THE FORMAT DATE  */
+    date.addEventListener('input', function (e) {
+      this.value = dateAutoFormat();
+
+      // show error if is not a valid date
+      let alert3 = document.getElementById('alert-3');
+      showError(alert3, isNotDate(this));
+
+      let dateNumber = date.value.match(/\d{2,4}/g);
+      document.getElementById('month').textContent = dateNumber[0];
+      document.getElementById('year').textContent = dateNumber[1];
+    });
+
+    function isNotDate(element) {
+      let actualDate = new Date();
+      let month = actualDate.getMonth() + 1; // start january 0 we need to add + 1
+      let year = Number(actualDate.getFullYear().toString().substr(-2)); // 2022 -> 22
+      let dateNumber = element.value.match(/\d{2,4}/g);
+      let monthNumber = Number(dateNumber[0]);
+      let yearNumber = Number(dateNumber[1]);
+
+      if (element.value === '' || monthNumber < 1 || monthNumber > 12 || yearNumber < year || (monthNumber <= month && yearNumber === year)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    function dateAutoFormat() {
+      let dateValue = date.value;
+      // if white space -> change to ''. If is not a number between 0-9 -> change to ''
+      let v = dateValue.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+
+      // min of 2 digits and max of 4
+      let matches = v.match(/\d{2,4}/g);
+      let match = matches && matches[0] || '';
+      let parts = [];
+
+      for (i = 0; i < match.length; i += 2) {
+        // after 4 digits add a new element to the Array
+        // e.g. "4510023" -> [4510, 023]
+        parts.push(match.substring(i, i + 2));
+      }
+
+      if (parts.length) {
+        // add a white space after 4 digits
+        return parts.join('/');
+      } else {
+        return dateValue;
+      }
+    };
+
+    /*  CHANGE THE FORMAT CVV  */
+    cvv.addEventListener('input', function (e) {
+      let alert4 = document.getElementById('alert-4');
+      let error = this.value.length < 3;
+      showError(alert4, error)
+    });
+
+    /* CHECK IF KEY PRESSED IS A NUMBER (input of card number, date and cvv) */
+    function isNumeric(event) {
+      if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode > 31)) {
+        return false;
+      }
+    };
+
+    /*  VALIDATION FORM WHEN PRESS THE BUTTON   */
+    form.addEventListener('submit', function (e) {
+      // 1. if there is not any name
+      // 2. if the length of the number card is not valid (16 numbers and 3 white space)
+      // 3. if is not a valid date (4 number and "/" or is not a valid date)
+      // 4. if is not a valid cvv
+
+      if (name.value === '' || number.value.length !== 19 || date.value.length !== 5 || isNotDate(date) === true || cvv.value.length < 3) {
+        e.preventDefault();
+      };
+
+      // 5. if any input is empty show the alert of that input
+      let input = document.querySelectorAll('input');
+      for (i = 0; i < input.length; i++) {
+        if (input[i].value === '') {
+          input[i].nextElementSibling.style.opacity = '1';
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
