@@ -8819,7 +8819,12 @@ canvas {
 	bottom: 0;
 }
 
-
+.content-over-content {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
 
 
 
@@ -8917,3 +8922,4 @@ canvas {
     transform: translate3d(8px, 0, 0);
   }
 }
+
