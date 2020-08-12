@@ -54,6 +54,11 @@ html {
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
+  header {
+    z-index: 100;
+    position: relative;
+  }
+
 body {
   margin: 0;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -8772,7 +8777,7 @@ padding: 8em 0; }
       display: none;
     }
     header .colorlib-navbar-brand .colorlib-logo .logo-img {
-      left: -10px;
+      left: 140%;
       right: -10px;
     }
 }
