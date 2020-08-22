@@ -24,6 +24,7 @@
 .reset-button {
   font: 400 11px "Open Sans";
   line-height: 1;
+  z-index: 9900;
   background: transparent;
   border-radius: 10px;
   position: fixed;
