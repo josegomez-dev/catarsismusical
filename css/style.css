@@ -8926,3 +8926,22 @@ canvas {
   }
 }
 
+
+
+.patreon-footer {
+  position: fixed;
+  left: 0;
+  z-index: 10;
+  bottom: 0;
+  width: 100%;
+  background: rgb(169,145,0);
+background: linear-gradient(90deg, rgba(169,145,0,1) 0%, rgba(0,0,0,1) 100%, rgba(206,182,142,1) 100%);
+padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+.patreon-footer .patreon-link {
+  position: relative; z-index: 100; cursor: pointer;
+  width: 10px;
+}
