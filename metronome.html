@@ -189,7 +189,7 @@
     }
 
     .metronome-container .counter .active {
-      background: #5ec2ff;
+      background: #CEB68E;
     }
 
     .metronome-container .controls {
@@ -233,7 +233,7 @@
 
     .metronome-container .controls .play-btn {
       width: 45%;
-      background: #D6E26D;
+      background: #A99100;
       border: 0px;
       border-radius: 5px;
       padding: 12px;
@@ -263,25 +263,6 @@
 
 <body>
   <!-- <button class="reset-button" onclick="reset()">Contactenos</button> -->
-  <div id="discord-shoutout" class="discord-shoutout">
-    <div class="shoutout-inner">
-      <img src="./images/logos/gomezenblanco.png" class="img-fluid" />
-      <span class="title">Hola Curioso!</span>
-      <p>
-        Tienes alguna pregunta acerca del proyecto?
-      </p>
-      <p>
-        Apreciamos tu Feedback!
-      </p>
-      <div class="discord-buttons">
-
-        <a class="discord-button discord-primary"
-          href="https://api.whatsapp.com/send?phone=50662402974&text=Hola%20Jose&source=&data=&app_absent="
-          target="_blank">Contactanos</a>
-        <button class="discord-button discord-secondary" onclick="hide()">Cerrar</button>
-      </div>
-    </div>
-  </div>
 
   <div class="KW_progressContainer">
     <div class="KW_progressBar">
@@ -343,16 +324,12 @@
           <div class="row justify-content-center mb-5 pb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
               <span>METRONOMO DIGITAL</span>
-              <h5>La música es la geometría en el tiempo</h5>
             </div>
 
 
             <div class="container">
 
               <div class="row mt-5 flex-column ftco-animate">
-                <div class="col-md-12 text-center">
-                  <h6 class="mb-4">Simple<b style="color: #FFF;">Metronome</b></h6>
-                </div>
                 <div class="col-md-12 animate-box" data-animate-effect="fadeInRight">
                   <p>
                     El metrónomo es un aparato utilizado para indicar tiempo
@@ -365,8 +342,7 @@
                 </div>
               </div>
 
-
-              <div class="row">
+              <div class="row flex-column ftco-animate">
                 <div class="container">
                   <section class="metronome-container">
                     <div class="counter"></div>
@@ -402,7 +378,10 @@
                     </div>
                   </section>
                 </div>
-
+                <div class="col-md-12 text-center">
+                  <h6 class="mb-4">Simple<b style="color: #FFF;">Metronome</b></h6>
+                </div>
+                <br><br><br>
                 <footer>
                   <ul>
                     <li>Haz clic en los círculos para acentuar ese ritmo</li>
@@ -420,11 +399,6 @@
       </section>
 
 
-
-      <div class="patreon-footer">
-        <a class="patreon-link" target="true" href="https://www.patreon.com/josegomez?fan_landing=true"><img width="150"
-            src="https://ruraltechfund.org/wp-content/uploads/2013/04/support_on_patreon-300x100.png" alt=""></a>
-      </div>
 
       <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
@@ -497,7 +471,6 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/chat-bubble.js"></script>
 
   <script>
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
