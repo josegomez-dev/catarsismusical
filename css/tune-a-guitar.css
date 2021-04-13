@@ -1,0 +1,76 @@
+#tuner_container {
+  width: 40%;
+  height: 100vh;
+  position: absolute;
+  left: 30%;
+}
+#tuner_pickups {
+  width: 100%;
+  position: absolute;
+  /* background: url('https://www.electricherald.com/tuner/Woods-BG.jpg'); */
+}
+#tuner_strings {
+  width: 100%;
+  position: absolute;
+}
+
+.string-x {
+  cursor: default;
+  fill: #dddddd;
+  stroke: #000000;
+  stroke-width: 0.1;
+  stroke-miterlimit: 10;
+}
+.string {
+  cursor: pointer;
+  fill: rgba(0, 0, 0, 0);
+  stroke: rgba(0, 0, 0, 0);
+  stroke-width: 24;
+  stroke-miterlimit: 10;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+.string:hover {
+  fill: #ffffff;
+}
+.string:active {
+  fill: #fafafa;
+  stroke: green;
+  stroke-width: 0.5;
+}
+
+#gc-cw {
+  font-family: lato;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 10px;
+}
+#gc-cw a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  margin-top: 8px;
+  width: 100%;
+  text-align: center;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+#gc-cw a:hover {
+  outline: 10px #fff solid;
+  color: #c44c4c;
+}
+#gc-cw a:active {
+  outline: 1px #f00 solid;
+}
+#gc-cw a span {
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 11px;
+}

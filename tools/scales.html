@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CATARSIS MUSICAL - Trascendencia Filosófica de la Improvisación Musical</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:title" content="Catarsis Musical">
+
+  <link rel="icon" href="../images/logos/gomezenblanco.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="../css/animate.css">
+
+  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+
+  <link rel="stylesheet" href="../css/aos.css">
+
+  <link rel="stylesheet" href="../css/ionicons.min.css">
+
+  <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="../css/jquery.timepicker.css">
+
+
+  <link rel="stylesheet" href="../css/flaticon.css">
+  <link rel="stylesheet" href="../css/icomoon.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/guitar-fretboard.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <!-- <button class="reset-button" onclick="reset()">Contactenos</button> -->
+  <!-- <div id="discord-shoutout" class="discord-shoutout">
+    <div class="shoutout-inner">
+      <img src="./images/logos/gomezenblanco.png" class="img-fluid" />
+      <span class="title">Hola Curioso!</span>
+      <p>
+        Tienes alguna pregunta acerca del proyecto?
+      </p>
+      <p>
+        Apreciamos tu Feedback!
+      </p>
+      <div class="discord-buttons">
+
+        <a class="discord-button discord-primary"
+          href="https://api.whatsapp.com/send?phone=50662402974&text=Hola%20Jose&source=&data=&app_absent="
+          target="_blank">Contactanos</a>
+        <button class="discord-button discord-secondary" onclick="hide()">Cerrar</button>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="KW_progressContainer">
+    <div class="KW_progressBar">
+
+    </div>
+  </div>
+
+  <div class="page">
+    <div id="colorlib-page">
+      <section class="ftco-section">
+        <div class="container mt-5">
+          <div class="row justify-content-center mb-5 pb-5">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+              <span>ESCALAS PENTATONICAS</span>
+            </div>
+            <div class="container">
+              <div class="row mt-5 flex-column ftco-animate">
+                <div class="col-md-12 animate-box" data-animate-effect="fadeInRight">
+                  <p>
+                    Una escala pentatónica, pentafónica o pentáfona​, en música, es una escala o modo musical constituido por una sucesión de cinco sonidos, alturas o notas diferentes dentro de una octava.
+                  </p>
+                  <ul>
+                    <li>
+                      <b>Escalas pentatónicas mayores (1 2 3 5 6)</b>: 
+                        Pueden verse como la <b>escala mayor sin los grados 4º y 7º</b>.
+                    </li>
+                    <li>
+                      <b>Escalas pentatónicas menores (1 b3 4 5 b7)</b>: 
+                        Pueden verse como la <b></b>escala menor <b>sin los grados 2º y 6º</b>.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-guitar-fretboard">
+          <p class="hint">Guitar Standard Tuning in E</p>
+          <div class="wrap" id="app">
+            <div class="controls">
+              <label for="scales-1">Select scale</label><select id="scales-1" v-model="checkedKey">
+                <option value="c-minor">C-Minor</option>
+                <option value="d-minor">D-Minor</option>
+                <option value="e-minor">E-Minor</option>
+                <option value="f-minor">F-Minor</option>
+                <option value="g-minor">G-Minor</option>
+                <option value="a-minor" selected>A-Minor</option>
+                <option value="b-minor">B-Minor</option>
+                <option value="c-major">C-Major</option>
+                <option value="d-major">D-Major</option>
+                <option value="e-major">E-Major</option>
+                <option value="f-major">F-Major</option>
+                <option value="g-major">G-Major</option>
+                <option value="a-major">A-Major</option>
+                <option value="b-major">B-Major</option>
+              </select>
+              <ul class="list horizontal">
+                <li><label>Box 1<input type="checkbox" v-model="checkedScales" checked value="one"></label></li>
+                <li><label>Box 2<input type="checkbox" v-model="checkedScales" value="two"></label></li>
+                <li><label>Box 3<input type="checkbox" v-model="checkedScales" value="three"></label></li>
+                <li><label>Box 4<input type="checkbox" v-model="checkedScales" value="four"></label></li>
+                <li><label>Box 5<input type="checkbox" v-model="checkedScales" value="five"></label></li>
+              </ul>
+            </div>
+            <div class="neck penta" v-bind:class=[checkedScales,checkedKey]>
+              <div class="fret zero">
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+              </div>
+              <div class="fret one">
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+              </div>
+              <div class="fret two">
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+              </div>
+              <div class="fret three">
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+              </div>
+              <div class="fret four">
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+              </div>
+              <div class="fret five">
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+              </div>
+              <div class="fret six">
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+              </div>
+              <div class="fret seven">
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+              </div>
+              <div class="fret eight">
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+              </div>
+              <div class="fret nine">
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+              </div>
+              <div class="fret ten">
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+              </div>
+              <div class="fret eleven">
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+              </div>
+              <div class="fret twelve">
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+              </div>
+              <div class="fret thirteen">
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+              </div>
+              <div class="fret fourteen">
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+              </div>
+              <div class="fret fifteen">
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+              </div>
+              <div class="fret sixteen">
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+              </div>
+              <div class="fret seventeen">
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+              </div>
+              <div class="fret eighteen">
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+              </div>
+              <div class="fret nineteen">
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+              </div>
+              <div class="fret twenty">
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+              </div>
+              <div class="fret twentyone">
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+              </div>
+              <div class="fret twentytwo">
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+              </div>
+              <div class="fret twentythree">
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+              </div>
+              <div class="fret twentyfour">
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+              </div>
+            </div><!-- .neck -->
+            <ul class="fret-numbers">
+              <li>0</li>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+              <li>11</li>
+              <li>12</li>
+              <li>13</li>
+              <li>14</li>
+              <li>15</li>
+              <li>16</li>
+              <li>17</li>
+              <li>18</li>
+              <li>19</li>
+              <li>20</li>
+              <li>21</li>
+              <li>22</li>
+              <li>23</li>
+              <li>24</li>
+            </ul>
+          </div><!-- #app -->
+          <div class="wrap" id="app2">
+            <div class="controls"><label for="scales-2">Select scale</label>
+              <select id="scales-2" v-model="checkedKey">
+                <option value="c-minor">C-Minor</option>
+                <option value="d-minor">D-Minor</option>
+                <option value="e-minor">E-Minor</option>
+                <option value="f-minor">F-Minor</option>
+                <option value="g-minor">G-Minor</option>
+                <option value="a-minor">A-Minor</option>
+                <option value="b-minor">B-Minor</option>
+                <option value="c-major" selected>C-Major</option>
+                <option value="d-major">D-Major</option>
+                <option value="e-major">E-Major</option>
+                <option value="f-major">F-Major</option>
+                <option value="g-major">G-Major</option>
+                <option value="a-major">A-Major</option>
+                <option value="b-major">B-Major</option>
+              </select>
+              <ul class="list horizontal">
+                <li><label>Box 1<input type="checkbox" v-model="checkedScales" value="one"></label></li>
+                <li><label>Box 2<input type="checkbox" v-model="checkedScales" value="two"></label></li>
+                <li><label>Box 3<input type="checkbox" v-model="checkedScales" value="three"></label></li>
+                <li><label>Box 4<input type="checkbox" v-model="checkedScales" value="four"></label></li>
+                <li><label>Box 5<input type="checkbox" v-model="checkedScales" value="five" checked></label></li>
+              </ul>
+            </div>
+            <div class="neck penta" v-bind:class=[checkedScales,checkedKey]>
+              <div class="fret zero">
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+              </div>
+              <div class="fret one">
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+              </div>
+              <div class="fret two">
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+              </div>
+              <div class="fret three">
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+              </div>
+              <div class="fret four">
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+              </div>
+              <div class="fret five">
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+              </div>
+              <div class="fret six">
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+              </div>
+              <div class="fret seven">
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+              </div>
+              <div class="fret eight">
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+              </div>
+              <div class="fret nine">
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+              </div>
+              <div class="fret ten">
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+              </div>
+              <div class="fret eleven">
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+              </div>
+              <div class="fret twelve">
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+              </div>
+              <div class="fret thirteen">
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+              </div>
+              <div class="fret fourteen">
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+              </div>
+              <div class="fret fifteen">
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+              </div>
+              <div class="fret sixteen">
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+              </div>
+              <div class="fret seventeen">
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+              </div>
+              <div class="fret eighteen">
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+              </div>
+              <div class="fret nineteen">
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+              </div>
+              <div class="fret twenty">
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+              </div>
+              <div class="fret twentyone">
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+              </div>
+              <div class="fret twentytwo">
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">F</div>
+                <div class="string">C</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+              </div>
+              <div class="fret twentythree">
+                <div class="string">D#</div>
+                <div class="string">Bb</div>
+                <div class="string">F#</div>
+                <div class="string">C#</div>
+                <div class="string">G#</div>
+                <div class="string">D#</div>
+              </div>
+              <div class="fret twentyfour">
+                <div class="string">E</div>
+                <div class="string">B</div>
+                <div class="string">G</div>
+                <div class="string">D</div>
+                <div class="string">A</div>
+                <div class="string">E</div>
+              </div>
+            </div><!-- .neck -->
+            <ul class="fret-numbers">
+              <li>0</li>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li>10</li>
+              <li>11</li>
+              <li>12</li>
+              <li>13</li>
+              <li>14</li>
+              <li>15</li>
+              <li>16</li>
+              <li>17</li>
+              <li>18</li>
+              <li>19</li>
+              <li>20</li>
+              <li>21</li>
+              <li>22</li>
+              <li>23</li>
+              <li>24</li>
+            </ul>
+          </div><!-- #app2 -->
+          <p class="hint">This demo needs a browser that understands modern CSS features, <a
+              href="https://caniuse.com/#feat=css-grid">CSS-Grid</a> and <a
+              href="https://caniuse.com/#feat=flexbox">Flexbox</a>. Sorry, old IE.</p>
+        </div><!-- .page -->
+      </section>
+
+
+      <!-- <br><br><br><br><br><br><br><br><br>
+      <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+          <div class="row mb-5 justify-content-center">
+            <div class="col-md-5 text-center">
+              <img style="margin-top: -345px;" width="300px" src="images/logos/doradeogomez.png" alt="">
+              <div class="ftco-footer-widget mb-5">
+                <ul class="ftco-footer-social list-unstyled">
+                  <li class="ftco-animate"><a target="true"
+                      href="https://www.facebook.com/Catarsis-Musical-101296445043200"><span
+                        class="icon-facebook"></span></a>
+                  </li>
+                  <li class="ftco-animate"><a target="true" href="https://www.instagram.com/catarsismusical.cr/"><span
+                        class="icon-instagram"></span></a>
+                  </li>
+                  <li class="ftco-animate"><a target="true" href="https://t.me/catarsismusical"><span
+                        class="icon-telegram"></span></a></li>
+
+                  <li class="ftco-animate"><a target="true" href="https://medium.com/@catarsismusical"><span
+                        class="icon-medium"></span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="ftco-footer-widget">
+                <h2 class="mb-3">Contactenos</h2>
+                <p class="h4 email"><a href="mailto:josegomez.dev@gmail.com">josegomez.dev@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p>
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | powered by
+                <a href="https://www.linkedin.com/in/josealejandrogomezcastro/" target="_blank">
+                  Jose Alejandro Gomez Castro
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer> -->
+
+      <!-- loader -->
+      <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+          <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+          <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+            stroke="#F9A991006D00" />
+        </svg></div>
+
+    </div>
+
+  </div>
+
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.easing.1.3.js"></script>
+  <script src="../js/jquery.waypoints.min.js"></script>
+  <script src="../js/jquery.stellar.min.js"></script>
+  <script src="../js/owl.carousel.min.js"></script>
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/aos.js"></script>
+  <script src="../js/jquery.animateNumber.min.js"></script>
+  <script src="../js/scrollax.min.js"></script>
+  <script src="../js/bootstrap-datepicker.js"></script>
+  <script src="../js/jquery.timepicker.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="../js/google-map.js"></script>
+  <script src="../js/main.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.min.js"></script>
+  <script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+          checkedScales: ["one"],
+          checkedKey: "a-minor"
+        }
+      });
+      var app2 = new Vue({
+        el: "#app2",
+        data: {
+          checkedScales: ["five"],
+          checkedKey: "c-major"
+        }
+      });
+
+  </script>
+</body>
+
+</html>
