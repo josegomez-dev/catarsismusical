@@ -10059,10 +10059,19 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  height: calc(100vh - 0);
+  height: auto;
   min-height: 820px;
   position: relative;
 }
+
+.owl-carousel.home-slider-footer .slider-item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: auto !important;
+  position: relative;
+}
+
 .owl-carousel.home-slider .slider-item .overlay {
   position: absolute;
   top: 0;
