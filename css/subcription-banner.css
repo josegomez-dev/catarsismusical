@@ -3,7 +3,7 @@
   font-weight: bold;
   text-transform: uppercase;
   text-align: left;
-  color: #018f8f;
+  color: #a99100;
 }
 .newsletter-subtitle {
   text-align: left;
@@ -57,7 +57,6 @@
 .newsletter-submit {
   border: 0;
   border: 0;
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6875;
   padding: .5625em 1.5em;
@@ -68,7 +67,6 @@
   box-sizing: border-box;
   position: relative;
   border: 0;
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6875;
   padding: .5625em 1.5em;
@@ -80,10 +78,10 @@
   -webkit-font-smoothing: antialiased;
   border-radius: 4px;
   transition: all 0.2s ease;
-  background: #018f8f;
+  background: #a99100;
   margin-bottom: 10px;
 }
 
 .newsletter-submit2:hover {
-  background: #4db0b0;
+  background: black;
 }
