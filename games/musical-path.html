@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CATARSIS MUSICAL - Trascendencia Filosófica de la Improvisación Musical</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:title" content="Catarsis Musical">
+
+  <link rel="icon" href="../images/logos/gomezenblanco.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="../css/animate.css">
+
+  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+
+  <link rel="stylesheet" href="../css/aos.css">
+
+  <link rel="stylesheet" href="../css/ionicons.min.css">
+
+  <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="../css/jquery.timepicker.css">
+
+
+  <link rel="stylesheet" href="../css/flaticon.css">
+  <link rel="stylesheet" href="../css/icomoon.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/chat-bubble.css">
+  <link rel="stylesheet" href="../css/tune-a-guitar.css">
+
+  <style>
+    /* ☛ ⚠ this is a desktop version not intended to work on mobile devices */
+:root {
+  --system-color-canvas: oklch(0% 0 0 / 90%);
+  --system-color-shadow: oklch(0% 0 0 / 38.5%);
+  --system-color-dark: oklch(0% 0 0);
+  --system-color-light: oklch(100% 0 0);
+  --system-color-label: oklch(67.03% 0.023 79.03);
+  --system-color-text-shadow: oklch(0% 0 0 / 20%);
+  --system-color-card-polyphemus: oklch(39.58% 0.013 81.76);
+  --system-color-card-andromeda: oklch(39.22% 0.016 214.52);
+  --system-color-card-cerberus: oklch(23.19% 0.036 48.15);
+  --system-color-card-nyx: oklch(35.95% 0.024 18.46);
+  --system-color-card-horse: oklch(35.25% 0.027 142.94);
+  --system-color-gem-orange: oklch(71.92% 0.056 38.8 / 20%);
+  --system-color-gem-blue: oklch(78.19% 0.06 187.95 / 20%);
+  --system-color-gem-red: oklch(69.69% 0.072 6.59 / 20%);
+  --system-color-gem-purple: oklch(71.26% 0.104 327.17 / 20%);
+  --system-color-gem-green: oklch(72.3% 0.162 149.93 / 20%);
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+
+  background-color: var(--system-color-canvas);
+
+  /* ✑ text selection disabling */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* ☛ ⚠ cursor max size 128px*128px */
+  cursor: url("https://live.staticflickr.com/65535/53457421324_029fbfb11c_o.png"),
+    pointer;
+
+  & .hand {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    -webkit-animation: opening 1.2s ease-in 1;
+    animation: opening 1.2s ease-in 1;
+
+    /* ✑ if one card is hovered, the others cards move backwards and lose their saturation */
+    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__#cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
+      section:not(:hover) {
+      z-index: -1;
+
+      -webkit-filter: grayscale(95%);
+      filter: grayscale(95%);
+    }
+
+    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
+      .hand__polyphemus:not(:hover) {
+      -webkit-transform: translateX(50%) translateY(13%) rotate(-14deg)
+        scale(0.9);
+      transform: translateX(50%) translateY(13%) rotate(-14deg) scale(0.9);
+    }
+
+    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
+      .hand__andromeda:not(:hover) {
+      -webkit-transform: translateX(35%) translateY(3%) rotate(-7deg) scale(0.9);
+      transform: translateX(35%) translateY(3%) rotate(-7deg) scale(0.9);
+    }
+
+    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
+      .hand__cerberus:not(:hover) {
+      -webkit-transform: translateY(-2%) scale(0.9);
+      transform: translateY(-2%) scale(0.9);
+    }
+
+    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
+      .hand__nyx:not(:hover) {
+      -webkit-transform: translateX(-35%) translateY(3%) rotate(7deg) scale(0.9);
+      transform: translateX(-35%) translateY(3%) rotate(7deg) scale(0.9);
+    }
+
+    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
+      .hand__horse:not(:hover) {
+      -webkit-transform: translateX(-50%) translateY(13%) rotate(14deg)
+        scale(0.9);
+      transform: translateX(-50%) translateY(13%) rotate(14deg) scale(0.9);
+    }
+
+    /* ✑ transparent curtain that appears between the cards on the table and the one in your hand, when you click on one of them */
+    & .hand__curtain {
+      width: 100%;
+      height: 100%;
+
+      display: none;
+
+      position: absolute;
+      z-index: 2;
+
+      background-color: var(--system-color-canvas);
+
+      &.curtain--visible {
+        display: block;
+        animation: curtain-up 0.8s ease-in forwards;
+      }
+    }
+
+    & section {
+      width: 20%;
+      aspect-ratio: 10/14;
+
+      border-radius: 5%;
+      overflow: hidden;
+
+      background-color: var(--system-color-shadow);
+      box-shadow: 0px 4px 16px var(--system-color-shadow),
+        0px 8px 32px var(--system-color-shadow);
+
+      transition: all 0.8s ease-out;
+
+      :is(&.hand__polyphemus-clone, &.hand__andromeda-clone, &.hand__cerberus-clone, &.hand__nyx-clone, &.hand__horse-clone) {
+        z-index: 3;
+        display: none;
+        position: absolute;
+
+        /* ☛ brings up the clicked card in your hand */
+        &.card--visible {
+          display: block;
+          -webkit-animation: card-zoom 0.8s ease-out forwards;
+          animation: card-zoom 0.8s ease-out forwards;
+        }
+      }
+
+      /* ✑ vanish the card clicked from the board */
+      &.card--hidden {
+        animation: vanish-from-the-board 0.5s ease-in forwards;
+      }
+
+      :is(&.hand__polyphemus, &.hand__polyphemus-clone) {
+        -webkit-transform: translateX(50%) translateY(0) rotate(-14deg);
+        transform: translateX(50%) translateY(0) rotate(-14deg);
+
+        background-color: var(--system-color-card-polyphemus);
+
+        &:hover {
+          -webkit-transform: translateX(50%) translateY(0) rotate(-14deg)
+            scale(1.1);
+          transform: translateX(50%) translateY(0) rotate(-14deg) scale(1.1);
+        }
+
+        & > article {
+          background-color: (--system-color-dark);
+          background: url("./../images/games/elcaminomusical/1.jpg")
+            no-repeat 50% 0%;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+
+          &::before {
+            width: 110%;
+            height: 35%;
+
+            content: "";
+            position: absolute;
+            inset: 70% auto auto -5%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+
+            -webkit-filter: drop-shadow(
+              0px 10px 10px var(--system-color-shadow)
+            );
+            filter: drop-shadow(0px 10px 10px var(--system-color-shadow));
+          }
+
+          &::after {
+            width: 18%;
+            height: 18%;
+
+            content: "";
+            position: absolute;
+            inset: -6% auto auto -6%;
+            z-index: 1;
+
+            content: "";
+            position: absolute;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+
+            -webkit-filter: drop-shadow(
+                3px 0px 4px var(--system-color-gem-orange)
+              )
+              drop-shadow(-3px 0px 4px var(--system-color-gem-orange))
+              drop-shadow(0px 3px 4px var(--system-color-gem-orange))
+              drop-shadow(0px -3px 4px var(--system-color-gem-orange));
+            filter: drop-shadow(3px 0px 4px var(--system-color-gem-orange))
+              drop-shadow(-3px 0px 4px var(--system-color-gem-orange))
+              drop-shadow(0px 3px 4px var(--system-color-gem-orange))
+              drop-shadow(0px -3px 4px var(--system-color-gem-orange));
+          }
+        }
+
+        & > aside {
+          &::before {
+            width: 33%;
+            height: 66%;
+
+            content: "";
+            position: absolute;
+            inset: 64% auto auto 35%;
+            z-index: 1;
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+          }
+
+          &::after {
+            width: 66%;
+            height: 66%;
+
+            content: "";
+            position: absolute;
+            inset: 7% auto auto 17%;
+            z-index: 1;
+
+            background: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+          }
+        }
+      }
+
+      :is(&.hand__andromeda, &.hand__andromeda-clone) {
+        -webkit-transform: translateX(35%) translateY(-10%) rotate(-7deg);
+        transform: translateX(35%) translateY(-10%) rotate(-7deg);
+        background-color: var(--system-color-card-andromeda);
+
+        &:hover {
+          -webkit-transform: translateX(35%) translateY(-10%) rotate(-7deg)
+            scale(1.1);
+          transform: translateX(35%) translateY(-10%) rotate(-7deg) scale(1.1);
+        }
+
+        & > article {
+          background-color: (--system-color-dark);
+          background: url("./../images/games/elcaminomusical/2.jpg")
+          no-repeat 50% 0%;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+
+          &::before {
+            width: 110%;
+            height: 35%;
+
+            content: "";
+            position: absolute;
+            inset: 70% auto auto -5%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+
+            -webkit-filter: drop-shadow(
+              0px 10px 10px var(--system-color-shadow)
+            );
+            filter: drop-shadow(0px 10px 10px var(--system-color-shadow));
+          }
+
+          &::after {
+            width: 18%;
+            height: 18%;
+
+            content: "";
+            position: absolute;
+            inset: -6% auto auto -6%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+
+            -webkit-filter: drop-shadow(
+                3px 0px 4px var(--system-color-gem-blue)
+              )
+              drop-shadow(-3px 0px 4px var(--system-color-gem-blue))
+              drop-shadow(0px 3px 4px var(--system-color-gem-blue))
+              drop-shadow(0px -3px 4px var(--system-color-gem-blue));
+            filter: drop-shadow(3px 0px 4px var(--system-color-gem-blue))
+              drop-shadow(-3px 0px 4px var(--system-color-gem-blue))
+              drop-shadow(0px 3px 4px var(--system-color-gem-blue))
+              drop-shadow(0px -3px 4px var(--system-color-gem-blue));
+          }
+        }
+
+        & > aside {
+          &::after {
+            width: 66%;
+            height: 66%;
+
+            content: "";
+            position: absolute;
+            inset: 7% auto auto 16.5%;
+            z-index: 1;
+
+            background: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+          }
+        }
+      }
+
+      :is(&.hand__cerberus, &.hand__cerberus-clone) {
+        -webkit-transform: translateY(-15%);
+        transform: translateY(-15%);
+        background-color: var(--system-color-card-cerberus);
+
+        &:hover {
+          -webkit-transform: translateY(-15%) scale(1.1);
+          transform: translateY(-15%) scale(1.1);
+        }
+
+        & > article {
+          background-color: (--system-color-dark);
+          background: url("./../images/games/elcaminomusical/3.jpg")
+            no-repeat 50% 0%;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+
+          &::before {
+            width: 110%;
+            height: 35%;
+
+            content: "";
+            position: absolute;
+            inset: 70% auto auto -5%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+
+            -webkit-filter: drop-shadow(
+              0px 10px 10px var(--system-color-shadow)
+            );
+            filter: drop-shadow(0px 10px 10px var(--system-color-shadow));
+          }
+
+          &::after {
+            width: 18%;
+            height: 18%;
+
+            content: "";
+            position: absolute;
+            inset: -6% auto auto -6%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+
+            -webkit-filter: drop-shadow(3px 0px 4px var(--system-color-gem-red))
+              drop-shadow(-3px 0px 4px var(--system-color-gem-red))
+              drop-shadow(0px 3px 4px var(--system-color-gem-red))
+              drop-shadow(0px -3px 4px var(--system-color-gem-red));
+            filter: drop-shadow(3px 0px 4px var(--system-color-gem-red))
+              drop-shadow(-3px 0px 4px var(--system-color-gem-red))
+              drop-shadow(0px 3px 4px var(--system-color-gem-red))
+              drop-shadow(0px -3px 4px var(--system-color-gem-red));
+          }
+        }
+
+        & > aside {
+          &::before {
+            width: 66%;
+            height: 66%;
+
+            content: "";
+            position: absolute;
+            inset: 7% auto auto 16.8%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+          }
+
+          &::after {
+            width: 33%;
+            height: 66%;
+
+            content: "";
+            position: absolute;
+            inset: 64% auto auto 35%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+          }
+        }
+      }
+
+      :is(&.hand__nyx, &.hand__nyx-clone) {
+        -webkit-transform: translateX(-35%) translateY(-10%) rotate(7deg);
+        transform: translateX(-35%) translateY(-10%) rotate(7deg);
+        background-color: var(--system-color-card-nyx);
+
+        &:hover {
+          -webkit-transform: translateX(-35%) translateY(-10%) rotate(7deg)
+            scale(1.1);
+          transform: translateX(-35%) translateY(-10%) rotate(7deg) scale(1.1);
+        }
+
+        & > article {
+          background: var(--system-color-dark)
+            url("./../images/games/elcaminomusical/4.jpg")
+            no-repeat 20% 10%;
+          -webkit-background-size: 88%;
+          background-size: 88%;
+
+          &::before {
+            width: 110%;
+            height: 35%;
+
+            content: "";
+            position: absolute;
+            inset: 70% auto auto -5%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+
+            -webkit-filter: drop-shadow(
+              0px 10px 10px var(--system-color-shadow)
+            );
+            filter: drop-shadow(0px 10px 10px var(--system-color-shadow));
+          }
+
+          &::after {
+            width: 18%;
+            height: 18%;
+
+            content: "";
+            position: absolute;
+            inset: -6% auto auto -6%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+
+            -webkit-filter: drop-shadow(
+                3px 0px 4px var(--system-color-gem-purple)
+              )
+              drop-shadow(-3px 0px 4px var(--system-color-gem-purple))
+              drop-shadow(0px 3px 4px var(--system-color-gem-purple))
+              drop-shadow(0px -3px 4px var(--system-color-gem-purple));
+            filter: drop-shadow(3px 0px 4px var(--system-color-gem-purple))
+              drop-shadow(-3px 0px 4px var(--system-color-gem-purple))
+              drop-shadow(0px 3px 4px var(--system-color-gem-purple))
+              drop-shadow(0px -3px 4px var(--system-color-gem-purple));
+          }
+        }
+
+        & > aside {
+          &::after {
+            width: 66%;
+            height: 66%;
+
+            content: "";
+            position: absolute;
+            inset: 7% auto auto 17.2%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+          }
+        }
+      }
+
+      :is(&.hand__horse, &.hand__horse-clone) {
+        -webkit-transform: translateX(-50%) rotate(14deg);
+        transform: translateX(-50%) rotate(14deg);
+
+        background-color: var(--system-color-card-horse);
+
+        &:hover {
+          transform: translateX(-50%) rotate(14deg) scale(1.1);
+        }
+
+        & > article {
+          background-color: (--system-color-dark);
+          background: url("./../images/games/elcaminomusical/5.jpg")
+            no-repeat 0% 0%;
+          -webkit-background-size: 100%;
+          background-size: 100%;
+
+          &::before {
+            width: 110%;
+            height: 35%;
+
+            content: "";
+            position: absolute;
+            inset: 70% auto auto -5%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+
+            -webkit-filter: drop-shadow(
+              0px 10px 10px var(--system-color-shadow)
+            );
+            filter: drop-shadow(0px 10px 10px var(--system-color-shadow));
+          }
+
+          &::after {
+            width: 18%;
+            height: 18%;
+
+            content: "";
+            position: absolute;
+            inset: -6% auto auto -6%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+
+            -webkit-filter: drop-shadow(
+                3px 0px 4px var(--system-color-gem-green)
+              )
+              drop-shadow(-3px 0px 4px var(--system-color-gem-green))
+              drop-shadow(0px 3px 4px var(--system-color-gem-green))
+              drop-shadow(0px -3px 4px var(--system-color-gem-green));
+            filter: drop-shadow(3px 0px 4px var(--system-color-gem-green))
+              drop-shadow(-3px 0px 4px var(--system-color-gem-green))
+              drop-shadow(0px 3px 4px var(--system-color-gem-green))
+              drop-shadow(0px -3px 4px var(--system-color-gem-green));
+          }
+        }
+
+        & > aside {
+          &::after {
+            width: 66%;
+            height: 66%;
+
+            content: "";
+            position: absolute;
+            inset: 7% auto auto 16.9%;
+            z-index: 1;
+
+            background-image: url("");
+            -webkit-background-size: 100%;
+            background-size: 100%;
+          }
+        }
+      }
+
+      & article {
+        width: 90%;
+        height: 65%;
+
+        border-radius: 5% 5% 0 0;
+        position: absolute;
+        inset: 5% auto auto 5%;
+
+        background-color: var(--system-color-dark);
+        box-shadow: inset 0px 0px 60px -30px var(--system-color-dark);
+
+        -moz-image-rendering: auto;
+        -ms-image-rendering: auto;
+        -o-image-rendering: auto;
+        image-rendering: auto;
+      }
+
+      & aside {
+        width: 90%;
+        height: 35%;
+
+        position: absolute;
+        inset: auto auto 5% 5%;
+        border-radius: 14% 14% 5% 5%;
+
+        background: var(--system-color-label);
+        box-shadow: inset 0px 0px 60px -30px var(--system-color-dark);
+      }
+    }
+  }
+}
+
+/*
+  ▀▄▀▄▀▄▀▄▀▄▀▄ ANIMATIONS ▀▄▀▄▀▄▀▄▀▄▀▄
+  */
+
+@keyframes opening {
+  from {
+    opacity: 0;
+    filter: grayscale(100%);
+  }
+
+  to {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+}
+
+@keyframes curtain-up {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.7;
+  }
+}
+
+@keyframes card-zoom {
+  from {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.45);
+  }
+}
+
+@keyframes vanish-from-the-board {
+  to {
+    opacity: 0;
+  }
+}
+
+/*** ◰ media queries ***/
+/** accessibility **/
+@media screen and (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="KW_progressContainer">
+    <div class="KW_progressBar">
+
+    </div>
+  </div>
+
+  <div class="page">
+    
+    <div id="colorlib-page">
+
+      <section class="ftco-section">
+        <div class="container mt-5">
+          
+          <div class="row justify-content-center mb-5 pb-5">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+              <h1>El Camino Musical</h1>
+              <span><p>¡Aprende teoría musical de una manera divertida!</p></span>
+            </div>
+            <div class="container">
+              <div class="row mt-5 flex-column ftco-animate">
+                <div class="col-md-12 animate-box" data-animate-effect="fadeInRight">
+                  <img src="./../images/grades-table-back.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mb-5 pb-5">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+              <h1>INSTRUCCIONES</h1>
+            </div>
+            <div class="container">
+              <div class="row mt-5 flex-column ftco-animate">
+                <div class="col-md-12 animate-box" data-animate-effect="fadeInRight">
+
+                  <main class="hand">
+                    <!--   original cards -->
+                    <section class="hand__polyphemus">
+                      <article></article>
+                      <aside></aside>
+                    </section>
+                    <section class="hand__andromeda">
+                      <article></article>
+                      <aside></aside>
+                    </section>
+                    <section class="hand__cerberus">
+                      <article></article>
+                      <aside></aside>
+                    </section>
+                    <section class="hand__nyx">
+                      <article></article>
+                      <aside></aside>
+                    </section>
+                    <section class="hand__horse">
+                      <article></article>
+                      <aside></aside>
+                    </section>
+                    <!--  transparent curtain that appears between the cards on the table and the one in your hand, when you click on one of them                -->
+                    <article class="hand__curtain"></article>
+                    <!--   clone cards -->
+                    <section class="hand__polyphemus-clone">
+                      <article></article>
+                      <aside></aside>
+                    </section>
+                    <section class="hand__andromeda-clone">
+                      <article></article>
+                      <aside></aside>
+                    </section>
+                    <section class="hand__cerberus-clone">
+                      <article></article>
+                      <aside></aside>
+                    </section>
+                    <section class="hand__nyx-clone">
+                      <article></article>
+                      <aside></aside>
+                    </section>
+                    <section class="hand__horse-clone">
+                      <article></article>
+                      <aside></aside>
+                    </section>
+                  </main>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <footer class="ftco-footer ftco-bg-dark ftco-section">
+        <div class="container">
+          <div class="row mb-5 justify-content-center">
+            <div class="col-md-5 text-center">
+              <img style="margin-top: -345px;" width="300px" src="./../images/logos/doradeogomez.png" alt="">
+              <div class="ftco-footer-widget mb-5">
+                <ul class="ftco-footer-social list-unstyled">
+                  <li class="ftco-animate"><a target="true"
+                      href="https://www.facebook.com/Catarsis-Musical-101296445043200"><span
+                        class="icon-facebook"></span></a>
+                  </li>
+                  <li class="ftco-animate"><a target="true" href="https://www.instagram.com/catarsismusical.cr/"><span
+                        class="icon-instagram"></span></a>
+                  </li>
+                  <li class="ftco-animate"><a target="true" href="https://t.me/catarsismusical"><span
+                        class="icon-telegram"></span></a></li>
+
+                  <li class="ftco-animate"><a target="true" href="https://medium.com/@catarsismusical"><span
+                        class="icon-medium"></span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="ftco-footer-widget">
+                <h2 class="mb-3">Contactenos</h2>
+                <p class="h4 email"><a href="mailto:josegomez.dev@gmail.com">josegomez.dev@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p>
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script> All rights reserved | powered by
+                <a href="https://www.linkedin.com/in/josealejandrogomezcastro/" target="_blank">
+                  Jose Alejandro Gomez Castro
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer> 
+
+      <!-- loader -->
+      <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+          <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+          <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+            stroke="#F9A991006D00" />
+        </svg></div>
+
+    </div>
+
+  </div>
+
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.easing.1.3.js"></script>
+  <script src="../js/jquery.waypoints.min.js"></script>
+  <script src="../js/jquery.stellar.min.js"></script>
+  <script src="../js/owl.carousel.min.js"></script>
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/aos.js"></script>
+  <script src="../js/jquery.animateNumber.min.js"></script>
+  <script src="../js/scrollax.min.js"></script>
+  <script src="../js/bootstrap-datepicker.js"></script>
+  <script src="../js/jquery.timepicker.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="../js/google-map.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/tune-a-guitar.js"></script>
+
+  <script>
+    const canvas = document.body;
+      const curtain = document.querySelector(".hand__curtain");
+
+      const cardSet = [
+        {
+          card: document.querySelector(".hand__polyphemus"),
+          clone: document.querySelector(".hand__polyphemus-clone")
+        },
+        {
+          card: document.querySelector(".hand__andromeda"),
+          clone: document.querySelector(".hand__andromeda-clone")
+        },
+        {
+          card: document.querySelector(".hand__cerberus"),
+          clone: document.querySelector(".hand__cerberus-clone")
+        },
+        {
+          card: document.querySelector(".hand__nyx"),
+          clone: document.querySelector(".hand__nyx-clone")
+        },
+        {
+          card: document.querySelector(".hand__horse"),
+          clone: document.querySelector(".hand__horse-clone")
+        }
+      ];
+
+      const handleCardClick = (card, clone, event) => {
+        card.classList.add("card--hidden");
+        event.stopPropagation(); // prevent glitch on hover
+        curtain.classList.add("curtain--visible");
+        clone.classList.add("card--visible");
+      };
+
+      cardSet.forEach(({ card, clone }) => {
+        card.addEventListener("click", (event) =>
+          handleCardClick(card, clone, event)
+        );
+      });
+
+      canvas.addEventListener("click", () => {
+        cardSet.forEach(({ card }) => card.classList.remove("card--hidden"));
+        curtain.classList.remove("curtain--visible");
+      });
+
+      canvas.addEventListener("click", () => {
+        cardSet.forEach(({ clone }) => clone.classList.remove("card--visible"));
+      });
+
+  </script>
+</body>
+
+</html>
