@@ -17,678 +17,113 @@
   <link rel="stylesheet" href="../css/owl.carousel.min.css">
   <link rel="stylesheet" href="../css/owl.theme.default.min.css">
   <link rel="stylesheet" href="../css/magnific-popup.css">
+  <link rel="stylesheet" href="../css/subcription-banner.css">
 
   <link rel="stylesheet" href="../css/aos.css">
 
   <link rel="stylesheet" href="../css/ionicons.min.css">
 
-  <link rel="stylesheet" href="../css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="../css/jquery.timepicker.css">
-
-
   <link rel="stylesheet" href="../css/flaticon.css">
   <link rel="stylesheet" href="../css/icomoon.css">
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/chat-bubble.css">
-  <link rel="stylesheet" href="../css/tune-a-guitar.css">
 
   <style>
-    /* ☛ ⚠ this is a desktop version not intended to work on mobile devices */
-:root {
-  --system-color-canvas: oklch(0% 0 0 / 90%);
-  --system-color-shadow: oklch(0% 0 0 / 38.5%);
-  --system-color-dark: oklch(0% 0 0);
-  --system-color-light: oklch(100% 0 0);
-  --system-color-label: oklch(67.03% 0.023 79.03);
-  --system-color-text-shadow: oklch(0% 0 0 / 20%);
-  --system-color-card-polyphemus: oklch(39.58% 0.013 81.76);
-  --system-color-card-andromeda: oklch(39.22% 0.016 214.52);
-  --system-color-card-cerberus: oklch(23.19% 0.036 48.15);
-  --system-color-card-nyx: oklch(35.95% 0.024 18.46);
-  --system-color-card-horse: oklch(35.25% 0.027 142.94);
-  --system-color-gem-orange: oklch(71.92% 0.056 38.8 / 20%);
-  --system-color-gem-blue: oklch(78.19% 0.06 187.95 / 20%);
-  --system-color-gem-red: oklch(69.69% 0.072 6.59 / 20%);
-  --system-color-gem-purple: oklch(71.26% 0.104 327.17 / 20%);
-  --system-color-gem-green: oklch(72.3% 0.162 149.93 / 20%);
-}
 
-*,
-*::after,
-*::before {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  width: 100dvw;
-  height: 100dvh;
-
-  background-color: var(--system-color-canvas);
-
-  /* ✑ text selection disabling */
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  /* ☛ ⚠ cursor max size 128px*128px */
-  cursor: url("https://live.staticflickr.com/65535/53457421324_029fbfb11c_o.png"),
-    pointer;
-
-  & .hand {
+.rotating-slider {
+    margin: 5em auto;
+    height: 360px;
+    position: relative;
     width: 100%;
+    overflow: hidden;
+}
+.rotating-slider ul.direction-controls {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.rotating-slider ul.direction-controls li.left-arrow {
+    position: absolute;
+    top: 50%;
+    right: 250px;
+    transform: translateY(-50%);
+}
+.rotating-slider ul.direction-controls li.right-arrow {
+    position: absolute;
+    top: 50%;
+    left: 250px;
+    transform: translateY(-50%);
+}
+.rotating-slider ul.direction-controls li button {
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 1.5em;
+    line-height: 1.5em;
+    padding: 0;
+    text-align: center;
+    transition: background 0.25s;
+    width: 1.5em;
+}
+.rotating-slider ul.direction-controls li button:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+.rotating-slider ul.slides {
+    border-radius: 50%;
     height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    -webkit-animation: opening 1.2s ease-in 1;
-    animation: opening 1.2s ease-in 1;
-
-    /* ✑ if one card is hovered, the others cards move backwards and lose their saturation */
-    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__#cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
-      section:not(:hover) {
-      z-index: -1;
-
-      -webkit-filter: grayscale(95%);
-      filter: grayscale(95%);
-    }
-
-    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
-      .hand__polyphemus:not(:hover) {
-      -webkit-transform: translateX(50%) translateY(13%) rotate(-14deg)
-        scale(0.9);
-      transform: translateX(50%) translateY(13%) rotate(-14deg) scale(0.9);
-    }
-
-    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
-      .hand__andromeda:not(:hover) {
-      -webkit-transform: translateX(35%) translateY(3%) rotate(-7deg) scale(0.9);
-      transform: translateX(35%) translateY(3%) rotate(-7deg) scale(0.9);
-    }
-
-    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
-      .hand__cerberus:not(:hover) {
-      -webkit-transform: translateY(-2%) scale(0.9);
-      transform: translateY(-2%) scale(0.9);
-    }
-
-    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
-      .hand__nyx:not(:hover) {
-      -webkit-transform: translateX(-35%) translateY(3%) rotate(7deg) scale(0.9);
-      transform: translateX(-35%) translateY(3%) rotate(7deg) scale(0.9);
-    }
-
-    &:has(section:not(.hand__polyphemus-clone, .hand__andromeda-clone, .hand__cerberus-clone, .hand__nyx-clone, .hand__horse-clone):hover)
-      .hand__horse:not(:hover) {
-      -webkit-transform: translateX(-50%) translateY(13%) rotate(14deg)
-        scale(0.9);
-      transform: translateX(-50%) translateY(13%) rotate(14deg) scale(0.9);
-    }
-
-    /* ✑ transparent curtain that appears between the cards on the table and the one in your hand, when you click on one of them */
-    & .hand__curtain {
-      width: 100%;
-      height: 100%;
-
-      display: none;
-
-      position: absolute;
-      z-index: 2;
-
-      background-color: var(--system-color-canvas);
-
-      &.curtain--visible {
-        display: block;
-        animation: curtain-up 0.8s ease-in forwards;
-      }
-    }
-
-    & section {
-      width: 20%;
-      aspect-ratio: 10/14;
-
-      border-radius: 5%;
-      overflow: hidden;
-
-      background-color: var(--system-color-shadow);
-      box-shadow: 0px 4px 16px var(--system-color-shadow),
-        0px 8px 32px var(--system-color-shadow);
-
-      transition: all 0.8s ease-out;
-
-      :is(&.hand__polyphemus-clone, &.hand__andromeda-clone, &.hand__cerberus-clone, &.hand__nyx-clone, &.hand__horse-clone) {
-        z-index: 3;
-        display: none;
-        position: absolute;
-
-        /* ☛ brings up the clicked card in your hand */
-        &.card--visible {
-          display: block;
-          -webkit-animation: card-zoom 0.8s ease-out forwards;
-          animation: card-zoom 0.8s ease-out forwards;
-        }
-      }
-
-      /* ✑ vanish the card clicked from the board */
-      &.card--hidden {
-        animation: vanish-from-the-board 0.5s ease-in forwards;
-      }
-
-      :is(&.hand__polyphemus, &.hand__polyphemus-clone) {
-        -webkit-transform: translateX(50%) translateY(0) rotate(-14deg);
-        transform: translateX(50%) translateY(0) rotate(-14deg);
-
-        background-color: var(--system-color-card-polyphemus);
-
-        &:hover {
-          -webkit-transform: translateX(50%) translateY(0) rotate(-14deg)
-            scale(1.1);
-          transform: translateX(50%) translateY(0) rotate(-14deg) scale(1.1);
-        }
-
-        & > article {
-          background-color: (--system-color-dark);
-          background: url("./../images/games/elcaminomusical/1.jpg")
-            no-repeat 50% 0%;
-          -webkit-background-size: 100%;
-          background-size: 100%;
-
-          &::before {
-            width: 110%;
-            height: 35%;
-
-            content: "";
-            position: absolute;
-            inset: 70% auto auto -5%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-
-            -webkit-filter: drop-shadow(
-              0px 10px 10px var(--system-color-shadow)
-            );
-            filter: drop-shadow(0px 10px 10px var(--system-color-shadow));
-          }
-
-          &::after {
-            width: 18%;
-            height: 18%;
-
-            content: "";
-            position: absolute;
-            inset: -6% auto auto -6%;
-            z-index: 1;
-
-            content: "";
-            position: absolute;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-
-            -webkit-filter: drop-shadow(
-                3px 0px 4px var(--system-color-gem-orange)
-              )
-              drop-shadow(-3px 0px 4px var(--system-color-gem-orange))
-              drop-shadow(0px 3px 4px var(--system-color-gem-orange))
-              drop-shadow(0px -3px 4px var(--system-color-gem-orange));
-            filter: drop-shadow(3px 0px 4px var(--system-color-gem-orange))
-              drop-shadow(-3px 0px 4px var(--system-color-gem-orange))
-              drop-shadow(0px 3px 4px var(--system-color-gem-orange))
-              drop-shadow(0px -3px 4px var(--system-color-gem-orange));
-          }
-        }
-
-        & > aside {
-          &::before {
-            width: 33%;
-            height: 66%;
-
-            content: "";
-            position: absolute;
-            inset: 64% auto auto 35%;
-            z-index: 1;
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-          }
-
-          &::after {
-            width: 66%;
-            height: 66%;
-
-            content: "";
-            position: absolute;
-            inset: 7% auto auto 17%;
-            z-index: 1;
-
-            background: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-          }
-        }
-      }
-
-      :is(&.hand__andromeda, &.hand__andromeda-clone) {
-        -webkit-transform: translateX(35%) translateY(-10%) rotate(-7deg);
-        transform: translateX(35%) translateY(-10%) rotate(-7deg);
-        background-color: var(--system-color-card-andromeda);
-
-        &:hover {
-          -webkit-transform: translateX(35%) translateY(-10%) rotate(-7deg)
-            scale(1.1);
-          transform: translateX(35%) translateY(-10%) rotate(-7deg) scale(1.1);
-        }
-
-        & > article {
-          background-color: (--system-color-dark);
-          background: url("./../images/games/elcaminomusical/2.jpg")
-          no-repeat 50% 0%;
-          -webkit-background-size: 100%;
-          background-size: 100%;
-
-          &::before {
-            width: 110%;
-            height: 35%;
-
-            content: "";
-            position: absolute;
-            inset: 70% auto auto -5%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-
-            -webkit-filter: drop-shadow(
-              0px 10px 10px var(--system-color-shadow)
-            );
-            filter: drop-shadow(0px 10px 10px var(--system-color-shadow));
-          }
-
-          &::after {
-            width: 18%;
-            height: 18%;
-
-            content: "";
-            position: absolute;
-            inset: -6% auto auto -6%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-
-            -webkit-filter: drop-shadow(
-                3px 0px 4px var(--system-color-gem-blue)
-              )
-              drop-shadow(-3px 0px 4px var(--system-color-gem-blue))
-              drop-shadow(0px 3px 4px var(--system-color-gem-blue))
-              drop-shadow(0px -3px 4px var(--system-color-gem-blue));
-            filter: drop-shadow(3px 0px 4px var(--system-color-gem-blue))
-              drop-shadow(-3px 0px 4px var(--system-color-gem-blue))
-              drop-shadow(0px 3px 4px var(--system-color-gem-blue))
-              drop-shadow(0px -3px 4px var(--system-color-gem-blue));
-          }
-        }
-
-        & > aside {
-          &::after {
-            width: 66%;
-            height: 66%;
-
-            content: "";
-            position: absolute;
-            inset: 7% auto auto 16.5%;
-            z-index: 1;
-
-            background: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-          }
-        }
-      }
-
-      :is(&.hand__cerberus, &.hand__cerberus-clone) {
-        -webkit-transform: translateY(-15%);
-        transform: translateY(-15%);
-        background-color: var(--system-color-card-cerberus);
-
-        &:hover {
-          -webkit-transform: translateY(-15%) scale(1.1);
-          transform: translateY(-15%) scale(1.1);
-        }
-
-        & > article {
-          background-color: (--system-color-dark);
-          background: url("./../images/games/elcaminomusical/3.jpg")
-            no-repeat 50% 0%;
-          -webkit-background-size: 100%;
-          background-size: 100%;
-
-          &::before {
-            width: 110%;
-            height: 35%;
-
-            content: "";
-            position: absolute;
-            inset: 70% auto auto -5%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-
-            -webkit-filter: drop-shadow(
-              0px 10px 10px var(--system-color-shadow)
-            );
-            filter: drop-shadow(0px 10px 10px var(--system-color-shadow));
-          }
-
-          &::after {
-            width: 18%;
-            height: 18%;
-
-            content: "";
-            position: absolute;
-            inset: -6% auto auto -6%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-
-            -webkit-filter: drop-shadow(3px 0px 4px var(--system-color-gem-red))
-              drop-shadow(-3px 0px 4px var(--system-color-gem-red))
-              drop-shadow(0px 3px 4px var(--system-color-gem-red))
-              drop-shadow(0px -3px 4px var(--system-color-gem-red));
-            filter: drop-shadow(3px 0px 4px var(--system-color-gem-red))
-              drop-shadow(-3px 0px 4px var(--system-color-gem-red))
-              drop-shadow(0px 3px 4px var(--system-color-gem-red))
-              drop-shadow(0px -3px 4px var(--system-color-gem-red));
-          }
-        }
-
-        & > aside {
-          &::before {
-            width: 66%;
-            height: 66%;
-
-            content: "";
-            position: absolute;
-            inset: 7% auto auto 16.8%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-          }
-
-          &::after {
-            width: 33%;
-            height: 66%;
-
-            content: "";
-            position: absolute;
-            inset: 64% auto auto 35%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-          }
-        }
-      }
-
-      :is(&.hand__nyx, &.hand__nyx-clone) {
-        -webkit-transform: translateX(-35%) translateY(-10%) rotate(7deg);
-        transform: translateX(-35%) translateY(-10%) rotate(7deg);
-        background-color: var(--system-color-card-nyx);
-
-        &:hover {
-          -webkit-transform: translateX(-35%) translateY(-10%) rotate(7deg)
-            scale(1.1);
-          transform: translateX(-35%) translateY(-10%) rotate(7deg) scale(1.1);
-        }
-
-        & > article {
-          background: var(--system-color-dark)
-            url("./../images/games/elcaminomusical/4.jpg")
-            no-repeat 20% 10%;
-          -webkit-background-size: 88%;
-          background-size: 88%;
-
-          &::before {
-            width: 110%;
-            height: 35%;
-
-            content: "";
-            position: absolute;
-            inset: 70% auto auto -5%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-
-            -webkit-filter: drop-shadow(
-              0px 10px 10px var(--system-color-shadow)
-            );
-            filter: drop-shadow(0px 10px 10px var(--system-color-shadow));
-          }
-
-          &::after {
-            width: 18%;
-            height: 18%;
-
-            content: "";
-            position: absolute;
-            inset: -6% auto auto -6%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-
-            -webkit-filter: drop-shadow(
-                3px 0px 4px var(--system-color-gem-purple)
-              )
-              drop-shadow(-3px 0px 4px var(--system-color-gem-purple))
-              drop-shadow(0px 3px 4px var(--system-color-gem-purple))
-              drop-shadow(0px -3px 4px var(--system-color-gem-purple));
-            filter: drop-shadow(3px 0px 4px var(--system-color-gem-purple))
-              drop-shadow(-3px 0px 4px var(--system-color-gem-purple))
-              drop-shadow(0px 3px 4px var(--system-color-gem-purple))
-              drop-shadow(0px -3px 4px var(--system-color-gem-purple));
-          }
-        }
-
-        & > aside {
-          &::after {
-            width: 66%;
-            height: 66%;
-
-            content: "";
-            position: absolute;
-            inset: 7% auto auto 17.2%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-          }
-        }
-      }
-
-      :is(&.hand__horse, &.hand__horse-clone) {
-        -webkit-transform: translateX(-50%) rotate(14deg);
-        transform: translateX(-50%) rotate(14deg);
-
-        background-color: var(--system-color-card-horse);
-
-        &:hover {
-          transform: translateX(-50%) rotate(14deg) scale(1.1);
-        }
-
-        & > article {
-          background-color: (--system-color-dark);
-          background: url("./../images/games/elcaminomusical/5.jpg")
-            no-repeat 0% 0%;
-          -webkit-background-size: 100%;
-          background-size: 100%;
-
-          &::before {
-            width: 110%;
-            height: 35%;
-
-            content: "";
-            position: absolute;
-            inset: 70% auto auto -5%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-
-            -webkit-filter: drop-shadow(
-              0px 10px 10px var(--system-color-shadow)
-            );
-            filter: drop-shadow(0px 10px 10px var(--system-color-shadow));
-          }
-
-          &::after {
-            width: 18%;
-            height: 18%;
-
-            content: "";
-            position: absolute;
-            inset: -6% auto auto -6%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-
-            -webkit-filter: drop-shadow(
-                3px 0px 4px var(--system-color-gem-green)
-              )
-              drop-shadow(-3px 0px 4px var(--system-color-gem-green))
-              drop-shadow(0px 3px 4px var(--system-color-gem-green))
-              drop-shadow(0px -3px 4px var(--system-color-gem-green));
-            filter: drop-shadow(3px 0px 4px var(--system-color-gem-green))
-              drop-shadow(-3px 0px 4px var(--system-color-gem-green))
-              drop-shadow(0px 3px 4px var(--system-color-gem-green))
-              drop-shadow(0px -3px 4px var(--system-color-gem-green));
-          }
-        }
-
-        & > aside {
-          &::after {
-            width: 66%;
-            height: 66%;
-
-            content: "";
-            position: absolute;
-            inset: 7% auto auto 16.9%;
-            z-index: 1;
-
-            background-image: url("");
-            -webkit-background-size: 100%;
-            background-size: 100%;
-          }
-        }
-      }
-
-      & article {
-        width: 90%;
-        height: 65%;
-
-        border-radius: 5% 5% 0 0;
-        position: absolute;
-        inset: 5% auto auto 5%;
-
-        background-color: var(--system-color-dark);
-        box-shadow: inset 0px 0px 60px -30px var(--system-color-dark);
-
-        -moz-image-rendering: auto;
-        -ms-image-rendering: auto;
-        -o-image-rendering: auto;
-        image-rendering: auto;
-      }
-
-      & aside {
-        width: 90%;
-        height: 35%;
-
-        position: absolute;
-        inset: auto auto 5% 5%;
-        border-radius: 14% 14% 5% 5%;
-
-        background: var(--system-color-label);
-        box-shadow: inset 0px 0px 60px -30px var(--system-color-dark);
-      }
-    }
-  }
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(0);
+    transform-origin: center center;
+    width: 100%;
+}
+.rotating-slider ul.slides li {
+    background-color: #ecf0f1;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    text-align: center;
+    transform-origin: bottom center;
+    width: 100%;
 }
 
-/*
-  ▀▄▀▄▀▄▀▄▀▄▀▄ ANIMATIONS ▀▄▀▄▀▄▀▄▀▄▀▄
-  */
-
-@keyframes opening {
-  from {
-    opacity: 0;
-    filter: grayscale(100%);
-  }
-
-  to {
-    opacity: 1;
-    filter: grayscale(0%);
-  }
+/* Demo Styles */
+.rotating-slider ul.slides li {
+    color: #fff;
 }
-
-@keyframes curtain-up {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 0.7;
-  }
+.rotating-slider ul.slides li:nth-of-type(1) {
+    background: transparent;
 }
-
-@keyframes card-zoom {
-  from {
-    opacity: 0;
-    transform: scale(1);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1.45);
-  }
+.rotating-slider ul.slides li:nth-of-type(2) {
+    background: transparent;
 }
-
-@keyframes vanish-from-the-board {
-  to {
-    opacity: 0;
-  }
+.rotating-slider ul.slides li:nth-of-type(3) {
+    background: transparent;
 }
-
-/*** ◰ media queries ***/
-/** accessibility **/
-@media screen and (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-    animation: none !important;
-    scroll-behavior: auto !important;
-  }
+.rotating-slider ul.slides li:nth-of-type(4) {
+    background: transparent;
+}
+.rotating-slider ul.slides li:nth-of-type(5) {
+    background: transparent;
+}
+.rotating-slider ul.slides li:nth-of-type(6) {
+    background: transparent;
+}
+.rotating-slider ul.slides li .inner {
+    box-sizing: border-box;
+    padding: 2em;
+    height: 100%;
+    width: 100%;
 }
 
   </style>
@@ -710,72 +145,76 @@ body {
           
           <div class="row justify-content-center mb-5 pb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
-              <h1>El Camino Musical</h1>
+              <h1 style="margin-top: -100px;">El Camino Musical</h1>
               <span><p>¡Aprende teoría musical de una manera divertida!</p></span>
+
+              <div class="div" style="text-align: center;">
+                <a target="_blank" href="./../docs/musical-path.pdf">
+                  <input class="newsletter-submit2" value="Ver instrucciones">
+                </a>
+              </div>
+              
             </div>
             <div class="container">
               <div class="row mt-5 flex-column ftco-animate">
                 <div class="col-md-12 animate-box" data-animate-effect="fadeInRight">
-                  <img src="./../images/grades-table-back.jpg" alt="">
+                  <img style="width: 100%;" src="./../images/grades-table-back.jpg" alt="">
                 </div>
+                
               </div>
             </div>
           </div>
 
-          <div class="row justify-content-center mb-5 pb-5">
-            <div class="col-md-7 text-center heading-section ftco-animate">
-              <h1>INSTRUCCIONES</h1>
-            </div>
+          <div class="div" style="text-align: center;">
+            <a target="_blank" href="./../docs/musical-path.pdf">
+              <input class="newsletter-submit2" style="background-color: green;" value="Ver en Play Store">
+            </a>
+          </div>
+          <div class="div" style="text-align: center;">
+            <a target="_blank" href="./../docs/musical-path.pdf">
+              <input class="newsletter-submit2" style="background-color: orange;" value="Apoyanos en Patreon">
+            </a>
+          </div>
+
+          
+
+          <div class="row justify-content-center mb-5 pb-5" style="margin-top: -70px;">
             <div class="container">
               <div class="row mt-5 flex-column ftco-animate">
-                <div class="col-md-12 animate-box" data-animate-effect="fadeInRight">
 
-                  <main class="hand">
-                    <!--   original cards -->
-                    <section class="hand__polyphemus">
-                      <article></article>
-                      <aside></aside>
-                    </section>
-                    <section class="hand__andromeda">
-                      <article></article>
-                      <aside></aside>
-                    </section>
-                    <section class="hand__cerberus">
-                      <article></article>
-                      <aside></aside>
-                    </section>
-                    <section class="hand__nyx">
-                      <article></article>
-                      <aside></aside>
-                    </section>
-                    <section class="hand__horse">
-                      <article></article>
-                      <aside></aside>
-                    </section>
-                    <!--  transparent curtain that appears between the cards on the table and the one in your hand, when you click on one of them                -->
-                    <article class="hand__curtain"></article>
-                    <!--   clone cards -->
-                    <section class="hand__polyphemus-clone">
-                      <article></article>
-                      <aside></aside>
-                    </section>
-                    <section class="hand__andromeda-clone">
-                      <article></article>
-                      <aside></aside>
-                    </section>
-                    <section class="hand__cerberus-clone">
-                      <article></article>
-                      <aside></aside>
-                    </section>
-                    <section class="hand__nyx-clone">
-                      <article></article>
-                      <aside></aside>
-                    </section>
-                    <section class="hand__horse-clone">
-                      <article></article>
-                      <aside></aside>
-                    </section>
-                  </main>
+                <div class="col-md-12 animate-box" data-animate-effect="fadeInRight">                  
+                  
+                  <div>
+                    <div class="rotating-slider">
+                      <ul class="slides">
+                        <li>
+                          <img style="width: 210px;" src="./../images/games/elcaminomusical/1.jpg" alt="">
+                        </li>
+                        <li>
+                          <img style="width: 210px;" src="./../images/games/elcaminomusical/2.jpg" alt="">
+                        </li>
+                        <li>
+                          <img style="width: 210px;" src="./../images/games/elcaminomusical/3.jpg" alt="">
+                        </li>
+                        <li>
+                          <img style="width: 210px;" src="./../images/games/elcaminomusical/4.jpg" alt="">
+                        </li>
+                        <li>
+                          <img style="width: 210px;" src="./../images/games/elcaminomusical/5.jpg" alt="">
+                        </li>
+                        <li>
+                          <img style="width: 210px;" src="./../images/games/elcaminomusical/6.jpg" alt="">
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="div" style="text-align: center;">
+                    <a target="_blank" href="./../docs/musical-path.pdf">
+                      <input class="newsletter-submit2" value="Ver instrucciones">
+                    </a>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -791,15 +230,15 @@ body {
               <img style="margin-top: -345px;" width="300px" src="./../images/logos/doradeogomez.png" alt="">
               <div class="ftco-footer-widget mb-5">
                 <ul class="ftco-footer-social list-unstyled">
-                  <li class="ftco-animate"><a target="true"
+                  <!-- <li class="ftco-animate"><a target="true"
                       href="https://www.facebook.com/Catarsis-Musical-101296445043200"><span
                         class="icon-facebook"></span></a>
-                  </li>
-                  <li class="ftco-animate"><a target="true" href="https://www.instagram.com/catarsismusical.cr/"><span
+                  </li> -->
+                  <!-- <li class="ftco-animate"><a target="true" href="https://www.instagram.com/catarsismusical.cr/"><span
                         class="icon-instagram"></span></a>
-                  </li>
-                  <li class="ftco-animate"><a target="true" href="https://t.me/catarsismusical"><span
-                        class="icon-telegram"></span></a></li>
+                  </li> -->
+                  <!-- <li class="ftco-animate"><a target="true" href="https://t.me/catarsismusical"><span
+                        class="icon-telegram"></span></a></li> -->
 
                   <li class="ftco-animate"><a target="true" href="https://medium.com/@catarsismusical"><span
                         class="icon-medium"></span></a>
@@ -858,54 +297,437 @@ body {
   <script src="../js/tune-a-guitar.js"></script>
 
   <script>
-    const canvas = document.body;
-      const curtain = document.querySelector(".hand__curtain");
+  
+  (function ($) {
+      $.fn.rotatingSlider = function (options) {
+        var rotatingSlider = {
+          init: function (el) {
+            this.$slider = $(el);
+            this.$slidesContainer = this.$slider.children("ul.slides");
+            this.$slides = this.$slidesContainer.children("li");
+            this.$clipPath;
+            this.$directionControls;
+            this.$currentSlide;
+            this.$nextSlide;
+            this.$previousSlide;
 
-      const cardSet = [
-        {
-          card: document.querySelector(".hand__polyphemus"),
-          clone: document.querySelector(".hand__polyphemus-clone")
-        },
-        {
-          card: document.querySelector(".hand__andromeda"),
-          clone: document.querySelector(".hand__andromeda-clone")
-        },
-        {
-          card: document.querySelector(".hand__cerberus"),
-          clone: document.querySelector(".hand__cerberus-clone")
-        },
-        {
-          card: document.querySelector(".hand__nyx"),
-          clone: document.querySelector(".hand__nyx-clone")
-        },
-        {
-          card: document.querySelector(".hand__horse"),
-          clone: document.querySelector(".hand__horse-clone")
-        }
-      ];
+            this.settings = $.extend(
+              {
+                autoRotate: false,
+                autoRotateInterval: 1000,
+                draggable: true,
+                directionControls: true,
+                directionLeftText: "&lsaquo;",
+                directionRightText: "&rsaquo;",
+                rotationSpeed: 750,
+                slideHeight: 360,
+                slideWidth: 480,
+                /* Callback Functions */
+                beforeRotationStart: function () { },
+                afterRotationStart: function () { },
+                beforeRotationEnd: function () { },
+                afterRotationEnd: function () { }
+              },
+              options
+            );
 
-      const handleCardClick = (card, clone, event) => {
-        card.classList.add("card--hidden");
-        event.stopPropagation(); // prevent glitch on hover
-        curtain.classList.add("curtain--visible");
-        clone.classList.add("card--visible");
+            // this.slideAngle = 360 / this.$slides.length;
+            this.slideAngle = 1;
+            this.currentRotationAngle = 0;
+            this.autoRotateIntervalId = false;
+            this.rotateTimoutId = false;
+            this.currentlyRotating = false;
+            this.readyToDrag = false;
+            this.dragStartPoint;
+            this.dragStartAngle;
+            this.currentlyDragging = false;
+            this.markupIsValid = false;
+
+            this.validateMarkup();
+            if (this.markupIsValid) {
+              this.renderSlider();
+              this.setCurrentSlide();
+              this.bindEvents();
+              if (this.settings.autoRotate) {
+                this.startAutoRotate();
+              }
+            }
+          },
+          bindEvents: function () {
+            if (this.settings.draggable) {
+              this.$slidesContainer.on(
+                "mousedown touchstart",
+                this.handleDragStart.bind(this)
+              );
+              this.$slidesContainer.on(
+                "mousemove touchmove",
+                this.handleDragMove.bind(this)
+              );
+              this.$slidesContainer.on(
+                "mouseup mouseleave touchend",
+                this.handleDragEnd.bind(this)
+              );
+            }
+            if (this.settings.directionControls) {
+              this.$slider
+                .find("ul.direction-controls .left-arrow button")
+                .click(this.handleLeftDirectionClick.bind(this));
+              this.$slider
+                .find("ul.direction-controls .right-arrow button")
+                .click(this.handleRightDirectionClick.bind(this));
+            }
+          },
+          handleDragStart: function (e) {
+            this.readyToDrag = true;
+            this.dragStartPoint =
+              e.type === "mousedown"
+                ? e.pageX
+                : e.originalEvent.touches[0].pageX;
+          },
+          handleDragMove: function (e) {
+            if (this.readyToDrag) {
+              var pageX =
+                e.type === "mousemove"
+                  ? e.pageX
+                  : e.originalEvent.touches[0].pageX;
+              if (
+                this.currentlyDragging === false &&
+                this.currentlyRotating === false &&
+                (this.dragStartPoint - pageX > 10 ||
+                  this.dragStartPoint - pageX < -10)
+              ) {
+                this.stopAutoRotate();
+                if (this.settings.directionControls) {
+                  this.$directionControls.css(
+                    "pointer-events",
+                    "none"
+                  );
+                }
+                window.getSelection().removeAllRanges();
+                this.currentlyDragging = true;
+                this.dragStartAngle = this.currentRotationAngle;
+              }
+              if (this.currentlyDragging) {
+                this.currentRotationAngle =
+                  this.dragStartAngle -
+                  ((this.dragStartPoint - pageX) /
+                    this.settings.slideWidth) *
+                  this.slideAngle;
+                this.$slidesContainer.css(
+                  "transform",
+                  "translateX(-50%) rotate(" +
+                  this.currentRotationAngle +
+                  "deg)"
+                );
+              }
+            }
+          },
+          handleDragEnd: function (e) {
+            this.readyToDrag = false;
+            if (this.currentlyDragging) {
+              this.currentlyDragging = false;
+              this.currentRotationAngle =
+                Math.round(
+                  this.currentRotationAngle / this.slideAngle
+                ) * this.slideAngle;
+              this.rotate();
+              if (this.settings.directionControls) {
+                this.$directionControls.css("pointer-events", "");
+              }
+            }
+          },
+          handleLeftDirectionClick: function (e) {
+            e.preventDefault();
+            this.stopAutoRotate();
+            this.rotateClockwise();
+          },
+          handleRightDirectionClick: function (e) {
+            e.preventDefault();
+            this.stopAutoRotate();
+            this.rotateCounterClockwise();
+          },
+          renderSlider: function () {
+            var halfAngleRadian = ((this.slideAngle / 2) * Math.PI) / 180;
+            var innerRadius =
+              ((1 / Math.tan(halfAngleRadian)) *
+                this.settings.slideWidth) /
+              2;
+            var outerRadius = Math.sqrt(
+              Math.pow(innerRadius + this.settings.slideHeight, 2) +
+              Math.pow(this.settings.slideWidth / 2, 2)
+            );
+            upperArcHeight =
+              outerRadius - (innerRadius + this.settings.slideHeight);
+            lowerArcHeight =
+              innerRadius - innerRadius * Math.cos(halfAngleRadian);
+            var slideFullWidth =
+              Math.sin(halfAngleRadian) * outerRadius * 2;
+            var slideFullHeight =
+              upperArcHeight + this.settings.slideHeight + lowerArcHeight;
+            var slideSidePadding =
+              (slideFullWidth - this.settings.slideWidth) / 2;
+            var fullArcHeight =
+              outerRadius - outerRadius * Math.cos(halfAngleRadian);
+            var lowerArcOffset =
+              (slideFullWidth -
+                Math.sin(halfAngleRadian) * innerRadius * 2) /
+              2;
+
+            /* Set height and width of slider element */
+            this.$slider.css("height", this.settings.slideHeight + "px");
+            this.$slider.css("width", this.settings.slideWidth + "px");
+
+            /* Set height and width of slides container and offset width*/
+            this.$slidesContainer.css("height", outerRadius * 2 + "px");
+            this.$slidesContainer.css("width", outerRadius * 2 + "px");
+
+            /* Offset width and arc height */
+            this.$slidesContainer.css("transform", "translateX(-50%)");
+            this.$slidesContainer.css("top", "-" + upperArcHeight + "px");
+
+            /* Generate path for slide clipping */
+            var pathCoords = "M 0 " + fullArcHeight;
+            pathCoords +=
+              " A " +
+              outerRadius +
+              " " +
+              outerRadius +
+              " 0 0 1 " +
+              slideFullWidth +
+              " " +
+              fullArcHeight;
+            pathCoords +=
+              " L " +
+              (slideFullWidth - lowerArcOffset) +
+              " " +
+              slideFullHeight;
+            pathCoords +=
+              " A " +
+              innerRadius +
+              " " +
+              innerRadius +
+              " 0 0 0 " +
+              lowerArcOffset +
+              " " +
+              slideFullHeight +
+              " Z";
+            this.$slider.append(
+              '<svg><defs><clipPath id="slideClipPath"><path /></clipPath></defs></svg>'
+            );
+            this.$slider.find("#slideClipPath>path").attr("d", pathCoords);
+
+            /* Apply styles to each slide */
+            this.$slides.each(
+              function (i, el) {
+                var $slide = $(el);
+                /* Set distance from point of rotation */
+                $slide.css(
+                  "transform-origin",
+                  "center " +
+                  (innerRadius + this.settings.slideHeight) +
+                  "px"
+                );
+
+                /* Set slide Height and Width */
+                $slide.css("height", this.settings.slideHeight + "px");
+                $slide.css("width", this.settings.slideWidth + "px");
+
+                /* Set calculated padding for width, upper arc height, and lower arc height */
+                $slide.css(
+                  "padding",
+                  upperArcHeight +
+                  "px " +
+                  slideSidePadding +
+                  "px " +
+                  lowerArcHeight +
+                  "px " +
+                  slideSidePadding +
+                  "px "
+                );
+
+                /* Offset container Arc Height */
+                $slide.css("top", upperArcHeight + "px");
+
+                /* Offset Width, then Rotate Slide, then offset individual Top Arcs  */
+                $slide.css(
+                  "transform",
+                  "translateX(-50%) rotate(" +
+                  this.slideAngle * i +
+                  "deg) translateY(-" +
+                  upperArcHeight +
+                  "px)"
+                );
+
+                /* Add clipping path  */
+                $slide.css("-webkit-clip-path", "url(#slideClipPath)");
+                $slide.css("clip-path", "url(#slideClipPath)");
+              }.bind(this)
+            );
+
+            /* Render Arrow Controls */
+            if (this.settings.directionControls) {
+              var directionArrowsHTML = '<ul class="direction-controls">';
+              directionArrowsHTML +=
+                '<li class="left-arrow"><button>' +
+                this.settings.directionLeftText +
+                "</button></li>";
+              directionArrowsHTML +=
+                '<li class="right-arrow"><button>' +
+                this.settings.directionRightText +
+                "</button></li>";
+              directionArrowsHTML += "</ul>";
+              this.$slider.append(directionArrowsHTML);
+              this.$directionControls = this.$slider.find(
+                "ul.direction-controls"
+              );
+            }
+          },
+          rotateClockwise: function () {
+            this.currentRotationAngle =
+              this.currentRotationAngle + this.slideAngle;
+            this.rotate();
+          },
+          rotateCounterClockwise: function () {
+            this.currentRotationAngle =
+              this.currentRotationAngle - this.slideAngle;
+            this.rotate();
+          },
+          rotate: function () {
+            this.beforeRotationStart();
+            this.currentlyRotating = true;
+            this.$slider.addClass("currently-rotating");
+            this.setCurrentSlide();
+
+            if (this.rotateTimeoutId) {
+              clearTimeout(this.rotateTimeoutId);
+              this.rotateTimeoutId = false;
+            }
+
+            this.$slidesContainer.css(
+              "transition",
+              "transform " +
+              this.settings.rotationSpeed / 1000 +
+              "s ease-in-out"
+            );
+            this.$slidesContainer.css(
+              "transform",
+              "translateX(-50%) rotate(" +
+              this.currentRotationAngle +
+              "deg)"
+            );
+
+            this.afterRotationStart();
+
+            this.rotateTimeoutId = setTimeout(
+              function () {
+                this.beforeRotationEnd();
+                this.currentlyRotating = false;
+                this.$slider.removeClass("currently-rotating");
+                this.$slidesContainer.css("transition", "none");
+
+                /* keep currentRotationAngle between -360 and 360 */
+                if (
+                  this.currentRotationAngle >= 360 ||
+                  this.currentRotationAngle <= -360
+                ) {
+                  this.currentRotationAngle =
+                    this.currentRotationAngle >= 360
+                      ? this.currentRotationAngle - 360
+                      : this.currentRotationAngle + 360;
+                  this.$slidesContainer.css(
+                    "transform",
+                    "translateX(-50%) rotate(" +
+                    this.currentRotationAngle +
+                    "deg)"
+                  );
+                }
+                this.afterRotationEnd();
+              }.bind(this),
+              this.settings.rotationSpeed
+            );
+          },
+          setCurrentSlide: function () {
+            console.log(this.$currentSlide)
+            var currAngle = this.currentRotationAngle;
+            if (
+              this.currentRotationAngle >= 360 ||
+              this.currentRotationAngle <= -360
+            ) {
+              currAngle =
+                currAngle >= 360 ? currAngle - 360 : currAngle + 360;
+            }
+            this.$currentSlide = this.$slides.eq(
+              -currAngle / this.slideAngle
+            );
+            this.$nextSlide = this.$currentSlide.is(":last-child")
+              ? this.$slides.first()
+              : this.$currentSlide.next();
+            this.$previousSlide = this.$currentSlide.is(":first-child")
+              ? this.$slides.last()
+              : this.$currentSlide.prev();
+
+            this.$slides.removeClass("active-slide");
+            this.$slides.removeClass("next-slide");
+            this.$slides.removeClass("previous-slide");
+
+            this.$currentSlide.addClass("active-slide");
+            this.$nextSlide.addClass("next-slide");
+            this.$previousSlide.addClass("previous-slide");
+          },
+          startAutoRotate: function () {
+            this.autoRotateIntervalId = setInterval(
+              function () {
+                this.rotateCounterClockwise();
+              }.bind(this),
+              this.settings.autoRotateInterval
+            );
+          },
+          stopAutoRotate: function () {
+            if (this.autoRotateIntervalId) {
+              clearInterval(this.autoRotateIntervalId);
+              this.autoRotateIntervalId = false;
+            }
+          },
+          validateMarkup: function () {
+            if (
+              this.$slider.hasClass("rotating-slider") &&
+              this.$slidesContainer.length === 1 &&
+              this.$slides.length >= 2
+            ) {
+              this.markupIsValid = true;
+            } else {
+              this.$slider.css("display", "none");
+              console.log("Markup for Rotating Slider is invalid.");
+            }
+          },
+
+          /* Callbacks */
+          beforeRotationStart: function () {
+            this.settings.beforeRotationStart();
+          },
+          afterRotationStart: function () {
+            this.settings.afterRotationStart();
+          },
+          beforeRotationEnd: function () {
+            this.settings.beforeRotationEnd();
+          },
+          afterRotationEnd: function () {
+            this.settings.afterRotationEnd();
+          }
+        };
+
+        return this.each(function () {
+          rotatingSlider.init(this);
+        });
       };
+    })(jQuery);
 
-      cardSet.forEach(({ card, clone }) => {
-        card.addEventListener("click", (event) =>
-          handleCardClick(card, clone, event)
-        );
+    $(function () {
+      $(".rotating-slider").rotatingSlider({
+        slideHeight: Math.min(360, window.innerWidth - 80),
+        slideWidth: Math.min(480, window.innerWidth - 80)
       });
-
-      canvas.addEventListener("click", () => {
-        cardSet.forEach(({ card }) => card.classList.remove("card--hidden"));
-        curtain.classList.remove("curtain--visible");
-      });
-
-      canvas.addEventListener("click", () => {
-        cardSet.forEach(({ clone }) => clone.classList.remove("card--visible"));
-      });
-
+    });
   </script>
 </body>
 
