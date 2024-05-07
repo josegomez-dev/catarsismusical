@@ -35,6 +35,57 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+
+  <style>
+    .ytube {
+      display: grid;
+      gap: var(--yt-gap, 1rem);
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    }
+    .ytube textarea {
+      display: none;
+    }
+    .ytube-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background-color: black;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+    .ytube-item:before {
+      content: "";
+      display: block;
+      padding-top: 56.25%;
+    }
+    .ytube-item * {
+      -o-object-fit: cover;
+        object-fit: cover;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0 none;
+    }
+    .ytube-item:hover {
+      --yt-is: 1.25;
+    }
+    .ytube-play {
+      stroke-width: 3;
+      stroke: var(--yt-icon-color, #fff);
+      width: var(--yt-icon-size, 3rem);
+      transform: scale(var(--yt-is, 1));
+      transition: transform 0.3s;
+      stroke-linejoin: round;
+      fill: none;
+      margin: auto;
+      z-index: 1;
+    }
+
+    .demo {
+      max-width: 800px;
+      width: 100%;
+    }
+  </style>
 </head>
 
 <body>
@@ -140,18 +191,62 @@
               "🎶 ¿Tienes una canción que te hace vibrar? ¡Hazla sonar en nuestro evento! 🎵 En nuestra noche especial, tú tienes el
               control. ¡Solicita tus canciones favoritas y déjanos hacer de tu velada una experiencia inolvidable! 🎤✨"
             </p>
-            
+            <a target="_blank" href="https://www.youtube.com/@catarsismusical/videos"><span class="icon-youtube"></span> ¡Ver presentacion en vivo!</a> <br/>
+            <p style="color: orange;">
+              ¡Proxima Presentacion 
+              <b style="color: red;">18 de MAYO</b> en <a href="https://www.facebook.com/LATUCURRA">@LaTuccura</a>!
+            </p>
+            <br/>
+            <a href="https://www.instagram.com/alegomez.cr"> <span class="icon-instagram"> </span>@alegomez.cr</a> | 
+            <a href="https://www.instagram.com/alegomez.cr"> <span class="icon-facebook"> </span>@alegomez.cr</a> | 
+            <a href="https://www.instagram.com/alegomez.cr"> <span class="icon-youtube"> </span>@musiqueandola</a> | 
           </div>
         </div>
       </section>
 
+      <section class="ftco-section" style="margin-top: -300px;">
+        <div class="container mt-5">
+          
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="demo">
+                <div class="ytube">
+                  <!--
+                  One ID per line, example:
+                  youtube.com/watch?v=wJfY22MawPo => wJfY22MawPo
+                  -->
+                  <textarea>
+                    Y2SaZZ3eqKY
+                    vuOeaSuP8Xo
+                    VpBNf5r6_1M
+                  </textarea>
+                </div>
+              </div>
+            </div>
+          </div>
 
-
-      <section class="ftco-section" style="margin-top: -150px; background-color:whitesmoke;">
+        </div>
+      </section>
+      
+      <section class="ftco-section" style="margin-top: -250px; background-color:whitesmoke;">
         <div class="container mt-5">
 
           <div class="row">
             <div class="col-md-12 text-center">
+
+              <h5 style="color:#ffc107;">Troba & Plancha</h5>
+              <ul style="list-style: none;">
+                <li>Sueno con serpientes | Silvio Rodriguez</li>
+                <li>Brazos de Sol - Alejandro Filio</li>
+                <li>Aventurera - Alberto Plaza</li>
+                <li>19 dias y 500 noches - Joaquin Sabina</li>
+                <li>Todo a pulmon & Santa Lucia - Miguel Rios</li>
+                <li>Te conozco - Ricardo Arjona</li>
+                <li>Mi historia entre tus dedos - Gianluca Grignani</li>
+                <li>Caraluna - Bacilos</li>
+                <li>Asi es la vida - Elefante</li>
+              </ul>
+              
               <h5 style="color:#ffc107;">Boleros del Recuerdo</h5>
 
               <ul style="list-style: none;">
@@ -163,66 +258,43 @@
                   <li>Odiame - Los Tres Reyes</li>
                   <li>Historia de un amor - Los Panchos</li>
                   <li>Almohada - Jose Jose (Version Trio)</li>
+                  <li>La Gloria eres tu - Luis Miguel (Version Trio)</li>
+                  <li>Usted - Luis Miguel (Version Trio)</li>
+                  <li>Sin un amor - Luis Miguel (Version Trio)</li>
               </ul>
               
-
-              <h5 style="color:#ffc107;">Troba & Plancha</h5>
+              <h5 style="color:#ffc107;">Clasicos Romanticos</h5>
               <ul style="list-style: none;">
-                  <li>Sueno con serpientes | Silvio Rodriguez</li>
-                  <li>Brazos de Sol - Alejandro Filio</li>
-                  <li>Aventurera - Alberto Plaza</li>
-                  <li>19 dias y 500 noches - Joaquin Sabina</li>
-                  <li>Todo a pulmon & Santa Lucia - Miguel Rios</li>
                   <li>Culpable o no - Luis Miguel</li>
                   <li>Amarte es un placer - Luis Miguel</li>
                   <li>Pequeno Gran Amor - Claudio Baglioni</li>
-                  <li>Penelope - Joan Manuelle Serrat</li>
                   <li>Ella - Gaviota</li>
                   <li>Mi Credo - Pepe Aguilar</li>
                   <li>Quieres ser mi amante - Camilo Sesto</li>
                   <li>Piel de Angel - Camilo Sesto</li>
                   <li>El Hombre del Piano - Ana Belen | Billy Joel</li>
-                  <li>Te conozco - Ricardo Arjona</li>
-                  <li>Mi historia entre tus dedos - </li>
+                  <li>Que alguien me diga - Gilberto Santa Rosa</li>
+                  <li>Durmiendo con la luna (Aqui estoy) - Elefante</li>
                   <li>Te amo - Alexander Acha</li>
                   <li>Digale - David Bisval</li>
                   <li>Cuando quieras, donde quieras - Dyango</li>
                   <li>Que vas a hacer esta noche - Rogelio Cisneros</li>
-              </ul>
-
-
-              <h5 style="color:#ffc107;">Clasicos Romanticos</h5>
-              <ul style="list-style: none;">
-                  <li>Que alguien me diga - Gilberto Santa Rosa</li>
-                  <li>Durmiendo con la luna (Aqui estoy) - Elefante</li>
                   <li>No me conoces & Hasta ayer - Marc Anthony</li>
                   <li>Flor Palida - Marc Anthony</li>
-
-              </ul>
-
-              <h5 style="color:#ffc107;">Canciones Populares</h5>
-              <ul style="list-style: none;">
-                  <li>Caraluna - Bacilos</li>
-                  <li>Asi es la vida - Elefante</li>
                   <li>Agua & La Flaca - Jarabe de Palo</li>
                   <li>Te he prometido - Leo Dan</li>
                   <li>Rayando el Sol - Mana</li>
               </ul>
 
-              <h5 style="color:#ffc107;">Banda Bailonga</h5>
+              <h5 style="color:#ffc107;">Música Ranchera Mexicana & Banda Popular</h5>
               <ul style="list-style: none;">
                 <li>La primera cita - Carin Leon</li>
                 <li>Quien es usted - Christian Nodal</li>
-                <li>Adios Amor - Christian Nodal</li>
                 <li>El color de tus ojos - Grupo MS</li>
                 <li>Ya me entere - Chayin Rubio</li>
                 <li>Si te pudiera mentir - Calibre 50</li>
                 <li>Dulce Pecado - Jessi Uribe</li>
                 <li>Disename - Joan Sebastian</li>
-              </ul>
-
-              <h5 style="color:#ffc107;">Duos</h5>
-              <ul style="list-style: none;">
                 <li>Olvidala - Nico Hernandez Ft Kristian Camilo</b></li>
                 <li>Vivir mi vida & Escandalo - Marc Anthony</li>
                 <li>Yo te recuerdo - Juan Gabriel Ft. Marc Anthony</li>
@@ -230,7 +302,6 @@
                 <li>La Cita - Gali Galeano Ft. Jessi Uribe</li>
                 <li>Abrazaame & Lo dudo - Alejandro Fernandez & Jose jose</li>
               </ul>
-
    
             </div>
           </div>
@@ -335,6 +406,80 @@
         e.preventDefault();
         $('html, body').animate({ scrollTop: 0 }, '300');
       });
+
+
+
+
+
+
+
+
+      const ytube = (() => {
+        if (window.ytube) {
+          return;
+        }
+
+        const elements = document.querySelectorAll(".ytube");
+        const SVG_PLAY =
+          '<svg class="ytube-play" viewBox="0 0 24 24"><path d="m7 3 14 9-14 9z"></path></svg>'; // meteoricons.com
+
+        function createArrayIds(element) {
+          const textarea = element.querySelector("textarea").value;
+          const ids = textarea
+            .split("\n")
+            .map((id) => id.trim())
+            .filter((id) => id !== "");
+
+          return ids;
+        }
+
+        function createThumbnail(id) {
+          const $img = document.createElement("img");
+
+          $img.classList.add("ytube-thumbnail");
+          $img.src = `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
+          $img.alt = "thumbnail";
+          $img.loading = "lazy";
+
+          return $img;
+        }
+
+        function createEmbed(id) {
+          const $iframe = document.createElement("iframe");
+
+          $iframe.classList.add("ytube-embed");
+          $iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+          $iframe.setAttribute("frameborder", "0");
+          $iframe.setAttribute("allowfullscreen", "1");
+
+          return $iframe;
+        }
+
+        elements.forEach((element) => {
+          const ids = createArrayIds(element);
+          const $fragment = document.createDocumentFragment();
+
+          ids.forEach((id) => {
+            const $div = document.createElement("div");
+            $div.classList.add("ytube-item");
+            $div.innerHTML = SVG_PLAY;
+            $div.appendChild(createThumbnail(id));
+
+            $div.addEventListener("click", () => {
+              $div.innerHTML = "";
+              $div.appendChild(createEmbed(id));
+            });
+
+            $fragment.appendChild($div);
+          });
+
+          element.innerHTML = "";
+          element.appendChild($fragment);
+        });
+
+        window.ytube = true;
+      })();
+
     });
   </script>
 </body>
