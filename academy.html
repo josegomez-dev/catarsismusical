@@ -36,6 +36,49 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="./css/boxes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/slide-auto-move-effect.css">
+  <link rel="stylesheet" href="css/autocarrusel.css">
+  <link rel="stylesheet" href="css/courses-grid.css">
+
+
+<style>
+  .custom-banner {
+    background: linear-gradient(90deg, transparent 0%, #000 47%, #000 100%);
+    color: gold; /* Text color */
+    padding: 20px; /* Padding around the text */
+    border-top-right-radius: 30px; /* Rounded corner at the top-right */
+    border-bottom-left-radius: 30px; /* Rounded corner at the bottom-left */
+    text-align: center; /* Center the text */
+    max-width: 80%; /* Optional: Set a max width for the banner */
+    margin: 20px auto; /* Optional: Center the banner horizontally */
+    font-size: 18px; /* Optional: Font size of the text */
+    font-weight: lighter;
+  }
+</style>
+
+
+<style>
+
+/* Styling for the typewriter effect */
+.typewriter {
+    border-right: 0.15em solid gold; /* Creates the blinking cursor effect */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    overflow: hidden; /* Ensures that the text that goes out of the element is hidden */
+    letter-spacing: 0.15em; /* Adds some space between the letters */
+    animation: blink 0.75s step-end infinite;
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+    from, to {
+        border-color: transparent; /* The border is transparent at the start and end of each blink cycle */
+    }
+    50% {
+        border-color: gold; /* The border is black in the middle of each blink cycle */
+    }
+}
+</style>
 </head>
 
 <body>
@@ -48,7 +91,7 @@
 
   <!-- Back to top button -->
   <a id="button"></a>
-  
+
 
   <div class="page">
     <nav id="colorlib-main-nav" role="navigation">
@@ -82,7 +125,7 @@
                   <a href="./community.html">
                     <span style="font-size: 28px;">
                       <img style="margin-top: -10px;" width="65px" src="./images/logos/logo-white.png" alt="">
-                      <b>COMUNIDAD</b>
+                      <b>ESTUDIO</b>
                     </span>
                   </a>
                 </li>
@@ -126,7 +169,7 @@
       </header>
 
       <br>
-      <section class="ftco-section">
+      <section class="ftco-section" >
         <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
           <a href="./academy.html" class="image order-2 d-flex justify-content-center align-items-center"
             style="background-image: url('images/logos/blancoACADEMY.png'); "
@@ -143,197 +186,284 @@
             </p>
             <p>
               Pretendemos generar conciencia, promoviendo la percepción musical con una metodología que expone la
-              <b><a href="#">Trascendencia Filosófica de la Improvisación
-                  Musical</a></b>, mediante la <b><a href="#">interpretación esencial de los números</a></b>, su
-              filosofía ancestral más transparente y como las relaciones entre estos lograron dar vida a los primeros
-              acercamientos musicales desde tiempos pitagóricos.
+              <b><a href="#" style="text-transform: uppercase;">Trascendencia Filosófica de la Improvisación
+                  Musical</a></b>, mediante la <b><a href="#" style="text-transform: uppercase;">interpretación esencial de los números</a></b>, su
+              filosofía ancestral más transparente y como las relaciones entre estos lograron dar vida a los <b> <a href="" style="text-transform: uppercase;">primeros
+                acercamientos musicales</a></b> desde tiempos pitagóricos.
             </p>
             <!-- <p><a href="#">View Project</a></p> -->
           </div>
+
+        </div>
+
+      </section>
+
+      <section class="ftco-section" style="margin-top: -250px;">
+        <div class="mt-5" >
+          <div class="row ftco-animate " >
+            <div class="col-md-9 justify-content-center" style="background: linear-gradient(90deg, transparent 0%, #000 47%, #000 100%);">
+
+              <div>
+
+                  <!--Buttons of grid and list-->
+                  <div class="courses-buttons">
+                    <h3>Cursos</h3>
+                    <i class="fa fa-th-large"  id="showdiv1" aria-hidden="true"></i> &nbsp; | &nbsp; <i class="fa fa-th-list" id="showdiv2" aria-hidden="true"></i>
+                  </div>
+
+                    <div class="courses-container">
+                      <!--Product Grid-->
+                      <div id="div1">
+                        <section class="courses-section-grid">
+                        <div class="courses-grid-prod">
+                          <div class="courses-prod-grid"><img src="images/courses/1.png" alt="kalita">
+                            <h3>Curso de Guitarra Eléctrica</h3>
+                            <p>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn. </p>
+                            <a href="docs/curso.pdf" target="_blank">
+                              <button class="button btn bg-primary"> Más información... <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                            </a>
+                          </div>
+                          <div class="courses-prod-grid"><img src="images/courses/2.png" alt="kalita">
+                            <h3>Curso de Guitarra Acústica</h3>
+                            <p>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.</p>
+                            <a href="docs/curso.pdf" target="_blank">
+                              <button class="button btn bg-primary"> Más información... <i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+                            </a>
+                          </div>
+                        </div>
+                        </section>
+                      </div>
+                    <!--Product List-->
+                      <div id="div2" style="display:none;">
+                        <section class="courses-section-list">
+                          <table>
+                            <tr>
+                              <td width="30%"><img src="https://images.contentful.com/3h0qt25be5vd/1ojeAoISmMSKysKIOKEWGi/22b6344383ffabc7e250f1eed88287ae/Brew_Guide-KalitaWave-Step03.jpg?w=960&h=640&fm=jpg&q=70" alt="kalita"><td>
+                              <td>  <h3>Curso de Guitarra Eléctrica </h3>
+                                <p>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.</p>
+                              <button class="btn-list"> Más información... <i class="fa fa-shopping-cart" aria-hidden="true"></i></button></td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><img src="https://images.contentful.com/3h0qt25be5vd/1ojeAoISmMSKysKIOKEWGi/22b6344383ffabc7e250f1eed88287ae/Brew_Guide-KalitaWave-Step03.jpg?w=960&h=640&fm=jpg&q=70" alt="kalita"><td>
+                              <td>  <h3>Curso de Guitarra Acústica </h3>
+                                <p>Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn.</p>
+                              <button class="btn-list"> Más información... <i class="fa fa-shopping-cart" aria-hidden="true"></i></button></td>
+                            </tr>
+                          </table>
+                        </section>
+                      </div>
+                    </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="col-md-3 justify-content-center" style="background: linear-gradient(270deg, transparent 0%, #000 47%, #000 100%);">
+              <br/>
+              <h3>Habilidades</h3>
+
+              <br/><br/>
+              <div class="courses-box-container">
+                <div class="courses-box-button">
+                  <span class="content">Fundamentos de la Improvisación</span>
+                  <span class="courses-box-badge">1</span>
+                  <p class="paragraph-gold-min">Comienza desde cero con los conceptos básicos de armonía, escalas y acordes, y aprende cómo estos elementos se combinan para crear música en tiempo real.</p>
+                </div>
+                <div class="courses-box-button">
+                  <span class="content">Técnicas para Instrumentos de Cuerdas</span>
+                  <span class="courses-box-badge">2</span>
+                  <p class="paragraph-gold-min">Domina las técnicas esenciales y avanzadas de la guitarra acústica y eléctrica, el requinto, el bajo y el ukelele. Desde el fingerpicking hasta los power chords, te enseñaremos a explorar cada instrumento de manera única.</p>
+                </div>
+                <div class="courses-box-button">
+                  <span class="content">Práctica Interactiva</span>
+                  <span class="courses-box-badge">3</span>
+                  <p class="paragraph-gold-min">Nuestros módulos incluyen ejercicios prácticos, pistas de acompañamiento y sesiones de improvisación guiadas que te permitirán aplicar lo aprendido en tiempo real.</p>
+                </div>
+                <div class="courses-box-button">
+                  <span class="content">Teoría Musical Simplificada</span>
+                  <span class="courses-box-badge">4</span>
+                  <p class="paragraph-gold-min">Aprende la teoría musical de manera sencilla y práctica. Entenderás cómo funcionan las escalas, los modos y las progresiones armónicas para improvisar con libertad y confianza.</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
         </div>
       </section>
 
-              
-      <!-- <section style="text-align: center;">      
-         <iframe class="only-for-web" style='width:75%; height:800px' src='https://online.pubhtml5.com/sllt/aukj/' seamless='seamless'
-              scrolling='no' frameborder='0' allowtransparency='true' allowfullscreen='true'></iframe>
-        <iframe  class="only-for-mobile" style='width:100%; height:450px' src='https://online.pubhtml5.com/sllt/aukj/' seamless='seamless'
-          scrolling='no' frameborder='0' allowtransparency='true' allowfullscreen='true'></iframe> 
-      </section> -->
 
-      <br><br><br>
-
-
-      <section>
-        <h2 class="only-for-web" style="text-transform: uppercase; color: #a99100; font-weight: bold; text-align: center;">Aprende Improvisación Musical</h2>
-        <h3 class="only-for-web" style="text-transform: uppercase; color: #a99100; font-weight: bold; text-align: center;">método Intensivo de 8 dias</h3>
-        <br /><br />
-        <nav class="method-categories">
-          <a href="#" style="color: #a99100" id="drop">METODO INTENSIVO DE IMPROVISACION MUSICAL<i aria-hidden="true" class="icon icon-arrow-down"></i></a>
-          <ul>
-            <li class="submenu" style="color: #a99100">
-              <a ><i aria-hidden="true" class="icon lnr lnr-car"></i>DIA 1</a>
-              <ul>
-                <li>
-                  <a href="./docs/dia-1.pdf#page=4">Nomenclatura Universal</a>
-                </li>
-                <li>
-                  <a href="./docs/dia-1.pdf#page=5">Tonos y Semitonos</a>
-                </li>
-                <li>
-                  <a href="./docs/dia-1.pdf#page=6">Escala Diatónica</a>
-                </li>
-                <li>
-                  <a href="./docs/dia-1.pdf#page=7">Escala Cromática</a>
-                </li>
-                <li>
-                  <a href="./docs/dia-1.pdf#page=9">Afinación Estándar</a>
-                </li>
-                <li class="exercise-row">
-                  <a target="_blank" href="./docs/material-1.jpg"><b>Ejercicio Práctico: <br> Notas del Diapasón</b></a>
-                </li>
-              </ul>
-            </li>
-            <li class="submenu" style="color: #a99100">
-              <a><i aria-hidden="true" class="icon lnr lnr-shirt"></i>DIA 2</a>
-              <ul>
-                <li>
-                  <a href="./docs/dia-2.pdf#page=4">Escencia de la Teoría Musical</a>
-                </li>
-                <li class="exercise-row">
-                  <a href="./docs/dia-2.pdf#page=5"><b>Ejercicio Práctico: <br> Cuerda Pitagorica</b></a>
-                </li>
-                <li>
-                  <a href="./docs/dia-2.pdf#page=6">Cromatismos</a>
-                </li>
-                <li>
-                  <a href="./docs/dia-2.pdf#page=7">Arpeggios</a>
-                </li>
-                <li class="exercise-row">
-                  <a href="./docs/dia-2.pdf#page=12"><b>Ejercicio Práctico: <br> Spider Ladder</b></a>
-                </li>
-              </ul>
-            </li>
-            <li class="submenu" style="color: #a99100">
-              <a ><i aria-hidden="true" class="icon lnr lnr-laptop-phone"></i>DIA 3</a>
-              <ul>
-                <li>
-                  <a href="./docs/dia-3.pdf#page=4">Acordes Escenciales</a>
-                </li>
-                <li class="exercise-row">
-                  <a href="./docs/dia-3.pdf#page=9">Acordes Mayores & Menores</a>
-                </li>
-                <li>
-                  <a href="./docs/dia-3.pdf#page=15">Cejillla & Capotraste</a>
-                </li>
-                <li>
-                  <a href="./docs/dia-3.pdf#page=16">Sostenidos y Bemoles</a>
-                </li>
-                <li>
-                  <a href="./docs/dia-3.pdf#page=17">Circulos Armonicos Mayores</a>
-                </li>
-                <li class="exercise-row">
-                  <a href="./docs/dia-2.pdf#page=23"><b>Ejercicio Práctico: <br> Todos los acordes Mayores y Menores</b></a>
-                </li>
-              </ul>
-            </li>
-            <li class="submenu" style="color: #a99100">
-              <a ><i aria-hidden="true" class="icon lnr lnr-picture"></i>DIA 4</a>
-              <ul>
-                <li class="exercise-row">
-                  <a href="./docs/dia-4.pdf#page=4">Tablauras</a>
-                </li>
-                <li>
-                  <a href="./docs/dia-4.pdf#page=5">Partituras</a>
-                </li>
-                <li>
-                  <a href="./docs/dia-4.pdf#page=6">Familias de acordes | Subdominante (IV)y dominante (V)</a>
-                </li>
-                <li>
-                  <a href="./docs/dia-4.pdf#page=7">Juego de Mesa</a>
-                </li>
-              </ul>
-            </li>
-            <li style="color: gray">
-              <a ><i aria-hidden="true" class="icon lnr lnr-leaf"></i>DIA 5 (Bloqueado)</a>
-            </li>
-            <li style="color: gray">
-              <a ><i aria-hidden="true" class="icon lnr lnr-bicycle"></i>DIA 6 (Bloqueado)</a>
-            </li>
-            <li style="color: gray">
-              <a ><i aria-hidden="true" class="icon lnr lnr-bug"></i>DIA 7 (Bloqueado)</a>
-            </li>
-            <li style="color: gray">
-              <a ><i aria-hidden="true" class="icon lnr lnr-construction"></i>DIA 8 (Bloqueado)</a>
-            </li>
-          </ul>
-        </nav>
-        <br>
-        <div class="only-for-web">
-          <br><br>
+      <main class="autocarrusel-main" style="margin-top: -100px;" >
+        <div class="autocarrusel-content">
+          <h2>Haz pensado en aprender a tocar... <h1 class="typewriter"></h1></h2>
+          <h3>Aprende a Improvisar con Confianza: <b>Curso de Improvisación Musical en Instrumentos de Cuerdas.</b></h3>
+          <p>
+            ¿Te gustaría tocar la música que amas sin depender de partituras o tablaturas? ¿Quieres entender cómo funciona la música de manera intuitiva y natural, aplicando técnicas de improvisación a tus instrumentos favoritos? Nuestro curso de improvisación musical te llevará más allá de la teoría, enseñándote a expresarte libremente con la guitarra acústica, guitarra eléctrica, requinto, bajo, ukelele e incluso el piano.
+          </p>
         </div>
-      </section>
 
-<!--       
-      <br><br>
-      
-      <div style="text-align: center;">
-        <video style="max-width: 100%;" autoplay loop muted inline>
-          <source src="images/CATARSIS MUSICAL.mp4" type="video/webm">
-          <source src="images/CATARSIS MUSICAL.mp4" type="video/mp4">
-          <img src="images/CATARSIS MUSICAL.mp4" />
-        </video>
-      </div> -->
-
-      <br><br><br><br><br><br><br><br>
-
-      <footer class="ftco-footer ftco-bg-dark ftco-section">
-        <div class="container">
-          <div class="row mb-5 justify-content-center">
-            <div class="col-md-5 text-center">
-              <img style="margin-top: -345px;" width="300px" src="images/logos/doradeogomez.png" alt="">
-              <div class="ftco-footer-widget mb-5">
-                <ul class="ftco-footer-social list-unstyled">
-                  <li class="ftco-animate"><a target="true" href="https://medium.com/@catarsismusical"><span
-                        class="icon-medium"></span></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="ftco-footer-widget">
-                <h2 class="mb-3">Contactenos</h2>
-                <p class="h4 email"><a href="mailto:josegomez.dev@gmail.com">josegomez.dev@gmail.com</a></p>
-              </div>
-            </div>
+        <div class="autocarrusel-stack">
+          <div class="autocarrusel-card">
+            <img
+              src="https://cdn11.bigcommerce.com/s-e3wpevzfi1/images/stencil/1280x960/uploaded_images/best-acoustic-guitars.jpg?t=1703885889"
+              alt="" />
           </div>
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <p>
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved | powered by
-                <a href="https://www.linkedin.com/in/josealejandrogomezcastro/" target="_blank">
-                  Jose Alejandro Gomez Castro
-                </a>
-              </p>
-            </div>
+          <div class="autocarrusel-card">
+            <img
+              src="https://www.taylorguitars.com/sites/default/files/styles/feature_half/public/images/2022-10/Taylor-Academy-10-Academy-12N-Academy-12e.jpg?itok=Q6mTMuVx"
+              alt="" />
+          </div>
+          <div class="autocarrusel-card">
+            <img
+              src="https://images.guitarguitar.co.uk/cdn/small/160/753_gg_ukeblog_alTenorpic%20(1).jpg"
+              alt="" />
+          </div>
+          <div class="autocarrusel-card">
+            <img
+              src="https://guitar.com/wp-content/uploads/2020/10/Epiphone-Les-Paul-Special-goty2020@1400x1050.jpg"
+              alt="" />
+          </div>
+          <div class="autocarrusel-card">
+            <img
+              src="https://powerselectricguitars.com/cdn/shop/files/preview_images/06022023_POWERSELECTRIC_NEWCOLORS_ONWHITEANDONSET_6008_2_1600x.jpg?v=1686651626"
+              alt="" />
+          </div>
+          <div class="autocarrusel-card">
+            <img
+              src="https://mitchellguitars.com/wp-content/uploads/2018/11/Mitchell-FB-Series-Bass-Main-Mobile.jpg"
+              alt="" />
           </div>
         </div>
-      </footer>
+      </main>
 
-      <div class="patreon-footer">
-        <a class="patreon-link" target="_blank" href="https://www.patreon.com/josegomez?fan_landing=true"><img width="120"
-            src="https://ruraltechfund.org/wp-content/uploads/2013/04/support_on_patreon-300x100.png" alt=""></a>
+
+      <div class="custom-banner">
+        <h1>¿Por Qué Elegir Este Curso?</h1>
+        <p>
+          <b>En nuestro curso, no solo aprenderás las técnicas, sino que desarrollarás una comprensión profunda y práctica de la música. Estarás equipado con las herramientas necesarias para improvisar en cualquier género musical y en cualquier situación, ya sea en una banda, solo o en una jam session.</b>
+        </p>
       </div>
-
-      <!-- loader -->
-      <div id="ftco-loader" class="show fullscreen">
-        <svg class="circular" width="48px" height="48px">
-          <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-          <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-            stroke="#A99100" /></svg></div>
+      <br/>
 
     </div>
-
   </div>
+  <!-- END PAGE -->
+
+
+    <!-- <div class="wrapper">
+      <main class="main ">
+        <div class="slide">
+        <div class="portfolio">
+          <section class="portfolio_items">
+            <figure class="portfolio_item">
+              <img  src="images/photos/clients1.jpeg" alt="" />
+            </figure>
+
+            <figure class="portfolio_item">
+              <img src="images/photos/clients2.jpg" alt="" />
+            </figure>
+
+            <figure class="portfolio_item">
+              <img src="https://cdn.pixabay.com/photo/2020/01/23/16/42/embrace-4788167__340.jpg" alt="" />
+            </figure>
+
+          </section>
+        </div>
+      </div>
+      </main>
+    </div> -->
+
+    <footer class="footer">
+        <div class="bd-best">
+            <div class="bd-best-list">
+              <figure class="bd-best-item">
+                <img class="kl_img" src="images/photos/clients6.PNG" alt="">
+              </figure>
+              <figure class="bd-best-item" >
+                <img class="kl_img" src="images/photos/clients1.jpeg" alt="">
+              </figure>
+              <figure class="bd-best-item">
+                <img class="kl_img" src="images/photos/clients2.jpg" alt="">
+              </figure>
+              <figure class="bd-best-item">
+                <img class="kl_img" src="images/photos/clients4.png" alt="">
+              </figure>
+              <figure class="bd-best-item">
+                <img class="kl_img" src="images/photos/clients5.JPG" alt="">
+              </figure>
+
+            </div>
+       </div>
+        <!-- <div class="bd-best">
+            <div class="bd-best-list">
+              <figure class="bd-best-item">
+                <img class="kl_img" src="images/photos/clients1.jpeg" alt="">
+              </figure>
+              <figure class="bd-best-item">
+                <img class="kl_img" src="images/photos/clients1.jpeg" alt="">
+              </figure>
+              <figure class="bd-best-item">
+                <img class="kl_img" src="images/photos/clients1.jpeg" alt="">
+              </figure>
+              <figure class="bd-best-item">
+                <img class="kl_img" src="images/photos/clients1.jpeg" alt="">
+              </figure>
+
+            </div>
+       </div> -->
+    </footer>
+
+
+
+    <br/><br/><br/>
+  <br/><br/><br/>
+
+  <footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div class="container">
+      <div class="row mb-5 justify-content-center">
+        <div class="col-md-5 text-center">
+          <img style="margin-top: -345px;" width="300px" src="images/logos/doradeogomez.png" alt="">
+          <div class="ftco-footer-widget mb-5">
+            <ul class="ftco-footer-social list-unstyled">
+              <li class="ftco-animate"><a target="true" href="https://www.facebook.com/profile.php?id=61553836722791"><span
+                    class="icon-facebook"></span></a>
+              </li>
+              <li class="ftco-animate"><a target="true" href="https://medium.com/@catarsismusical"><span
+                    class="icon-medium"></span></a>
+              </li>
+              <li class="ftco-animate"><a target="true" href="https://youtube.com/@catarsismusical"><span
+                    class="icon-youtube"></span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="ftco-footer-widget">
+            <h2 class="mb-3">Contactenos</h2>
+            <h5>José Alejandro Gómez Castro</h5>
+            <p class="h4 email"><a style="color: orange;" href="mailto:josegomez.dev@gmail.com"><b>josegomez.dev@gmail.com</b></a> o al <a style="color: greenyellow" href="https://wa.me/50662402974"><b>WhatsApp 6240 2974</b></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved | powered by
+            <a href="https://www.linkedin.com/in/josealejandrogomezcastro/" target="_blank">
+              Jose Alejandro Gomez Castro
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+          stroke="#A99100" /></svg></div>
 
 
   <script src="js/jquery.min.js"></script>
@@ -350,30 +480,26 @@
   <script src="js/scrollax.min.js"></script>
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
+
   <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
   <!-- <script src="js/google-map.js"></script> -->
   <script src="js/main.js"></script>
-
-    <script>
-      $(document).ready(function () {
-        var btn = $('#button');
-
-        $(window).scroll(function () {
-          if ($(window).scrollTop() > 300) {
-            btn.addClass('show');
-          } else {
-            btn.removeClass('show');
-          }
+  <script>
+    $(function() {
+        $('#showdiv1').click(function() {
+            $('div[id^=div]').hide();
+            $('#div1').show();
+        });
+        $('#showdiv2').click(function() {
+            $('div[id^=div]').hide();
+            $('#div2').show();
         });
 
-        btn.on('click', function (e) {
-          e.preventDefault();
-          $('html, body').animate({ scrollTop: 0 }, '300');
-        });
-      });
-    </script>
-    <script src="./js/boxes.js"></script>
+    })
+  </script>
+  <script src="js/typewritter-effect.js"></script>
+  <script src="js/autocarrusel.js"></script>
 </body>
 
 </html>

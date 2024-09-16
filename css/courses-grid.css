@@ -1,0 +1,154 @@
+
+
+.courses-buttons{
+  font-size: 22px;
+  margin-top: 2%;
+  margin-left: 4.2%;
+}
+
+.courses-container{
+display: flex;
+flex-flow: column nowrap;
+}
+/*CSS Grid*/
+.courses-section-grid{
+ display: flex;
+ padding-left: 25px;
+ padding-right: 25px;
+}
+.courses-grid-prod{
+flex: 1 1 auto;
+display: flex;
+flex-flow: row wrap;
+}
+.courses-prod-grid{
+flex: 1 1 25%;
+margin:2%;
+padding:12px;
+border: 2px solid #000;
+}
+
+.courses-prod-grid img{
+width:100%;
+}
+.courses-container h3, .courses-container p{
+text-align: center;
+line-height: 1.5;
+letter-spacing: 1px;
+}
+
+
+
+.courses-container button{
+float: right;
+}
+
+/*CSS List*/
+.courses-section-list{
+ display: flex;
+ padding: 2% 4%;
+}
+.courses-container table {
+width: 100%;
+margin: 10px 10px;
+border:2px solid #000;
+border-collapse: collapse;
+border-spacing: 0;
+}
+.courses-container table tr td {
+padding: 10px;
+border-top: 2px solid #000;
+}
+.courses-container tr td img{
+width:100%;
+}
+.courses-container .btn-list{
+  background: darkcyan;
+  border: 1px solid darkcyan;
+  border-radius: 6px;
+  color: white;
+  font-size: 22px;
+  width: 200px;
+  height: 40px;
+  position: right;
+  margin: 10px;
+  margin-top: 10%;
+  letter-spacing: 1px;
+  display: inline-block;
+
+}
+.courses-container .btn-list:hover{
+  background: white;
+  border: 2px solid darkcyan;
+
+  color: darkcyan;
+
+  margin: 10%;
+
+}
+.courses-container button{
+float: right;
+}
+
+@media (min-width : 320px) and (max-width : 480px) {
+.courses-section-list, .courses-buttons{
+  display: none;
+}
+}
+
+
+
+
+
+
+
+
+
+
+.courses-box-button {
+  position: relative;
+  border-radius: 4px;
+  border: 2px solid white;
+  padding: 15px 30px;
+  color: white;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 0.3s;
+}
+.courses-box-button:hover {
+  transform: scale(1.03);
+  background: rgba(0, 0, 0, 0.13);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+}
+.courses-box-button:active {
+  transform: scale(0.96);
+}
+.courses-box-button:active .badge {
+  transform: scale(1.2);
+}
+
+.courses-box-badge {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  background: #1fceff;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -15px;
+  left: -15px;
+  transition: all 0.3s;
+}
+
+
+.paragraph-gold-min {
+  color: gold; font-size: 0.7em;
+}
