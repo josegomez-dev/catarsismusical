@@ -11619,3 +11619,17 @@ canvas {
   opacity: 1;
   visibility: visible;
 }
+
+
+.custom-banner {
+  background: linear-gradient(90deg, transparent 0%, #000 47%, #000 100%);
+  color: gold; /* Text color */
+  padding: 20px; /* Padding around the text */
+  border-top-right-radius: 30px; /* Rounded corner at the top-right */
+  border-bottom-left-radius: 30px; /* Rounded corner at the bottom-left */
+  text-align: center; /* Center the text */
+  max-width: 80%; /* Optional: Set a max width for the banner */
+  margin: 20px auto; /* Optional: Center the banner horizontally */
+  font-size: 18px; /* Optional: Font size of the text */
+  font-weight: lighter;
+}
