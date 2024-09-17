@@ -39,9 +39,31 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/autocarrusel.css">
   <link rel="stylesheet" href="css/courses-grid.css">
+  <link rel="stylesheet" href="css/chat-bubble.css">
+
 </head>
 
 <body>
+
+  <div id="discord-shoutout" class="discord-shoutout">
+    <div class="shoutout-inner">
+      <img src="./images/logos/gomezenblanco.png" class="img-fluid" />
+      <span class="title">Hola Maestro.</span>
+      <p>
+        Tienes alguna pregunta acerca del proyecto?
+      </p>
+      <p>
+        Apreciamos tu Feedback!
+      </p>
+      <div class="discord-buttons">
+        <a class="discord-button discord-primary"
+          href="https://api.whatsapp.com/send?phone=50662402974&text=Hola%20Jose&source=&data=&app_absent="
+          target="_blank">Contactanos</a>
+        <button class="discord-button discord-secondary" onclick="hide()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
 
   <div class="KW_progressContainer">
     <div class="KW_progressBar">
@@ -98,14 +120,6 @@
                     </span>
                   </a>
                 </li>
-                <hr width="150px" style="background: #343a40; z-index: 1;">
-                <div>
-                  <li>
-                    <a style="font-size: 18px;" href="./blog.html">
-                      <span style="font-size: 18px;"> <span style="font-size: 22px;" class="icon-book"></span> BLOG</span>
-                    </a>
-                  </li>
-                </div>
               </ul>
             </div>
           </div>
@@ -377,6 +391,8 @@
   <script src="js/scrollax.min.js"></script>
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/chat-bubble.js"></script>
+
 
   <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->

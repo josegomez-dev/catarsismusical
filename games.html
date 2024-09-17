@@ -36,9 +36,31 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="css/chat-bubble.css">
+
 </head>
 
 <body>
+
+  <div id="discord-shoutout" class="discord-shoutout">
+    <div class="shoutout-inner">
+      <img src="./images/logos/gomezenblanco.png" class="img-fluid" />
+      <span class="title">Hola Maestro.</span>
+      <p>
+        Tienes alguna pregunta acerca del proyecto?
+      </p>
+      <p>
+        Apreciamos tu Feedback!
+      </p>
+      <div class="discord-buttons">
+        <a class="discord-button discord-primary"
+          href="https://api.whatsapp.com/send?phone=50662402974&text=Hola%20Jose&source=&data=&app_absent="
+          target="_blank">Contactanos</a>
+        <button class="discord-button discord-secondary" onclick="hide()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
 
   <div class="KW_progressContainer">
     <div class="KW_progressBar">
@@ -94,14 +116,6 @@
                     </span>
                   </a>
                 </li>
-                <hr width="150px" style="background: #343a40; z-index: 1;">
-                <div>
-                  <li>
-                    <a style="font-size: 18px;" href="./blog.html">
-                      <span style="font-size: 18px;"> <span style="font-size: 22px;" class="icon-book"></span> BLOG</span>
-                    </a>
-                  </li>
-                </div>
               </ul>
             </div>
           </div>
@@ -235,6 +249,8 @@
   <script src="js/scrollax.min.js"></script>
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/chat-bubble.js"></script>
+
   <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
   <!-- <script src="js/google-map.js"></script> -->
