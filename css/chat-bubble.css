@@ -1,43 +1,23 @@
 
-
-
-
-.reset-2-button {
-  font: 400 11px "Open Sans";
-  line-height: 1;
-  background: transparent;
-  border-radius: 10px;
-  position: fixed;
-  margin: 195px 0 0 10px;
-  border: 2px solid #A99100;
-  color: #A99100;
-  font-size: 1em;
-  padding: 0.5em 0.8em;
-  cursor: pointer;
-}
-.reset-2-button:hover {
-  background: #A99100;
-  color: #fff;
-}
-
-
 .reset-button {
   font: 400 11px "Open Sans";
   line-height: 1;
-  z-index: 9900;
   background: transparent;
   border-radius: 10px;
   position: fixed;
-  margin: 145px 0 0 10px;
+  margin: 35px 0 0 10px;
   border: 2px solid #A99100;
   color: #A99100;
   font-size: 1em;
   padding: 0.5em 0.8em;
   cursor: pointer;
+  transition: all 400ms;
+  z-index: 100;
 }
 .reset-button:hover {
   background: #A99100;
   color: #fff;
+  font-size: 22px;
 }
 
 .discord-shoutout * {
