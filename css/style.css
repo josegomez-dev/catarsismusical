@@ -2666,37 +2666,37 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #212529;
-  background-color: #79efb4;
-  border-color: #79efb4;
+  background-color: white;
+  border-color: white;
 }
 .btn-primary:hover {
   color: #212529;
-  background-color: #57eba1;
-  border-color: #4bea9b;
+  background-color: white;
+  border-color: white;
 }
 .btn-primary:focus,
 .btn-primary.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(121, 239, 180, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(121, 239, 180, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem white;
+  box-shadow: 0 0 0 0.2rem white;
 }
 .btn-primary.disabled,
 .btn-primary:disabled {
   color: #212529;
-  background-color: #79efb4;
-  border-color: #79efb4;
+  background-color: white;
+  border-color: white;
 }
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #212529;
-  background-color: #4bea9b;
-  border-color: #40e894;
+  background-color: white;
+  border-color: white;
 }
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(121, 239, 180, 0.5);
-  box-shadow: 0 0 0 0.2rem rgba(121, 239, 180, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem white;
+  box-shadow: 0 0 0 0.2rem white;
 }
 
 .btn-secondary {
@@ -5108,13 +5108,13 @@ input[type='button'].btn-block {
 
 .badge-primary {
   color: #212529;
-  background-color: #79efb4;
+  background-color: white;
 }
 .badge-primary[href]:hover,
 .badge-primary[href]:focus {
   color: #212529;
   text-decoration: none;
-  background-color: #4bea9b;
+  background-color: white;
 }
 
 .badge-secondary {
@@ -6421,14 +6421,14 @@ button.close {
 }
 
 .bg-primary {
-  background-color: #79efb4 !important;
+  background-color: white !important;
 }
 
 a.bg-primary:hover,
 a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #4bea9b !important;
+  background-color: white !important;
 }
 
 .bg-secondary {
@@ -9327,12 +9327,12 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #79efb4 !important;
+  color: white !important;
 }
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #4bea9b !important;
+  color: white !important;
 }
 
 .text-secondary {
@@ -9788,8 +9788,9 @@ h5,
   color: #a99100;
 }
 #colorlib-main-nav ul li.active a span:before {
-  background: #a99100;
+  background: #ffc107;
   visibility: visible;
+  border-radius: 100%;
   -webkit-transform: scaleX(1);
   -moz-transform: scaleX(1);
   -ms-transform: scaleX(1);
@@ -11632,4 +11633,12 @@ canvas {
   margin: 20px auto; /* Optional: Center the banner horizontally */
   font-size: 18px; /* Optional: Font size of the text */
   font-weight: lighter;
+}
+
+.active b {
+  color: #ffc107 !important;
+}
+
+b {
+  color: #ffc107 !important;
 }
