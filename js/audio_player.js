@@ -10,15 +10,15 @@ const allSongs = [
     id: 0,
     title: "Cyberpunk Space Battle [Lvl 1]",
     artist: "@alegomez.cr",
-    duration: "4:25",
+    duration: "1:21",
     src:
       "audios/nebulas/1.mp3"
   },
   {
     id: 1,
     title: "Futuristic Starfighter [Lvl 2]",
-    artist: "@alegomez.cr",
-    duration: "4:15",
+    artist: `Christofer "Zeppellin"`,
+    duration: "1:51",
     src:
       "audios/nebulas/2.mp3"
   },
@@ -26,7 +26,7 @@ const allSongs = [
     id: 2,
     title: "Apocalyptic Space Warfare [Lvl 3]",
     artist: "@alegomez.cr",
-    duration: "3:51",
+    duration: "2:48",
     src:
       "audios/nebulas/3.mp3"
   },
@@ -34,7 +34,7 @@ const allSongs = [
     id: 3,
     title: "Galactic Conflict [Lvl 4]",
     artist: "@alegomez.cr",
-    duration: "3:34",
+    duration: "2:41",
     src:
       "audios/nebulas/4.mp3"
   },
@@ -42,7 +42,7 @@ const allSongs = [
     id: 4,
     title: "Ultimate Space Showdown [Lvl 5]",
     artist: "alegomez.cr",
-    duration: "3:35",
+    duration: "2:54",
     src:
       "audios/nebulas/5.mp3"
   }
