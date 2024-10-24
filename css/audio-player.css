@@ -21,7 +21,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: -200px;
   background-image: url('https://d.newsweek.com/en/full/2316078/astronaut-space-laptop.jpg');
   background-position: center;
   background-size: cover;
@@ -220,11 +219,21 @@ button:focus,
   font-size: 0.85rem;
   width: 241px;
   text-align: left;
+
+  white-space: nowrap;         /* Prevents text from wrapping to a new line */
+  overflow: hidden;            /* Hides the overflowing text */
+  text-overflow: ellipsis;     /* Adds the ellipsis (...) */
+  width: 200px;
 }
 
 .playlist-song-artist {
   font-size: 0.725rem;
   width: 80px;
+
+  white-space: nowrap;         /* Prevents text from wrapping to a new line */
+  overflow: hidden;            /* Hides the overflowing text */
+  text-overflow: ellipsis;     /* Adds the ellipsis (...) */
+  width: 100px;
 }
 
 .playlist-song-duration {

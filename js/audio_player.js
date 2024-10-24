@@ -8,43 +8,43 @@ const shuffleButton = document.getElementById("shuffle");
 const allSongs = [
   {
     id: 0,
-    title: "Nebulas Level 4: Galactic Conflict",
+    title: "Cyberpunk Space Battle [Lvl 1]",
     artist: "@alegomez.cr",
     duration: "4:25",
     src:
-      "https://drive.google.com/file/d/1YXcss5QYlM5x-eXGvGMc860w3nxa9_S1/view"
+      "./../audios/nebulas/1.mp3"
   },
   {
     id: 1,
-    title: "Nebulas Level 1: Cyberpunk Space Battle",
+    title: "Futuristic Starfighter [Lvl 2]",
     artist: "@alegomez.cr",
     duration: "4:15",
     src:
-      "https://drive.google.com/file/d/1yd9k_C1KW8jGRvNJw-9bw4jFm3zrlV3U/view?usp=sharing"
+      "./../audios/nebulas/2.mp3"
   },
   {
     id: 2,
-    title: "Nebulas Level 3: Apocalyptic Space Warfare",
+    title: "Apocalyptic Space Warfare [Lvl 3]",
     artist: "@alegomez.cr",
     duration: "3:51",
     src:
-      "https://drive.google.com/file/d/1Y6lqsoEHCFPBNlfo4xdNt9kG7TEKoII0/view"
+      "./../audios/nebulas/3.mp3"
   },
   {
     id: 3,
-    title: "Cruising for a Musing",
+    title: "Galactic Conflict [Lvl 4]",
     artist: "@alegomez.cr",
     duration: "3:34",
     src:
-      "https://cdn.freecodecamp.org/curriculum/js-music-player/cruising-for-a-musing.mp3"
+      "./../audios/nebulas/4.mp3"
   },
   {
     id: 4,
-    title: "Never Not Favored",
+    title: "Ultimate Space Showdown [Lvl 5]",
     artist: "alegomez.cr",
     duration: "3:35",
     src:
-      "https://cdn.freecodecamp.org/curriculum/js-music-player/never-not-favored.mp3"
+      "./../audios/nebulas/5.mp3"
   }
 ];
 
