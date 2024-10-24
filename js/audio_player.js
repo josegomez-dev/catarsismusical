@@ -12,7 +12,7 @@ const allSongs = [
     artist: "@alegomez.cr",
     duration: "4:25",
     src:
-      "./../audios/nebulas/1.mp3"
+      "audios/nebulas/1.mp3"
   },
   {
     id: 1,
@@ -20,7 +20,7 @@ const allSongs = [
     artist: "@alegomez.cr",
     duration: "4:15",
     src:
-      "./../audios/nebulas/2.mp3"
+      "audios/nebulas/2.mp3"
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const allSongs = [
     artist: "@alegomez.cr",
     duration: "3:51",
     src:
-      "./../audios/nebulas/3.mp3"
+      "audios/nebulas/3.mp3"
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const allSongs = [
     artist: "@alegomez.cr",
     duration: "3:34",
     src:
-      "./../audios/nebulas/4.mp3"
+      "audios/nebulas/4.mp3"
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const allSongs = [
     artist: "alegomez.cr",
     duration: "3:35",
     src:
-      "./../audios/nebulas/5.mp3"
+      "audios/nebulas/5.mp3"
   }
 ];
 
