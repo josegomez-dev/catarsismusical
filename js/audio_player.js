@@ -20,7 +20,7 @@ const allSongs = [
     artist: "@alegomez.cr",
     duration: "4:15",
     src:
-      "https://drive.google.com/file/d/1pJ-ekP8R88FE09q5nrmaV-GtqsovHZSP/view"
+      "https://drive.google.com/file/d/1yd9k_C1KW8jGRvNJw-9bw4jFm3zrlV3U/view?usp=sharing"
   },
   {
     id: 2,
