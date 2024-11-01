@@ -3,8 +3,8 @@
   --primary-color: #dfdfe2;
   --secondary-color: #ffffff;
   --app-background-color: #4d4d62;
-  --background-color: brown;
-  --foreground-color: black;
+  --background-color: #e91f64;
+  --foreground-color: #8b1034;
   --highlight-color: red;
 
   /* font sizes */
@@ -21,7 +21,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('https://images3.alphacoders.com/135/1352140.png');
+  background-image: url('https://img.freepik.com/premium-photo/woman-walking-through-field-flowers_780838-3656.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
