@@ -8,43 +8,19 @@ const shuffleButton = document.getElementById("shuffle");
 const allSongs = [
   {
     id: 0,
-    title: "Cyberpunk Space Battle [Lvl 1]",
-    artist: "@alegomez.cr",
-    duration: "1:21",
+    title: "Costa Rica Rockabilly",
+    artist: "alegomez.cr",
+    duration: "4:26",
     src:
-      "audios/nebulas/1.mp3"
+      "audios/rockabilly-costa-rica.mp3"
   },
   {
     id: 1,
-    title: "Futuristic Starfighter [Lvl 2]",
-    artist: `Christofer "Zeppellin"`,
-    duration: "1:51",
-    src:
-      "audios/nebulas/2.mp3"
-  },
-  {
-    id: 2,
-    title: "Apocalyptic Space Warfare [Lvl 3]",
-    artist: "@alegomez.cr",
-    duration: "2:48",
-    src:
-      "audios/nebulas/3.mp3"
-  },
-  {
-    id: 3,
-    title: "Galactic Conflict [Lvl 4]",
-    artist: "@alegomez.cr",
-    duration: "2:41",
-    src:
-      "audios/nebulas/4.mp3"
-  },
-  {
-    id: 4,
-    title: "Ultimate Space Showdown [Lvl 5]",
+    title: "Bolero (Brujeria)",
     artist: "alegomez.cr",
-    duration: "2:54",
+    duration: "4:09",
     src:
-      "audios/nebulas/5.mp3"
+      "audios/bolero-brujeria.mp3"
   }
 ];
 
