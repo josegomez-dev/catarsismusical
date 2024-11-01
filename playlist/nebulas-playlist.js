@@ -152,7 +152,9 @@ const setPlayerDisplay = () => {
   const currentTitle = userData?.currentSong?.title;
   const currentArtist = userData?.currentSong?.artist;
 
+  playingSong.style = "color: gold; background: black;";
   playingSong.textContent = currentTitle ? currentTitle : "";
+  songArtist.style = "color: black; background: white;";
   songArtist.textContent = currentArtist ? currentArtist : "";
 };
 
