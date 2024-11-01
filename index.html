@@ -22,7 +22,6 @@
   <link rel="stylesheet" href="css/chat-bubble.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
-  <link rel="stylesheet" href="css/autocarrusel.css">
 </head>
 
 <body>
@@ -365,24 +364,6 @@
   <script src="js/main.js"></script>
   <script src="js/random-quotes.js"></script>
   <script src="js/chat-bubble.js"></script>
-  <script>
-    $(document).ready(function () {
-      var btn = $('#button');
-
-      $(window).scroll(function () {
-        if ($(window).scrollTop() > 300) {
-          btn.addClass('show');
-        } else {
-          btn.removeClass('show');
-        }
-      });
-
-      btn.on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({ scrollTop: 0 }, '300');
-      });
-    });
-  </script>
 </body>
 
 </html>

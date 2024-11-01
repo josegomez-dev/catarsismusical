@@ -200,3 +200,29 @@ $(document).ready(function ($) {
 
 });
 
+const slider = document.querySelector('.slider');
+
+function activate(e) {
+	const items = document.querySelectorAll('.item');
+	e.target.matches('.next') && slider.append(items[0])
+	e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+}
+
+document.addEventListener('click',activate,false);
+
+$(document).ready(function () {
+	var btn = $('#button');
+
+	$(window).scroll(function () {
+		if ($(window).scrollTop() > 300) {
+			btn.addClass('show');
+		} else {
+			btn.removeClass('show');
+		}
+	});
+
+	btn.on('click', function (e) {
+		e.preventDefault();
+		$('html, body').animate({ scrollTop: 0 }, '300');
+	});
+});
