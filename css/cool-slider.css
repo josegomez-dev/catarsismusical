@@ -42,14 +42,13 @@
   width: min(30vw,400px);
   position: absolute;
   top: 50%;
-  left: 3rem;
+  left: 2rem;
   transform: translateY(-50%);
   font: 400 0.85rem helvetica,sans-serif;
   color: white;
   text-shadow: 0 3px 8px rgba(0,0,0,0.5);
   opacity: 0;
   display: none;
-  margin-bottom: 50px;
 
   & .title {
     font-family: 'arial-black';
@@ -91,8 +90,8 @@
 
 .slider-carrusel-items .nav {
   position: absolute;
-  bottom: 2rem;
-  left: 50%;
+  bottom: 5rem;
+  left: 20%;
   transform: translateX(-50%);
   z-index: 5;
   user-select: none;
@@ -149,14 +148,14 @@
 .slider-carrusel-items .image-bg-slider-items {
   width: 385%;
   margin-left: -50px;
-  height: 350px;
-  max-height: 420px;
+  height: 290px;
+  max-height: 370px;
   position: absolute;
   z-index: -1;
-  top: -75px;
+  top: -70px;
 }
 .footer-slider-info {
-  margin-top: 200px;
+  margin-top: 160px;
   padding: 25px;
   color: black;
   background: #fc00ff;  /* fallback for old browsers */

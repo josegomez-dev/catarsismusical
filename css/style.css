@@ -11646,3 +11646,29 @@ b {
  .secondary-color {
   color: var(--secondary-color);
  }
+
+
+
+
+html, body {
+  overflow-x: hidden;
+}
+#container{
+  position: relative;
+  height: 500px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide{
+  display: block;
+  position: absolute;
+  height: 200px !important;
+  width: 200px !important;
+  background-image: url('https://i.pinimg.com/originals/93/8d/ba/938dbad28adb3e2d2684d48a7e53bf23.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
