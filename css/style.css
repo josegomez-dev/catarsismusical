@@ -11580,6 +11580,9 @@ canvas {
   .only-for-mobile {
     display: none;
   }
+  .audio-container {
+    height: calc(100vh - 200px) !important;
+  }
 }
 
 @media only screen and (max-width: 1500px) {
