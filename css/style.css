@@ -11582,7 +11582,7 @@ canvas {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1500px) {
   .only-for-web {
     display: none;
   }
