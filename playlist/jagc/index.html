@@ -30,6 +30,8 @@
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
 
   <link rel="stylesheet" href="./style.css">
+
+  <link rel="stylesheet" href="../../css/cool-slider.css">
 </head>
 
 <body>
@@ -95,18 +97,34 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <!-- <div class="colorlib-navbar-brand">
+              <div class="colorlib-navbar-brand">
                 <a class="colorlib-logo" href="./../../index.html"><span class="logo-img"
                     style="background-image: url(./../../images/logos/doradeogomez.png);"></span></a>
-              </div> -->
+              </div>
               <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
             </div>
           </div>
         </div>
       </header>
 
+      <section class="ftco-section">
+        <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
 
-      <br/><br/><br/><br/><br/><br/><br/>
+          <div class="text order-1">
+            <h4 class="subheading">Digital Free Playlist</h4>
+            <h2 class="heading"><a href="./../../studio.html">Jose Alejandro Gomez Castro <b>| Catarsis Musical</b></a>
+            </h2>
+            <p>
+              <span class="secondary-color">
+                Musico (Cantautor), Requintista
+              </span>.
+              <!-- La produccion, composicion e improvisacion de la musica son mis hobbies. -->
+            </p>
+          </div>
+        </div>
+      </section>
+
+
 
       <section class="ftco-section" >
         <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
@@ -185,6 +203,51 @@
         </div>
       </section>
 
+      <section class="">
+
+        <br/>
+        <br/>
+
+        <div class="slider-carrusel-wrapper cool-slider">
+          <div class="slider-carrusel-items">
+            <ul class='slider'>
+              <li class='item' style="background-image: url('../../images/playlist/poemas.png')">
+                <div class='content'>
+                  <h2 class='title'>"NEBULAS"</h2>
+                  <img class="image-bg-slider-items" style="background-color: purple;" alt="">
+                  <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Tempore fuga voluptatum <br/><br/>
+                  <button><a href="./playlist/nebulas/index.html">Escuchar Playlist</a></button>
+                </div>
+              </li>
+              <li class='item' style="background-image: url('../../images/playlist/nebulas.png')">
+                <div class='content'>
+                  <h2 class='title'>"JAGC"</h2>
+                  <img class="image-bg-slider-items" style="background-color: red;" alt="">
+                  <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Tempore fuga voluptatum <br/><br/>
+                  <button><a href="./playlist/jagc/index.html">Escuchar Playlist</a></button>
+                </div>
+              </li>
+              <li class='item' style="background-image: url('../../images/playlist/jagc.png')">
+                <div class='content'>
+                  <h2 class='title'>"POEMAS"</h2>
+                  <img class="image-bg-slider-items" style="background-color: pink;" alt="">
+                  <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                    adipisicing elit. Tempore fuga voluptatum <br/><br/>
+                  <button><a href="./playlist/poemas/index.html">Escuchar Playlist</a></button>
+                </div>
+              </li>
+            </ul>
+            <nav class='nav'>
+              <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+              <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+            </nav>
+          </div>
+        </div>
+
+      </section>
+
       <!-- loader -->
       <div id="ftco-loader" class="show fullscreen">
         <svg class="circular" width="48px" height="48px">
@@ -195,6 +258,10 @@
     </div>
 
   </div>
+
+  <!-- COOL-SLIDER JS IMPORTS -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
   <script src="./script.js"></script>
 
