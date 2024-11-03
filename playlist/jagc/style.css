@@ -21,10 +21,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url('https://images3.alphacoders.com/135/1352140.png');
+  background-color: red;
+  /* background-image: url('https://images3.alphacoders.com/135/1352140.png');
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   height: 100vh;
   margin: 0;
   padding: 10px;
