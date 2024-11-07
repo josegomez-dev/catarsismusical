@@ -163,7 +163,7 @@
           <div class="row justify-content-center mb-5 pb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
               <span>Descubramos juntos el Maravilloso Mundo de la Improvisación </span>
-              <!-- <h2>CATARSIS MUSICAL</h2> -->
+              <h2>CATARSIS MUSICAL</h2>
             </div>
           </div>
           <div class="row">
@@ -207,33 +207,39 @@
         </div>
       </section>
 
-
       <section class="ftco-section">
         <div class="container">
           <div class="row justify-content-center mb-5 pb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
-              <span>Destacados</span>
+              <span>Descubramos juntos el Maravilloso Mundo de la Improvisación Musical</span>
               <h2>Proyectos</h2>
             </div>
           </div>
           <div class="row">
             <div class="text col-md-12">
-              <img style="width: 100%;" src="images/home/studio.png" alt="">
+              <a href="./studio.html">
+                <img style="width: 100%;" src="images/home/studio.png" alt="">
+              </a>
               <br/>
               <br/>
-              <h4 class="subheading">Estudio de Grabación & Arte Audiovisual</h4>
-              <h2 class="heading"><a href="./academy.html"><b>Trascendencia Musical</b></a></h2>
+              <h2 class="subheading">STUDIO <b>Trascendencia Musical </b></h2>
+              <h4>
+                <span id="section1" class="animatedTextSection" style="color: orange;"></span>
+              </h4>
+              <h2 class="heading"><a href="./academy.html"><b></b></a></h2>
               <p>
                 Un espacio creativo donde la música y el arte audiovisual convergen. Nos especializamos en la producción musical, desde la creación de bandas sonoras hasta el impulso de artistas independientes en crecimiento. En este estudio, transformamos ideas en experiencias sonoras y visuales que trascienden el tiempo.
               </p>
             </div>
 
-            <div class="text col-md-12" style="margin-top: 50px;">
-              <img style="width: 100%;" src="images/home/academy.png" alt="">
+            <div class="text col-md-12" style="margin-top: 150px;">
+              <a href="./academy.html">
+                <img style="width: 100%;" src="images/home/academy.png" alt="">
+              </a>
               <br/>
               <br/>
-              <h4 class="subheading">Plataforma de Aprendizaje</h4>
-              <h2 class="heading"><a href="./academy.html"><b>Academia Musical</b></a></h2>
+              <h2 class="subheading">Catarsis<b> Academia Musical </b></h2>
+              <h4 id="section2" class="animatedTextSection" style="color: orange;"></h4>
               <p>
                 Nuestra academia propone un método innovador que simplifica el aprendizaje musical al enfocarse en los principios esenciales. Basándonos en una nueva perspectiva, promovemos la percepción musical a través de la Filosofía Pitagórica de la Improvisación Musical, explorando cómo las relaciones entre los números y sus significados ancestrales han dado vida a los primeros acercamientos de la música desde tiempos pitagóricos.
               </p>
@@ -253,13 +259,16 @@
             </div>
 
 
-            <div class="text col-md-12" style="margin-top: 50px;">
-              <img style="width: 100%;" src="images/home/games.png" alt="">
+            <div class="text col-md-12" style="margin-top: 150px;">
+              <a href="./games.html">
+                <img style="width: 100%;" src="images/home/games.png" alt="">
+              </a>
               <br/>
               <br/>
-              <h4 class="subheading">Entretenimiento & Musicoterapia</h4>
-              <h2 class="heading"><a href="./games.html"><b>Zona de Juegos</b></a>
+              <h2 class="subheading">
+                Zona de Juegos <b> Catarsis Musical </b>
               </h2>
+              <h4 id="section3" class="animatedTextSection" style="color: orange"></h4>
               <p>
                 Un espacio lúdico y educativo diseñado para facilitar la comprensión de la teoría musical de forma divertida y accesible. Nuestro primer juego, "El Camino Musical," aborda los grados musicales, permitiendo a los usuarios aprender y explorar este tema fundamental de manera interactiva. En esta zona, cada juego es una herramienta de aprendizaje que fomenta una comprensión más profunda de la teoría musical.
               </p>
@@ -271,6 +280,30 @@
           </div>
         </div>
     </section>
+
+    <section class="footer-slider-info" style="text-align: center; position: relative; overflow: hidden;">
+        <h3 class="animatedText"></h3>
+        <div class="row">
+          <div class="col-md-10" style="text-align: left;">
+            <p>¡Descubramos juntos el maravilloso mundo de la improvisación musical!</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia molestiae cumque laboriosam mollitia inventore nemo eius ipsum ratione? Odio saepe nemo dicta quod sit aut aliquam totam eum vel soluta.
+            </p>
+            <hr>
+            <p><a href="./games.html"><b>Jugar <span style="color: orange; font-weight: bolder;">GRATIS</span> "El Camino Musical"</b> (Version Digital)</a></p>
+            <button><span class="icon icon-book"></span></button>
+          </div>
+          <div class="col-md-2">
+            <img width="380px" style="margin: -60px 0;" src="images/eBook-removebg-preview.png" alt="">
+          </div>
+        </div>
+        <div class="music-notes"></div>
+      </section>
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
 
     <div class="patreon-footer">
       <img style="position: absolute; bottom: 0; left: 10px; width: 35%; max-width: 300px;" src="./images/avatar.png" alt="">
@@ -342,6 +375,193 @@
   <script src="js/main.js"></script>
   <script src="js/random-quotes.js"></script>
   <script src="js/chat-bubble.js"></script>
+
+  <script>
+    // Define an array of strings to be displayed and erased
+    const textArray = [
+      " - Hola chic@s!, Bienvenidos a esta gran aventura musical - ",
+      " - Descarga nuestro e-Book GRATIS - ",
+      " - Descubre la Trascendencia Filosófica de la Improvisación Musical - "
+      // Add more strings as needed
+    ];
+
+    // Initialize variables
+    let typeJsText = document.querySelector(".animatedText");
+    let stringIndex = 0; // Index of the current string in the array
+    let charIndex = 0; // Index of the current character in the current string
+    let isTyping = true; // Whether we are currently typing or erasing
+
+    function typeJs() {
+      if (stringIndex < textArray.length) {
+        // Check if there are more strings to display or erase
+        const currentString = textArray[stringIndex];
+
+        if (isTyping) {
+          // Typing animation
+          if (charIndex < currentString.length) {
+            typeJsText.innerHTML += currentString.charAt(charIndex);
+            charIndex++;
+          } else {
+            isTyping = false; // Switch to erasing mode
+          }
+        } else {
+          // Erasing animation
+          if (charIndex > 0) {
+            typeJsText.innerHTML = currentString.substring(0, charIndex - 1);
+            charIndex--;
+          } else {
+            isTyping = true; // Switch back to typing mode
+            stringIndex++; // Move to the next string
+
+            if (stringIndex >= textArray.length) {
+              stringIndex = 0; // Reset to the beginning of the array
+            }
+
+            charIndex = 0; // Reset character index
+            typeJsText.innerHTML = ""; // Clear the content for the new string
+          }
+        }
+      }
+    }
+
+    // Set an interval to call the typeJs function
+    setInterval(typeJs, 100); // You can adjust the animation speed as needed
+
+  </script>
+
+
+
+<script>
+  // Define an array of text arrays for each section
+  const textArrays = {
+    section1: [
+      "GRABACIÓN & PRODUCCIÓN MUSICAL.",
+      "ARTE AUDIOVISUAL.",
+      // Add more strings as needed for section 1
+    ],
+    section2: [
+      "CURSO DE GUITARRA ACUSTICA: Fundamentos Basicos",
+      "CURSO DE GUITARRA ELECTRICA: Tecnincas Avanzadas",
+      "CURSO PREMIUM: Convierte en un Musico 2.0",
+      "Recursos para Musicos",
+      // Add more strings as needed for section 2
+    ],
+    section3: [
+      "DESARROLLO DE VIDEO JUEGOS PLATFORMA 2D",
+      "DESARROLLO DE JUEGOS DE MESA",
+      "APLICACIONES WEB 3.0",
+      "ANIMACIÓN & EFECTOS ESPECIALES",
+      // Add more strings as needed for section 3
+    ]
+  };
+
+  // Function to create typing and erasing animation for each section
+  function typeJs(sectionId) {
+    const textArray = textArrays[sectionId];
+    const element = document.getElementById(sectionId);
+    let stringIndex = 0; // Index of the current string in the array
+    let charIndex = 0; // Index of the current character in the current string
+    let isTyping = true; // Whether we are currently typing or erasing
+
+    function type() {
+      if (stringIndex < textArray.length) {
+        const currentString = textArray[stringIndex];
+
+        if (isTyping) {
+          // Typing animation
+          if (charIndex < currentString.length) {
+            element.innerHTML += currentString.charAt(charIndex);
+            charIndex++;
+          } else {
+            isTyping = false; // Switch to erasing mode
+          }
+        } else {
+          // Erasing animation
+          if (charIndex > 0) {
+            element.innerHTML = currentString.substring(0, charIndex - 1);
+            charIndex--;
+          } else {
+            isTyping = true; // Switch back to typing mode
+            stringIndex++; // Move to the next string
+            if (stringIndex >= textArray.length) {
+              stringIndex = 0; // Reset to the beginning of the array
+            }
+            charIndex = 0; // Reset character index
+            element.innerHTML = ""; // Clear the content for the new string
+          }
+        }
+      }
+    }
+
+    // Start the typing animation with a set interval for this section
+    setInterval(type, 100); // Adjust the speed as needed
+  }
+
+  // Call the function for each section by ID
+  typeJs("section1");
+  typeJs("section2");
+  typeJs("section3");
+</script>
+
+<script>
+  // Function to create a floating music note
+function createMusicNote() {
+    const note = document.createElement('div');
+    note.classList.add('music-note');
+    note.innerText = '♪'; // You can change to '♫' for variety
+
+    // Randomize position and size
+    note.style.left = `${Math.random() * 100}%`;
+    note.style.fontSize = `${Math.random() * 10 + 40}px`;
+
+    // Randomize note colors
+    const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A6', '#F3FF33'];
+    note.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+    document.querySelector('.music-notes').appendChild(note);
+
+    // Remove the note after animation
+    setTimeout(() => {
+        note.remove();
+    }, 10000); // Match this with the animation duration in CSS
+}
+
+// Add music notes at intervals
+setInterval(createMusicNote, 500);
+
+// Handle cursor/touch interactions
+document.querySelector('.footer-slider-info').addEventListener('mousemove', (e) => {
+    document.querySelectorAll('.music-note').forEach(note => {
+        const rect = note.getBoundingClientRect();
+        const dx = e.clientX - rect.left;
+        const dy = e.clientY - rect.top;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 100) { // Adjust distance sensitivity as needed
+            note.style.transform = `translate(${dx / 10}px, ${dy / 10}px)`;
+        } else {
+            note.style.transform = '';
+        }
+    });
+});
+
+document.querySelector('.footer-slider-info').addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    document.querySelectorAll('.music-note').forEach(note => {
+        const rect = note.getBoundingClientRect();
+        const dx = touch.clientX - rect.left;
+        const dy = touch.clientY - rect.top;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 100) {
+            note.style.transform = `translate(${dx / 10}px, ${dy / 10}px)`;
+        } else {
+            note.style.transform = '';
+        }
+    });
+});
+
+</script>
 </body>
 
 </html>

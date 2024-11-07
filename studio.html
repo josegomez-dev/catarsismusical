@@ -62,47 +62,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
 
-  <style>
-
-    .animatedText {
-      color: white;
-      text-align: center;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-size: 28px;
-      display: inline-block;
-      padding: 0;
-      border-right: 1px solid #414141;
-    }
-    .animatedTextPageTitle {
-      color: white;
-      text-align: center;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      font-size: 28px;
-      display: inline-block;
-      padding: 0;
-      border-right: 1px solid #414141;
-    }
-
-    #container{
-      position: relative;
-      height: 500px;
-      width: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .slide{
-      display: block;
-      position: absolute;
-      height: 200px !important;
-      width: 200px !important;
-      background-image: url('https://i.pinimg.com/originals/93/8d/ba/938dbad28adb3e2d2684d48a7e53bf23.png');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-  </style>
 </head>
 
 <body>
@@ -201,6 +160,22 @@
       <div class="only-for-web" style="margin-top: -250px;"></div>
       <div class="only-for-mobile" style="margin-top: -70px;"></div>
 
+      <div class="video-container">
+        <video controls loop playsinline class="intro-video">
+            <source src="video/vivir-sin-miedo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay">
+            <h4>Vivir sin miedo <span style="color: gold">Nueva Cancion!</span></h4>
+            <h2><span style="color: orange">Jose Alejandro Gomez Castro</span></h2>
+        </div>
+      </div>
+
+      <br/>
+      <br/>
+      <br/>
+
+      <div class="only-for-mobile" style="margin-top: -200px;"></div>
 
       <section class="ftco-section">
         <div class="block-3 ftco-animate" data-scrollax-parent="true">
@@ -318,18 +293,28 @@
         </div>
       </section>
 
+      <div class="only-for-mobile" style="margin-top: -100px;"></div>
 
       <div class="only-for-web" style="margin-top: -222px;"></div>
 
 
-      <section class="footer-slider-info" style="text-align: center;">
+      <section class="footer-slider-info" style="text-align: center; position: relative; overflow: hidden;">
         <h3 class="animatedText"></h3>
-        <p>
-          ¡Descubramos juntos el maravilloso mundo de la improvisación musical!
-        </p>
-        <div>
-          <img height="280px" style="margin-left: -15px;" src="images/eBook-removebg-preview.png" alt="">
+        <div class="row">
+          <div class="col-md-10" style="text-align: left;">
+            <p>¡Descubramos juntos el maravilloso mundo de la improvisación musical!</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia molestiae cumque laboriosam mollitia inventore nemo eius ipsum ratione? Odio saepe nemo dicta quod sit aut aliquam totam eum vel soluta.
+            </p>
+            <hr>
+            <p><a href="./games.html"><b>Jugar <span style="color: orange; font-weight: bolder;">GRATIS</span> "El Camino Musical"</b> (Version Digital)</a></p>
+            <button><span class="icon icon-book"></span></button>
+          </div>
+          <div class="col-md-2">
+            <img width="380px" style="margin: -60px 0;" src="images/eBook-removebg-preview.png" alt="">
+          </div>
         </div>
+        <div class="music-notes"></div>
       </section>
 
 
@@ -437,9 +422,8 @@
               </div>
               <div class="ftco-footer-widget">
                 <h2 class="mb-3">Contactenos</h2>
-                <p class="h4 email">
-                  <a href="mailto:josegomez.dev@gmail.com">josegomez.dev@gmail.com</a>
-                </p>
+                <h5>José Alejandro Gómez Castro</h5>
+                <p class="h4 email"><a class="secondary-color" href="mailto:josegomez.dev@gmail.com">josegomez.dev@gmail.com</a> <br/> <a href="https://wa.me/50662402974"><b> +506 6240 2974 </b></a></p>
               </div>
             </div>
           </div>
