@@ -142,27 +142,39 @@
         </div>
       </header>
 
+      <div class="only-for-web" style="margin-top: -125px;"></div>
+
+
       <section class="ftco-section">
         <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-          <a href="#" class="image order-2 d-flex justify-content-center align-items-center"
-            style="background-image: url('images/logos/blancoACADEMY.png'); "
-            data-scrollax=" properties: { translateY: '-30%'}">
-            <div class="icon d-flex text-center justify-content-center align-items-center">
-              <span class="icon-search"></span>
-            </div>
-          </a>
-          <div class="text order-1">
-            <h4 class="subheading">Academia de Música</h4>
-            <h2 class="heading"><a href="./academy.html">ACADEMIA <b>| CATARSIS MUSICAL</b></a>
-            </h2>
+          <div class="text order-1" style="width: 100%;">
+            <h4 class="subheading"><b>Academia de Música</b> powered by <b>Catarsis Musical</b>.</h4>
+            <h2 class="heading"><span href="./studio.html">ACADEMIA <b class="animatedTextPageTitle"></b></span></h2>
             <p>
               Explora el <span class="secondary-color">fascinante mundo de la improvisación</span>, aprender nunca fue tan facil, <b>Catarsis Musical</b> es una herramienta poderosa
               para el desarrollo de creatividad musical. En esta sección, aprenderás los fundamentos necesarios para crear tu propia música y
-              llevarla al siguiente nivel. <span class="secondary-color">Visita nuestros cursos y recursos musicales gratuitos y de pago</span>, te ayudaremos a desarrollar tus habilidades musicales para convertirte en un <b>Musico 2.0</b>.
+              llevarla al siguiente nivel.
               <br/><br/>
-              <a class="btn bg-primary" style="color: black;"><b>Únete a nosotros</b> </a> en este emocionante viaje hacia el <b>descubrimiento musical</b>. <br/><br/>
-              <a class="btn bg-primary" style="color: black;"><b>Suscribete y obten acceso</b></a> a nuestro app y convierte en un <b>Musico 2.0</b>.
+              <a class="btn bg-primary"><b>Suscribete</b></a> y obten acceso  a nuestra<b> <a href="" class="btn bg-primary"><b>APP</b></a></b> y convierte en un <b>Musico 2.0</b>.
             </p>
+            <div class="only-for-web" style="margin-top: 100px;"></div>
+            <div style="text-align: center;">
+              <img style="width: 100%; max-width: 1500px;" src="./images/home/academy.png" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="only-for-web" style="margin-top: -350px;"></div>
+
+      <section class="ftco-section" style="margin-top: -250px;">
+        <div class="ftco-animate">
+          <div class="row" style="text-align: center;">
+            <div class="col-md-12">
+              <p class="secondary-color">Visita nuestros cursos y recursos musicales gratuitos y de pago.</p>
+              <p>Te ayudaremos a desarrollar tus habilidades musicales para convertirte en un <b>Musico 2.0</b>.</p>
+              <a class="btn bg-primary" style="color: black;"><b>Únete a nosotros</b> </a> en este emocionante viaje hacia el <b>descubrimiento musical</b>. <br/><br/>
+            </div>
           </div>
         </div>
       </section>
@@ -188,7 +200,7 @@
               <div class="ftco-footer-widget">
                 <h2 class="mb-3">Contactenos</h2>
                 <h5>José Alejandro Gómez Castro</h5>
-                <p class="h4 email"><a class="secondary-color" href="mailto:josegomez.dev@gmail.com">josegomez.dev@gmail.com</a> o al <a href="https://wa.me/50662402974"><b>+506 6240 2974 [WhatsApp]</b></a></p>
+                <p class="h4 email"><a class="secondary-color" href="mailto:josegomez.dev@gmail.com">josegomez.dev@gmail.com</a> o al <a href="https://wa.me/50662402974"><b>+506 6240 2974</b></a></p>
               </div>
             </div>
           </div>
@@ -236,6 +248,59 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
   <!-- <script src="js/google-map.js"></script> -->
   <script src="js/main.js"></script>
+  <script>
+    // Define an array of strings to be displayed and erased
+    const textArrayTitle = [
+      "CURSO DE GUITARRA ACUSTICA: Fundamentos Basicos",
+      "CURSO DE GUITARRA ELECTRICA: Tecnincas Avanzadas",
+      "CURSO PREMIUM: Convierte en un Musico 2.0",
+      "RECURSOS DIGITALES E INTERACTIVOS PARA MUSICOS",
+      // Add more strings as needed
+    ];
+
+    // Initialize variables
+    let typeJsText2 = document.querySelector(".animatedTextPageTitle");
+    let stringIndex2 = 0; // Index of the current string in the array
+    let charIndex2 = 0; // Index of the current character in the current string
+    let isTyping2 = true; // Whether we are currently typing or erasing
+
+    function typeJs() {
+      if (stringIndex2 < textArrayTitle.length) {
+        // Check if there are more strings to display or erase
+        const currentString = textArrayTitle[stringIndex2];
+
+        if (isTyping2) {
+          // Typing animation
+          if (charIndex2 < currentString.length) {
+            typeJsText2.innerHTML += currentString.charAt(charIndex2);
+            charIndex2++;
+          } else {
+            isTyping2 = false; // Switch to erasing mode
+          }
+        } else {
+          // Erasing animation
+          if (charIndex2 > 0) {
+            typeJsText2.innerHTML = currentString.substring(0, charIndex2 - 1);
+            charIndex2--;
+          } else {
+            isTyping2 = true; // Switch back to typing mode
+            stringIndex2++; // Move to the next string
+
+            if (stringIndex2 >= textArrayTitle.length) {
+              stringIndex2 = 0; // Reset to the beginning of the array
+            }
+
+            charIndex2 = 0; // Reset character index
+            typeJsText2.innerHTML = ""; // Clear the content for the new string
+          }
+        }
+      }
+    }
+
+    // Set an interval to call the typeJs function
+    setInterval(typeJs, 200); // You can adjust the animation speed as needed
+
+  </script>
 </body>
 
 </html>
