@@ -11735,6 +11735,7 @@ html, body {
   border-right: 1px solid #414141;
   margin-bottom: 25px;
   color: gold;
+  font-weight: bolder;
 }
 .animatedTextPageTitle {
   color: white;
@@ -11805,4 +11806,12 @@ html, body {
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   border-radius: 10px;
   top: 0px;
+}
+
+
+.videogame-container {
+margin: 0 auto;
+width: 100%;
+max-width: 1500px;
+height: 100vh;
 }

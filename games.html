@@ -105,33 +105,47 @@
         </div>
       </header>
 
+      <div class="only-for-web" style="margin-top: -125px;"></div>
+
       <section class="ftco-section">
         <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-          <a href="#" class="image order-2 d-flex justify-content-center align-items-center"
-            style="background-image: url('images/logos/blancoJUEGOS.png'); "
-            data-scrollax=" properties: { translateY: '-30%'}">
-            <div class="icon d-flex text-center justify-content-center align-items-center">
-              <span class="icon-search"></span>
+          <div class="text order-1" style="width: 100%;">
+            <h4 class="subheading"><b>Games Zone </b> powered by <b>Catarsis Musical</b>.</h4>
+            <h2 class="heading">Bienvenido </h2>
+            <div style="height: 80px; margin-top: -25px;">
+              <b class="animatedTextPageTitle"></b>
             </div>
-          </a>
-          <div class="text order-1">
-            <h4 class="subheading">Zona de Juegos Educativos Musicales</h4>
-            <h2 class="heading"><a href="./games.html">JUEGOS EDUCATIVOS <b>| CATARSIS MUSICAL</b></a>
-            </h2>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur est quo exercitationem quod repellat, inventore error iste, temporibus quae praesentium in doloribus vero, natus ab illo dolore tenetur labore quasi.
+              Un espacio lúdico y educativo diseñado para facilitar la comprensión de la teoría musical de forma divertida y accesible. En esta zona, cada juego es una herramienta de aprendizaje que fomenta una comprensión más profunda de la teoría musical.
             </p>
+            <a href="">Nuestro primer juego, <b>"El Camino Musical"</b>, aborda los grados musicales, permitiendo a los usuarios aprender y explorar la base esencial y fundamental de manera interactiva y para toda la familia.</a>
+            <div class="only-for-web" style="margin-top: 100px;"></div>
+            <div style="text-align: center;">
+              <img style="width: 100%; max-width: 1500px;" src="./images/home/games.png" alt="">
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="ftco-section" style="background-color: gray; margin-top: -100px;">
+      <div class="only-for-web" style="margin-top: -300px;"></div>
+      <div style="margin-top: -250px;"></div>
+
+      <section class="ftco-section" style="margin-top: -100px;">
         <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
 
-          <iframe src="https://josegomez-dev.github.io/MusicalPath/" height="500px" width="100%" frameborder="0"></iframe>
+          <iframe style="height: 300px;" class="videogame-container only-for-mobile" src="https://www.youtube.com/embed/a2musNj58J0?si=LxuVeK49CG-r5E-O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe style="height: 700px;" class="videogame-container only-for-web" src="https://www.youtube.com/embed/a2musNj58J0?si=LxuVeK49CG-r5E-O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
         </div>
       </section>
+
+      <!-- <section class="ftco-section" style="background-color: gray; margin-top: -100px;">
+        <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
+
+          <iframe class="videogame-container" src="https://josegomez-dev.github.io/MusicalPath/" frameborder="0"></iframe>
+
+        </div>
+      </section> -->
 
       <!-- <section>
         <div class="row">
@@ -147,7 +161,7 @@
         </div>
       </section> -->
 
-      <br /><br /><br /><br /><br /><br />
+      <br /><br />
 
       <footer class="ftco-footer ftco-bg-dark ftco-section">
         <div class="container">
@@ -218,6 +232,60 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
   <!-- <script src="js/google-map.js"></script> -->
   <script src="js/main.js"></script>
+  <script>
+    // Define an array of strings to be displayed and erased
+    const textArrayTitle = [
+      "VIDEO JUEGOS PLATFORMA 2D",
+      "JUEGOS DE MESA",
+      "TELEGRAM APPS WEB 3.0",
+      "ANIMACIÓN & EFECTOS ESPECIALES",
+      // Add more strings as needed
+    ];
+
+    // Initialize variables
+    let typeJsText2 = document.querySelector(".animatedTextPageTitle");
+    let stringIndex2 = 0; // Index of the current string in the array
+    let charIndex2 = 0; // Index of the current character in the current string
+    let isTyping2 = true; // Whether we are currently typing or erasing
+
+    function typeJs() {
+      if (stringIndex2 < textArrayTitle.length) {
+        // Check if there are more strings to display or erase
+        const currentString = textArrayTitle[stringIndex2];
+
+        if (isTyping2) {
+          // Typing animation
+          if (charIndex2 < currentString.length) {
+            typeJsText2.innerHTML += currentString.charAt(charIndex2);
+            charIndex2++;
+          } else {
+            isTyping2 = false; // Switch to erasing mode
+          }
+        } else {
+          // Erasing animation
+          if (charIndex2 > 0) {
+            typeJsText2.innerHTML = currentString.substring(0, charIndex2 - 1);
+            charIndex2--;
+          } else {
+            isTyping2 = true; // Switch back to typing mode
+            stringIndex2++; // Move to the next string
+
+            if (stringIndex2 >= textArrayTitle.length) {
+              stringIndex2 = 0; // Reset to the beginning of the array
+            }
+
+            charIndex2 = 0; // Reset character index
+            typeJsText2.innerHTML = ""; // Clear the content for the new string
+          }
+        }
+      }
+    }
+
+    // Set an interval to call the typeJs function
+    setInterval(typeJs, 100); // You can adjust the animation speed as needed
+
+  </script>
+
 </body>
 
 </html>
