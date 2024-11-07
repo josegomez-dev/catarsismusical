@@ -11774,6 +11774,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
 /* Video */
@@ -11781,8 +11782,9 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100vh;
+  width: 100%;
   height: auto;
+  min-height: 400px;
   transform: translate(-50%, -50%);
   min-width: 100%;
   object-fit: cover; /* Ensures the video covers the container */
