@@ -167,7 +167,7 @@
                 <a href="">Nuestro primer juego, <b>"El Camino Musical"</b>, aborda los grados musicales, permitiendo a los usuarios aprender y explorar la base esencial y fundamental de manera interactiva y para toda la familia.</a>
               </div>
             </div>
-            <div class="row" style="margin: 0 auto; max-height: 500px; margin-top: -100px;">
+            <div class="row" style="margin: 0 auto; max-height: 500px; ">
               <div class="col-md-6" style="text-align: center; margin-bottom: 25px;">
                 <img style="width: 100%; max-width: 1500px;" src="images/musical-path-adv.jpg" alt="">
               </div>
@@ -195,47 +195,6 @@
           </div>
         </div>
       </section>
-
-      <!-- <section class="ftco-section" style="background-color: gray; margin-top: -100px;">
-        <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-
-          <iframe class="videogame-container" src="https://josegomez-dev.github.io/MusicalPath/" frameborder="0"></iframe>
-
-        </div>
-      </section> -->
-
-      <!-- <section>
-        <div class="row">
-          <div class="col-md-4">
-            <img width="100%" src="./images/eBook.jpeg" alt="">
-          </div>
-          <div class="col-md-4">
-            <img width="100%" src="./images/black-shirt.png" alt="">
-          </div>
-          <div class="col-md-4">
-            <img width="100%" src="./images/musical-path-adv.jpg" alt="">
-          </div>
-        </div>
-      </section> -->
-
-      <!-- <section class="footer-slider-info" style="text-align: center; position: relative; overflow: hidden;">
-        <h3 class="animatedText"></h3>
-        <div class="row">
-          <div class="col-md-10" style="text-align: left;">
-            <p>¡Descubramos juntos el maravilloso mundo de la improvisación musical!</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia molestiae cumque laboriosam mollitia inventore nemo eius ipsum ratione? Odio saepe nemo dicta quod sit aut aliquam totam eum vel soluta.
-            </p>
-            <hr>
-            <p><a href="./games.html"><b>Jugar <span style="color: orange; font-weight: bolder;">GRATIS</span> "El Camino Musical"</b> (Version Digital)</a></p>
-            <button><span class="icon icon-book"></span></button>
-          </div>
-          <div class="col-md-2">
-            <img width="380px" style="margin: -60px 0;" src="images/eBook-removebg-preview.png" alt="">
-          </div>
-        </div>
-        <div class="music-notes"></div>
-      </section> -->
 
       <br/>
 
@@ -421,65 +380,6 @@
 
 </script>
 
-<script>
-  // Function to create a floating music note
-function createMusicNote() {
-    const note = document.createElement('div');
-    note.classList.add('music-note');
-    note.innerText = '♪'; // You can change to '♫' for variety
-
-    // Randomize position and size
-    note.style.left = `${Math.random() * 100}%`;
-    note.style.fontSize = `${Math.random() * 10 + 40}px`;
-
-    // Randomize note colors
-    const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A6', '#F3FF33'];
-    note.style.color = colors[Math.floor(Math.random() * colors.length)];
-
-    document.querySelector('.music-notes').appendChild(note);
-
-    // Remove the note after animation
-    setTimeout(() => {
-        note.remove();
-    }, 10000); // Match this with the animation duration in CSS
-}
-
-// Add music notes at intervals
-setInterval(createMusicNote, 500);
-
-// Handle cursor/touch interactions
-document.querySelector('.footer-slider-info').addEventListener('mousemove', (e) => {
-    document.querySelectorAll('.music-note').forEach(note => {
-        const rect = note.getBoundingClientRect();
-        const dx = e.clientX - rect.left;
-        const dy = e.clientY - rect.top;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < 100) { // Adjust distance sensitivity as needed
-            note.style.transform = `translate(${dx / 10}px, ${dy / 10}px)`;
-        } else {
-            note.style.transform = '';
-        }
-    });
-});
-
-document.querySelector('.footer-slider-info').addEventListener('touchmove', (e) => {
-    const touch = e.touches[0];
-    document.querySelectorAll('.music-note').forEach(note => {
-        const rect = note.getBoundingClientRect();
-        const dx = touch.clientX - rect.left;
-        const dy = touch.clientY - rect.top;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < 100) {
-            note.style.transform = `translate(${dx / 10}px, ${dy / 10}px)`;
-        } else {
-            note.style.transform = '';
-        }
-    });
-});
-
-</script>
 </body>
 
 </html>
