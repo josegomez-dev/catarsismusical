@@ -10056,11 +10056,12 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
 .owl-carousel.home-slider {
   z-index: 0;
   position: relative;
-}
-.owl-carousel.home-slider .slider-item {
+  background-image: url('https://images.unsplash.com/photo-1453090927415-5f45085b65c0?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVzaWMlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+.owl-carousel.home-slider .slider-item {
   height: auto;
   min-height: 820px;
   position: relative;
@@ -11805,7 +11806,7 @@ html, body {
   padding: 20px;
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   border-radius: 10px;
-  top: 0px;
+  top: 105px;
 }
 
 .videogame-container {
