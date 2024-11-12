@@ -10056,7 +10056,8 @@ header .colorlib-navbar-brand .colorlib-logo:focus {
 .owl-carousel.home-slider {
   z-index: 0;
   position: relative;
-  background-image: url('https://images.unsplash.com/photo-1453090927415-5f45085b65c0?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVzaWMlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww');
+  /* background-image: url('https://images.unsplash.com/photo-1453090927415-5f45085b65c0?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVzaWMlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww'); */
+  background-image: url('https://images.unsplash.com/uploads/1412282232015a06e258a/4bdd2a58?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bXVzaWMlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -11810,8 +11811,18 @@ html, body {
 }
 
 .videogame-container {
-margin: 0 auto;
-width: 100%;
-max-width: 1500px;
-height: 100vh;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1500px;
+  height: 100vh;
+}
+
+
+img.lazy {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img.lazy[src] {
+  opacity: 1;
 }
