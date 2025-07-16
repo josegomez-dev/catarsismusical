@@ -32,6 +32,7 @@ body {
   font-size: 2rem;
   color: var(--primary);
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.9));
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .hero p {
@@ -49,6 +50,7 @@ body {
   display: inline-block;
   margin-top: 1rem;
   transition: transform 0.2s ease;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .btn:hover {
@@ -105,11 +107,13 @@ body {
   margin: 0.5rem 0;
   font-size: 1.5rem;
   color: var(--primary);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .card p {
   font-size: 1.2rem;
   color: #cbd5e1;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .card:hover {
@@ -133,6 +137,7 @@ footer {
   text-align: center;
   background: var(--dark);
   color: var(--light);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 /* === Redes Sociales / Footer Buttons === */
@@ -348,6 +353,7 @@ z-index: 0;
 .head h2 {
   font: 400 1.5rem/1.2 Inter, sans-serif;
   color: #fff;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 @media (min-width: 1024px) {
   .head h2 {
@@ -446,6 +452,7 @@ z-index: 0;
   font-size: 1.35rem;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .project-card__thumb,
 .project-card__desc,
@@ -484,7 +491,7 @@ z-index: 0;
   max-width: 16rem;
   background-color: white;
   border-radius: 0.35rem;
-  padding: 0.5rem;
+  padding: 5px;
   margin-bottom: 0.5rem;
   height: 50px;
   overflow: auto;
