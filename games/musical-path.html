@@ -19,8 +19,8 @@
       <h1 style="margin-top: -50px; font-size: 5rem; margin-bottom: -10px; margin-top: -80px;">EL&nbsp;CAMINO</h1>
       <h5 style="font-size: 1.2rem;">¡Descubramos juntos el mundo de la improvisación musical!</h5>
       <h1 style="font-size: 5rem; margin-top: -10px; ">MUSICAL</h1>
-      <a href="#explora" class="btn">Ver Trailer 🎥</a> &nbsp;
-      <a href="#explora" class="btn" style="background-color: #22d3ee; color: var(--dark)">Jugar 🎲</a>
+      <a id="openTrailerBtn" href="javascript:void(0);" class="btn">Ver Trailer ▶️</a> &nbsp;
+      <a id="playGameBtn" href="javascript:void(0);" class="btn btn2">Jugar 🎲</a>
     </div>
   </header>
 
@@ -31,6 +31,11 @@
   <hr>
 
   <section id="explora" class="section showcase">
+    <h2 style="color: var(--primary); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Explora el Camino Musical</h2>
+    <strong>¡Descubre nuestros productos exclusivos!</strong>
+    <br/>
+    <br/>
+
     <div class="cards">
       <div class="card" onclick="openModal(0)">
         <img src="./../images/eBook.jpeg" alt="Libro" />
@@ -77,62 +82,62 @@
       <div class="track" id="track">
 
 
-        <article class="project-card">
+        <article class="project-card" data-index="0">
           <img class="project-card__bg" src="./../images/instructions/5.jpg" alt="">
           <div class="project-card__content">
             <img class="project-card__thumb" src="./../images/instructions/5.jpg" alt="">
             <div>
               <h3 class="project-card__title">¿Cómo se juega?</h3>
               <p class="project-card__desc">Reglas básicas para tu aventura musical.</p>
-              <button class="project-card__btn">Details</button>
+              <!-- <button class="project-card__btn">Abrir...</button> -->
             </div>
           </div>
         </article>
 
-        <article class="project-card" active>
+        <article class="project-card" data-index="1" active>
           <img class="project-card__bg" src="./../images/instructions/1.jpg" alt="">
           <div class="project-card__content">
             <img class="project-card__thumb" src="./../images/instructions/1.jpg" alt="">
             <div>
               <h3 class="project-card__title">Descubre grados musicales</h3>
               <p class="project-card__desc">Aprende teoría musical mientras te diviertes.</p>
-              <button class="project-card__btn">Details</button>
+              <!-- <button class="project-card__btn">Abrir...</button> -->
             </div>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-index="2">
           <img class="project-card__bg" src="./../images/instructions/2.jpg" alt="">
           <div class="project-card__content">
             <img class="project-card__thumb" src="./../images/instructions/2.jpg" alt="">
             <div>
               <h3 class="project-card__title">¡Lanza los dados!</h3>
               <p class="project-card__desc">Notas, colores y diversión en cada jugada.</p>
-              <button class="project-card__btn">Details</button>
+              <!-- <button class="project-card__btn">Abrir...</button> -->
             </div>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-index="3">
           <img class="project-card__bg" src="./../images/instructions/3.jpg" alt="">
           <div class="project-card__content">
             <img class="project-card__thumb" src="./../images/instructions/3.jpg" alt="">
             <div>
-              <h3 class="project-card__title">Reta a tus amigos</h3>
-              <p class="project-card__desc">Responde correctamente... y/o vuelve al inicio.
-              <button class="project-card__btn">Details</button>
+              <h3 class="project-card__title">¡Reta a tus amigos!</h3>
+              <p class="project-card__desc">Compite en el tablero y mejora tus habilidades musicales.</p>
+              <!-- <button class="project-card__btn">Abrir...</button> -->
             </div>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-index="4">
           <img class="project-card__bg" src="./../images/instructions/4.jpg" alt="">
           <div class="project-card__content">
             <img class="project-card__thumb" src="./../images/instructions/4.jpg" alt="">
             <div>
               <h3 class="project-card__title">¡Domina el tablero!</h3>
               <p class="project-card__desc">Aprende y conquista el camino musical.</p>
-              <button class="project-card__btn">Details</button>
+              <!-- <button class="project-card__btn">Abrir...</button> -->
             </div>
           </div>
         </article>
@@ -147,8 +152,19 @@
   <section class="cta">
     <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">📲 ¡Versión digital gratuita!</h2>
     <p>Explora el juego desde tu celular, tablet o computadora. ¡Aprende música de forma divertida!</p>
-      <a target="_blank" href="https://www.youtube.com/watch?v=a2musNj58J0" class="btn">Ver Trailer 🎥</a> &nbsp;
-      <a href="#explora" class="btn" style="background-color: #22d3ee; color: var(--dark)">Jugar 🎲</a>
+      <br/>
+      <a target="_blank" href="https://www.youtube.com/watch?v=a2musNj58J0" class="btn">Ver Trailer ▶️</a> &nbsp;
+      <a href="#explora" class="btn btn2">Jugar 🎲</a>
+      <br/>
+      <img onclick="window.open(`https://americapixelgames.com/`, '_blank')" src="./../images/america.png" width="100px" alt="" style="cursor: pointer; ">
+      <!-- 👇 Avatar Image -->
+      <div class="avatar-wrapper">
+        <!-- 💬 Speech bubble -->
+        <div class="speech-bubble">¡Hola, ya probaste <strong style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-transform: uppercase; color: var(--accent);">el camino musical</strong>?!</div>
+        <!-- 🧑 Avatar -->
+        <img src="./../images/avatar.png" alt="Avatar diciendo hola" class="avatar-hi" />
+      </div>
+
   </section>
 
 
@@ -159,196 +175,291 @@
       <a href="https://wa.me/50662402974" target="_blank"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.facebook.com/profile.php?id=61553836722791" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://www.instagram.com/alegomez.cr/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="mailto:josegomez.dev@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.youtube.com/@catarsismusical"><i class="fas fa-youtube"></i></a>
+      <a href="https://www.youtube.com/@catarsismusical"><i class="fab fa-youtube" style="color: red;"></i></a>
     </div>
   </footer>
 
-  <script>
-    // === Modal Lógica ===
-const modal = document.getElementById("modal");
-const modalBody = document.getElementById("modal-body");
-
-function openModal(index) {
-  const contents = [
-    `
-    <h2>📖 Libro Educativo</h2>
-    <p>Este libro acompaña el juego e introduce conceptos como geometría musical, escalas y juegos para improvisar. ¡Ideal para principiantes y curiosos!</p>
-    <img src="./../images/eBook.jpeg" style="width:100%; border-radius:10px; margin-top:1rem;" />
-    <p>Disponible en formato digital y físico. ¡Descubre el mundo de la improvisación musical!</p>
-    <a href="https://online.pubhtml5.com/sllt/aukj/" target="_blank" class="btn">Descargar eBook Gratis</a> 
-    `,
-    `
-    <h2>👕 Camiseta Oficial</h2>
-    <p>Una camiseta original con emociones musicales. Disponible en tallas para niños, jóvenes y adultos. ¡Exprésate mientras juegas!</p>
-    <img src="./../images/black-shirt.png" style="width:100%; border-radius:10px; margin-top:1rem;" />
-    <p>Disponible en varias tallas y colores. ¡Lleva la música contigo!</p>
-    <a href="https://catarsismusical.bigcartel.com/" target="_blank" class="btn">Ir a tienda en linea</a>  
-    `,
-    `
-    <h2>🎬 Trailer del Juego</h2>
-    <p>¡Explora el universo del Camino Musical con este video!</p>
-    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin-top:1rem;">
-      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              style="position:absolute; top:0; left:0; width:100%; height:100%;">
-      </iframe>
+  <!-- Fullscreen Modal for Instructions -->
+  <div class="fullscreen-modal" id="fullscreenModal">
+    <span class="close" onclick="closeFullscreenModal()">&times;</span>
+    <div class="fullscreen-slider" id="fullscreenSlider">
+      <img id="fullscreenImage" src="" alt="Instrucción" />
+      <div class="fullscreen-nav">
+        <button onclick="changeInstruction(-1)">👈</button>
+        <button onclick="changeInstruction(1)">👉</button>
+      </div>
     </div>
-    `
-  ];
+  </div>
 
-  modalBody.innerHTML = contents[index];
-  modal.style.display = "flex";
-}
+  <script>
+    // === Core Buttons ===
+    document.getElementById("openTrailerBtn").addEventListener("click", () => {
+      openModal(2);
+    });
 
-function closeModal() {
-  modal.style.display = "none";
-}
+    document.getElementById("playGameBtn").addEventListener("click", () => {
+      // redirect on a new tab
+      window.open("https://josegomez-dev.github.io/MusicalPath/", "_blank");
+    });
 
-// === Personajes Aleatorios en Scroll ===
-const characters = [
-  "./../images/112.png",
-  "./../images/Bobby.png",
-  "./../images/221.png"
-];
+    // === Modal Lógica ===
+    const modal = document.getElementById("modal");
+    const modalBody = document.getElementById("modal-body");
 
-function spawnCharacter() {
-  const img = document.createElement("img");
-  img.src = characters[Math.floor(Math.random() * characters.length)];
-  img.className = "scroll-character";
-  img.style.position = "fixed";
-  img.style.left = `${Math.random() * 80 + 10}%`;
-  img.style.top = `${Math.random() * 60 + 30}%`;
-  img.style.width = "80px";
-  img.style.zIndex = "1000";
-  img.style.animation = "floatUp 4s ease-in-out forwards";
-  document.body.appendChild(img);
+    function openModal(index) {
+      const contents = [
+        `
+        <h2>📖 Libro Educativo</h2>
+        <p>Este libro acompaña el juego e introduce conceptos como geometría sagrada musical, escalas y juegos para improvisar.</p>
+        <img src="./../images/eBook.jpeg" style="width:100%; border-radius:10px; margin-top:1rem;" />
+        <p class="pdt-note">Disponible en formato digital y físico.</p>
+        <a href="https://online.pubhtml5.com/sllt/aukj/" target="_blank" class="btn">Descargar eBook Gratis</a> 
+        `,
+        `
+        <h2>👕 Camiseta Oficial</h2>
+        <p>Una camiseta original con emociones musicales. Disponible en tallas para niños, jóvenes y adultos.</p>
+        <img src="./../images/black-shirt.png" style="width:100%; border-radius:10px; margin-top:1rem;" />
+        <p class="pdt-note">Disponible en varias tallas y colores.</p>
+        <a href="https://catarsismusical.bigcartel.com/" target="_blank" class="btn">Ir a tienda en linea</a>  
+        `,
+        `
+        <div>
+          <h2>🎬 Trailer del Juego</h2>
+          <p>¡Explora el universo del Camino Musical con este video!</p>
+          <iframe src="https://www.youtube.com/embed/a2musNj58J0"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="position:absolute; top:0; left:0; width:100%; height:100%;">
+          </iframe>
+          <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin-top:1rem;">
+              <footer style="position: fixed; bottom: 0; width: 100%; left: 0; right: 0;">
+                <p>Hecho con ❤️ por José Alejandro Gómez Castro</p>
+                <div class="social">
+                  <a href="https://wa.me/50662402974" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  <a href="https://www.facebook.com/profile.php?id=61553836722791" target="_blank"><i class="fab fa-facebook"></i></a>
+                  <a href="https://www.instagram.com/alegomez.cr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.youtube.com/@catarsismusical"><i class="fab fa-youtube" style="color: red;"></i></a>
+                </div>
+              </footer>
+          </div>
+        </div>
+        `
+      ];
 
-  setTimeout(() => {
-    img.remove();
-  }, 4000);
-}
+      modalBody.innerHTML = contents[index];
+      modal.style.display = "flex";
+    }
 
-window.addEventListener("scroll", () => {
-  if (Math.random() > 0.92) {
-    spawnCharacter();
-  }
-});
+    function closeModal() {
+      modal.style.display = "none";
+    }
 
-// === Animación flotante personalizada (opcional) ===
-const style = document.createElement("style");
-style.innerHTML = `
-@keyframes floatUp {
-  0% { transform: translateY(50px); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: translateY(-150px); opacity: 0; }
-}
-`;
-document.head.appendChild(style);
+    // === Personajes Aleatorios en Scroll ===
+    const characters = [
+      "./../images/112.png",
+      "./../images/Bobby.png",
+      "./../images/221.png"
+    ];
+
+    function spawnCharacter() {
+      const img = document.createElement("img");
+      img.src = characters[Math.floor(Math.random() * characters.length)];
+      img.className = "scroll-character";
+      img.style.position = "fixed";
+      img.style.left = `${Math.random() * 80 + 10}%`;
+      img.style.top = `${Math.random() * 60 + 30}%`;
+      img.style.width = "80px";
+      img.style.zIndex = "1000";
+      img.style.animation = "floatUp 4s ease-in-out forwards";
+      document.body.appendChild(img);
+
+      setTimeout(() => {
+        img.remove();
+      }, 4000);
+    }
+
+    window.addEventListener("scroll", () => {
+      if (Math.random() > 0.92) {
+        spawnCharacter();
+      }
+    });
+
+    // === Animación flotante personalizada (opcional) ===
+    const style = document.createElement("style");
+    style.innerHTML = `
+    @keyframes floatUp {
+      0% { transform: translateY(50px); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-150px); opacity: 0; }
+    }
+    `;
+    document.head.appendChild(style);
+
+      </script>
+
+      <script>
+        (() => {
+      const track = document.getElementById("track");
+      const wrap = track.parentElement;
+      const cards = Array.from(track.children);
+      const prev = document.getElementById("prev");
+      const next = document.getElementById("next");
+      const dotsBox = document.getElementById("dots");
+
+      const isMobile = () => matchMedia("(max-width:767px)").matches;
+
+      cards.forEach((_, i) => {
+        const dot = document.createElement("span");
+        dot.className = "dot";
+        dot.onclick = () => activate(i, true);
+        dotsBox.appendChild(dot);
+      });
+      const dots = Array.from(dotsBox.children);
+
+      let current = 0;
+
+      function center(i) {
+        const card = cards[i];
+        const axis = isMobile() ? "top" : "left";
+        const size = isMobile() ? "clientHeight" : "clientWidth";
+        const start = isMobile() ? card.offsetTop : card.offsetLeft;
+        wrap.scrollTo({
+          [axis]: start - (wrap[size] / 2 - card[size] / 2),
+          behavior: "smooth"
+        });
+      }
+
+      function toggleUI(i) {
+        cards.forEach((c, k) => c.toggleAttribute("active", k === i));
+        dots.forEach((d, k) => d.classList.toggle("active", k === i));
+        prev.disabled = i === 0;
+        next.disabled = i === cards.length - 1;
+      }
+
+      function activate(i, scroll) {
+        if (i === current) return;
+        current = i;
+        toggleUI(i);
+        if (scroll) center(i);
+      }
+
+      function go(step) {
+        activate(Math.min(Math.max(current + step, 0), cards.length - 1), true);
+      }
+
+      prev.onclick = () => go(-1);
+      next.onclick = () => go(1);
+
+      addEventListener(
+        "keydown",
+        (e) => {
+          if (["ArrowRight", "ArrowDown"].includes(e.key)) go(1);
+          if (["ArrowLeft", "ArrowUp"].includes(e.key)) go(-1);
+        },
+        { passive: true }
+      );
+
+      cards.forEach((card, i) => {
+        card.addEventListener(
+          "mouseenter",
+          () => matchMedia("(hover:hover)").matches && activate(i, true)
+        );
+        card.addEventListener("click", () => activate(i, true));
+      });
+
+      let sx = 0,
+        sy = 0;
+      track.addEventListener(
+        "touchstart",
+        (e) => {
+          sx = e.touches[0].clientX;
+          sy = e.touches[0].clientY;
+        },
+        { passive: true }
+      );
+
+      track.addEventListener(
+        "touchend",
+        (e) => {
+          const dx = e.changedTouches[0].clientX - sx;
+          const dy = e.changedTouches[0].clientY - sy;
+          if (isMobile() ? Math.abs(dy) > 60 : Math.abs(dx) > 60)
+            go((isMobile() ? dy : dx) > 0 ? -1 : 1);
+        },
+        { passive: true }
+      );
+      if (window.matchMedia("(max-width:767px)").matches) dotsBox.hidden = true;
+
+      addEventListener("resize", () => center(current));
+
+      toggleUI(0);
+      center(0);
+    })();
+
+    // === Modal Lógica ===
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    window.addEventListener("click", function (event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
 
   </script>
 
   <script>
-    (() => {
-  const track = document.getElementById("track");
-  const wrap = track.parentElement;
-  const cards = Array.from(track.children);
-  const prev = document.getElementById("prev");
-  const next = document.getElementById("next");
-  const dotsBox = document.getElementById("dots");
+    const instructionImages = [
+      "./../images/instructions/5.jpg",
+      "./../images/instructions/1.jpg",
+      "./../images/instructions/2.jpg",
+      "./../images/instructions/3.jpg",
+      "./../images/instructions/4.jpg"
+    ];
 
-  const isMobile = () => matchMedia("(max-width:767px)").matches;
+    let currentInstructionIndex = 0;
 
-  cards.forEach((_, i) => {
-    const dot = document.createElement("span");
-    dot.className = "dot";
-    dot.onclick = () => activate(i, true);
-    dotsBox.appendChild(dot);
-  });
-  const dots = Array.from(dotsBox.children);
+    const fullscreenModal = document.getElementById("fullscreenModal");
+    const fullscreenImage = document.getElementById("fullscreenImage");
 
-  let current = 0;
+    function openFullscreenModal(index) {
+      currentInstructionIndex = index;
+      fullscreenImage.src = instructionImages[currentInstructionIndex];
+      fullscreenModal.style.display = "flex";
+    }
 
-  function center(i) {
-    const card = cards[i];
-    const axis = isMobile() ? "top" : "left";
-    const size = isMobile() ? "clientHeight" : "clientWidth";
-    const start = isMobile() ? card.offsetTop : card.offsetLeft;
-    wrap.scrollTo({
-      [axis]: start - (wrap[size] / 2 - card[size] / 2),
-      behavior: "smooth"
+    function closeFullscreenModal() {
+      fullscreenModal.style.display = "none";
+    }
+
+    function changeInstruction(step) {
+      currentInstructionIndex += step;
+      if (currentInstructionIndex < 0) currentInstructionIndex = instructionImages.length - 1;
+      if (currentInstructionIndex >= instructionImages.length) currentInstructionIndex = 0;
+      fullscreenImage.src = instructionImages[currentInstructionIndex];
+    }
+
+    // Close on outside click
+    window.addEventListener("click", function (event) {
+      if (event.target === fullscreenModal) {
+        closeFullscreenModal();
+      }
     });
-  }
 
-  function toggleUI(i) {
-    cards.forEach((c, k) => c.toggleAttribute("active", k === i));
-    dots.forEach((d, k) => d.classList.toggle("active", k === i));
-    prev.disabled = i === 0;
-    next.disabled = i === cards.length - 1;
-  }
-
-  function activate(i, scroll) {
-    if (i === current) return;
-    current = i;
-    toggleUI(i);
-    if (scroll) center(i);
-  }
-
-  function go(step) {
-    activate(Math.min(Math.max(current + step, 0), cards.length - 1), true);
-  }
-
-  prev.onclick = () => go(-1);
-  next.onclick = () => go(1);
-
-  addEventListener(
-    "keydown",
-    (e) => {
-      if (["ArrowRight", "ArrowDown"].includes(e.key)) go(1);
-      if (["ArrowLeft", "ArrowUp"].includes(e.key)) go(-1);
-    },
-    { passive: true }
-  );
-
-  cards.forEach((card, i) => {
-    card.addEventListener(
-      "mouseenter",
-      () => matchMedia("(hover:hover)").matches && activate(i, true)
-    );
-    card.addEventListener("click", () => activate(i, true));
-  });
-
-  let sx = 0,
-    sy = 0;
-  track.addEventListener(
-    "touchstart",
-    (e) => {
-      sx = e.touches[0].clientX;
-      sy = e.touches[0].clientY;
-    },
-    { passive: true }
-  );
-
-  track.addEventListener(
-    "touchend",
-    (e) => {
-      const dx = e.changedTouches[0].clientX - sx;
-      const dy = e.changedTouches[0].clientY - sy;
-      if (isMobile() ? Math.abs(dy) > 60 : Math.abs(dx) > 60)
-        go((isMobile() ? dy : dx) > 0 ? -1 : 1);
-    },
-    { passive: true }
-  );
-  if (window.matchMedia("(max-width:767px)").matches) dotsBox.hidden = true;
-
-  addEventListener("resize", () => center(current));
-
-  toggleUI(0);
-  center(0);
-})();
+    // 🎯 Attach click to entire project card
+   document.querySelectorAll(".project-card__thumb").forEach(img => {
+      img.addEventListener("click", (e) => {
+        e.stopPropagation(); // prevent parent click behavior
+        const card = img.closest(".project-card");
+        const index = parseInt(card.getAttribute("data-index"), 10);
+        openFullscreenModal(index);
+      });
+    });
 
   </script>
+
+
 </body>
 </html>

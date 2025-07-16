@@ -17,7 +17,7 @@ body {
 }
 
 .hero {
-  background: linear-gradient(145deg, #facc15, #f472b6);
+  background: var(--dark);
   text-align: center;
   padding: 4rem 2rem;
   color: #111;
@@ -41,21 +41,76 @@ body {
 }
 
 .btn {
+  position: relative;
+  border: 2px solid transparent;
   background: var(--dark);
-  color: white;
+  color: var(--accent);
   padding: 0.8rem 1.5rem;
-  border: none;
   border-radius: 30px;
   text-decoration: none;
   display: inline-block;
   margin-top: 1rem;
   transition: transform 0.2s ease;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  z-index: 1;
+  overflow: hidden;
 }
 
+/* Glowing animated border using pseudo-element */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  border-radius: 30px;
+  background: linear-gradient(45deg, white, var(--accent), var(--dark), var(--accent));
+  background-size: 400% 400%;
+  animation: borderGlow 5s linear infinite;
+}
+
+/* Optional inner glow */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: 28px;
+  background: var(--dark);
+  z-index: -1;
+}
+
+/* Animation keyframes */
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.15);
   background: var(--accent);
+  color: var(--primary);
+}
+
+.btn2 {
+  background-color: var(--primary); 
+  color: white;
+}
+.btn2:hover {
+  background-color: var(--accent); 
+  color: var(--primary);
 }
 
 .floating-section {
@@ -130,6 +185,89 @@ body {
   color: #111;
   text-align: center;
   padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-wrapper {
+  position: absolute;
+  bottom: -10px;
+  right: 1rem;
+  max-width: 150px;
+  z-index: 2;
+}
+
+.avatar-hi {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 💬 Speech bubble */
+.speech-bubble {
+  position: absolute;
+  bottom: 100%;
+  right: 100px;
+  top: 60px;
+  background: rgba(255, 255, 255, 0.809);
+  color: #111;
+  padding: 1rem 0.5rem 2rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  animation: floatHi 3s ease-in-out infinite, pulse 1.8s infinite;
+  white-space: nowrap;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+/* 💬 Tail of speech bubble */
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-top-color: black;
+}
+
+
+@media (max-width: 768px) {
+  .speech-bubble {
+    top: 30px;
+    right: 50px;
+    height: 30px;
+  }
+  .speech-bubble::after {
+    bottom: -16px;
+  }
+}
+
+/* ✨ Float animation */
+@keyframes floatHi {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ✨ Pulse animation */
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6); }
+  50% { box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3); }
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .avatar-wrapper {
+    max-width: 90px;
+    right: 0.5rem;
+  }
+
+  .speech-bubble {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
 }
 
 footer {
@@ -205,7 +343,7 @@ footer .social a[href*="mailto:"] {
 }
 
 .modal-content {
-  background: #fff;
+  background: var(--dark);
   color: #111;
   padding: 2rem;
   border-radius: 20px;
@@ -214,6 +352,30 @@ footer .social a[href*="mailto:"] {
   animation: slideUp 0.4s ease-out;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
   position: relative;
+}
+
+.modal-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: #cbd5e1;
+}
+
+.modal-content .pdt-note {
+  font-size: 1.2rem;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-top: 10px;
+  color: var(--accent);
+}
+
+.modal-content .btn {
+  background: var(--primary);
+  color: black;
 }
 
 @keyframes slideUp {
@@ -493,8 +655,10 @@ z-index: 0;
   border-radius: 0.35rem;
   padding: 5px;
   margin-bottom: 0.5rem;
-  height: 50px;
+  height: auto;
   overflow: auto;
+  box-shadow: 0 4px 10px rgba(250, 250, 250, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .project-card__btn {
   padding: 0.55rem 1.3rem;
@@ -663,5 +827,87 @@ z-index: 0;
   .nav-btn {
     position: static;
     transform: none;
+  }
+}
+
+
+
+
+
+/* === Fullscreen Modal === */
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.fullscreen-modal img {
+  width: 100%;
+  max-width: 1200px;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.fullscreen-modal img:hover {
+  transform: scale(1.01);
+}
+
+.fullscreen-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  text-shadow: 0 0 10px #fff;
+}
+
+.fullscreen-nav {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.fullscreen-nav button {
+  background-color: var(--dark);
+  border: none;
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: #111;
+  cursor: pointer;
+  animation: glow 1.5s infinite alternate;
+  box-shadow: 0 0 12px var(--primary);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px var(--primary);
+  }
+  100% {
+    box-shadow: 0 0 25px var(--accent);
+  }
+}
+
+@media (max-width: 768px) {
+  .fullscreen-modal img {
+    max-height: 70vh;
+    width: 100%;
+  }
+
+  .fullscreen-nav button {
+    font-size: 2rem;
+    padding: 0.4rem 0.8rem;
   }
 }
