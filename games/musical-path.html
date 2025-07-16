@@ -9,18 +9,35 @@
 </head>
 <body>
 
+  <div id="preloader">
+    <div class="hero-overlay">
+      <br>
+      <br>
+      <img src="./../images/logos/catarsis.png" alt="Logo Musical Path" class="logo" style="margin-top: -180px; position: absolute; left: 50%; transform: translateX(-50%); width: 100px; z-index: 100;" />
+      <h1 style="margin-top: -80px; font-size: 5rem; margin-bottom: -10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: var(--primary)">EL&nbsp;CAMINO</h1>
+      <h5 style="font-size: 1.2rem; font-family: Verdana, Geneva, Tahoma, sans-serif;">¡Descubramos juntos el mundo de la improvisación musical!</h5>
+      <h1 style="font-size: 5rem; margin-top: -10px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: var(--primary)">MUSICAL</h1>
+      <a style="font-size: 1.5rem;" class="btn">Trailer ▶️</a> &nbsp;
+      <a style="font-size: 1.5rem;" class="btn btn2">Jugar 🎲</a>
+    </div>
+  </div>
+
+
   <header class="hero">
     <video autoplay muted loop playsinline class="hero-video">
       <source src="./../images/banner.mp4" type="video/mp4">
       Tu navegador no soporta video HTML5.
     </video>
     <div class="hero-overlay">
+            <br>
+      <br>
+
       <img src="./../images/logos/catarsis.png" alt="Logo Musical Path" class="logo" style="margin-top: -180px; position: absolute; left: 50%; transform: translateX(-50%); width: 100px; z-index: 100;" />
       <h1 style="margin-top: -50px; font-size: 5rem; margin-bottom: -10px; margin-top: -80px;">EL&nbsp;CAMINO</h1>
       <h5 style="font-size: 1.2rem; font-family: Verdana, Geneva, Tahoma, sans-serif;">¡Descubramos juntos el mundo de la improvisación musical!</h5>
       <h1 style="font-size: 5rem; margin-top: -10px; ">MUSICAL</h1>
-      <a id="openTrailerBtn" href="javascript:void(0);" class="btn">Ver Trailer ▶️</a> &nbsp;
-      <a id="playGameBtn" href="javascript:void(0);" class="btn btn2">Jugar 🎲</a>
+      <a style="font-size: 1.5rem;" id="openTrailerBtn" href="javascript:void(0);" class="btn">Trailer ▶️</a> &nbsp;
+      <a style="font-size: 1.5rem;" id="playGameBtn" href="javascript:void(0);" class="btn btn2">Jugar 🎲</a>
     </div>
   </header>
 
@@ -120,31 +137,38 @@
     <br/>
     
     <div class="">
-      <a style="font-size: 1.5rem;" href="https://catarsismusical.bigcartel.com/" target="_blank" class="btn"> <strong style="color: var(--primary)">🛒 Catarsis Musical tienda </strong> 🛍️ en línea</a>
+      <a style="font-size: 1.5rem;" href="https://catarsismusical.bigcartel.com/" target="_blank" class="btn"> <strong style="color: var(--primary)">🛒 Catarsis Musical tienda </strong> 🛍️ en línea 😱</a>
     </div>
 
     <br/>
     <br/>
 
-    <div class="cards">
-      <div class="card" onclick="openModal(0)">
-        <img src="./../images/eBook.jpeg" alt="Libro" />
-        <h3>Libro Educativo</h3>
-        <p>Improvisación musical basada en cuerdas (Empirismo y Mnemotecnia): La músicaes geometría en el tiempo.</p>
-      </div>
-
-      <div class="card" onclick="openModal(1)">
-        <img src="./../images/black-shirt.png" alt="Camiseta" />
-        <h3>Merch Oficial</h3>
-        <p>Diseños únicos para mostrar tus emociones musicales.</p>
-      </div>
-
-      <div class="card" onclick="openModal(2)">
-        <img src="./../images/box.png" alt="Símbolo Musical" />
-        <h3>Juego de Mesa</h3>
-        <p>Aprende los grados musicales jugando con nuestro juego de mesa interactivo.</p>
-      </div>
+   <div class="cards">
+    <div class="card" onclick="openModal(0)">
+      <span class="price-badge">₡30.000</span>
+      <img src="./../images/eBook.jpeg" alt="Libro" />
+      <h3>Libro Educativo</h3>
+      <p>Improvisación musical basada en cuerdas (Empirismo y Mnemotecnia): La música es geometría en el tiempo.</p>
+      <a class="buy-btn" href="https://wa.me/506XXXXXXXX?text=Hola%2C%20quiero%20comprar%20el%20Libro%20Educativo%20%F0%9F%93%96.%20Cantidad%3A%201" target="_blank">Comprar por WhatsApp</a>
     </div>
+
+    <div class="card" onclick="openModal(1)">
+      <span class="price-badge">₡16.000</span>
+      <img src="./../images/black-shirt.png" alt="Camiseta" />
+      <h3>Merch Oficial</h3>
+      <p>Diseños únicos para mostrar tus emociones musicales.</p>
+      <a class="buy-btn" href="https://wa.me/506XXXXXXXX?text=Hola%2C%20quiero%20comprar%20Merch%20Oficial%20%F0%9F%91%95.%20Cantidad%3A%201" target="_blank">Comprar por WhatsApp</a>
+    </div>
+
+    <div class="card" onclick="openModal(2)">
+      <span class="price-badge">₡35.000</span>
+      <img src="./../images/box.png" alt="Juego" />
+      <h3>Juego de Mesa</h3>
+      <p>Aprende los grados musicales con nuestro juego de mesa exclusivo para toda la familia.</p>
+      <a class="buy-btn" href="https://wa.me/506XXXXXXXX?text=Hola%2C%20quiero%20comprar%20el%20Juego%20de%20Mesa%20%F0%9F%8E%AF.%20Cantidad%3A%201" target="_blank">Comprar por WhatsApp</a>
+    </div>
+  </div>
+
     
     <!-- Modal -->
     <div class="modal" id="modal">
@@ -158,9 +182,9 @@
   <section class="cta">
     <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">📲 ¡Versión digital gratuita!</h2>
     <br/>
-    <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Explora el juego desde tu computadora o <a style="color: var(--accent); font-weight: bolder;" href="https://play.google.com/store/apps/details?id=com.americapixelgames.musicalpath">dispositivo móvil. (Android)</a> </p>
-      <a target="_blank" href="https://www.youtube.com/watch?v=a2musNj58J0" class="btn">Ver Trailer ▶️</a> &nbsp;
-      <a href="#explora" class="btn btn2">Jugar 🎲</a>
+    <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Explora el juego desde tu <a target="_blank" style="color:purple; text-transform: uppercase; font-weight: bolder;" href="https://josegomez-dev.github.io/MusicalPath/">computadora</a> o <a style="color: var(--accent); font-weight: bolder;" href="https://play.google.com/store/apps/details?id=com.americapixelgames.musicalpath">dispositivo móvil. (Android)</a> </p>
+      <a style="font-size: 1.5rem;" target="_blank" href="https://www.youtube.com/watch?v=a2musNj58J0" class="btn">Trailer ▶️</a> &nbsp;
+      <a id="playGameBtn2" href="javascript:void(0);" style="font-size: 1.5rem;" class="btn btn2">Jugar 🎲</a>
       <br/>
       <br/>
       <strong>¡Aprende música de forma divertida!</strong>
@@ -210,6 +234,10 @@
     });
 
     document.getElementById("playGameBtn").addEventListener("click", () => {
+      // redirect on a new tab
+      window.open("https://josegomez-dev.github.io/MusicalPath/", "_blank");
+    });
+    document.getElementById("playGameBtn2").addEventListener("click", () => {
       // redirect on a new tab
       window.open("https://josegomez-dev.github.io/MusicalPath/", "_blank");
     });
@@ -488,6 +516,13 @@
     }
   </script>
 
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').style.display = 'none';
+      }, 3500); // Should match fade-out duration
+    });
+  </script>
 
 </body>
 </html>

@@ -180,6 +180,50 @@ body {
   border-radius: 10px;
 }
 
+
+.price-badge {
+  position: absolute;
+  background-color: var(--accent);
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  top: 10px;
+  right: 10px;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buy-btn {
+  margin-top: 1rem;
+  background-color: #25D366;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: var(--accent);
+}
+
+
+
+
+
+
 .cta {
   background: var(--primary);
   color: #111;
@@ -910,5 +954,46 @@ z-index: 0;
   .fullscreen-nav button {
     font-size: 2rem;
     padding: 0.4rem 0.8rem;
+  }
+}
+
+
+
+
+
+
+
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 2.8s;
+  pointer-events: none;
+  background-image: url('./../images/box-fade.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#preloader .btn {
+  pointer-events: all;
+  margin-top: 1rem;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }
