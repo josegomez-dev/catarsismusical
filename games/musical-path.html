@@ -17,7 +17,7 @@
     <div class="hero-overlay">
       <img src="./../images/logos/catarsis.png" alt="Logo Musical Path" class="logo" style="margin-top: -180px; position: absolute; left: 50%; transform: translateX(-50%); width: 100px; z-index: 100;" />
       <h1 style="margin-top: -50px; font-size: 5rem; margin-bottom: -10px; margin-top: -80px;">EL&nbsp;CAMINO</h1>
-      <h5 style="font-size: 1.2rem;">¡Descubramos juntos el mundo de la improvisación musical!</h5>
+      <h5 style="font-size: 1.2rem; font-family: Verdana, Geneva, Tahoma, sans-serif;">¡Descubramos juntos el mundo de la improvisación musical!</h5>
       <h1 style="font-size: 5rem; margin-top: -10px; ">MUSICAL</h1>
       <a id="openTrailerBtn" href="javascript:void(0);" class="btn">Ver Trailer ▶️</a> &nbsp;
       <a id="playGameBtn" href="javascript:void(0);" class="btn btn2">Jugar 🎲</a>
@@ -32,7 +32,7 @@
 
   <section id="explora" class="section showcase">
     <h2 style="color: var(--primary); font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Explora el Camino Musical</h2>
-    <strong>¡Descubre nuestros productos exclusivos!</strong>
+    <strong style="font-family: Verdana, Geneva, Tahoma, sans-serif;">¡Descubre nuestros productos exclusivos!</strong>
     <br/>
     <br/>
 
@@ -40,7 +40,7 @@
       <div class="card" onclick="openModal(0)">
         <img src="./../images/eBook.jpeg" alt="Libro" />
         <h3>Libro Educativo</h3>
-        <p>Trascendencia Filosófica de la Improvisación Musical.</p>
+        <p>Improvisación musical basada en cuerdas (Empirismo y Mnemotecnia): La músicaes geometría en el tiempo.</p>
       </div>
 
       <div class="card" onclick="openModal(1)">
@@ -51,7 +51,7 @@
 
       <div class="card" onclick="openModal(2)">
         <img src="./../images/box.png" alt="Símbolo Musical" />
-        <h3>El Camino Musical</h3>
+        <h3>Juego de Mesa</h3>
         <p>Aprende los grados musicales jugando con nuestro juego de mesa interactivo.</p>
       </div>
     </div>
@@ -70,7 +70,7 @@
   <section>
     <div class="head">
       <h2 style="color: var(--primary);">Instrucciones del Juego</h2>
-      <strong>¡Aprende y diviértete con el Camino Musical! Aquí te mostramos cómo jugar:</strong>
+      <strong style="font-family: Verdana, Geneva, Tahoma, sans-serif;">¡Aprende y diviértete con el Camino Musical! Aquí te mostramos cómo jugar:</strong>
 
       <div class="controls">
         <button id="prev" class="nav-btn" aria-label="Prev">‹</button>
@@ -151,16 +151,20 @@
 
   <section class="cta">
     <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">📲 ¡Versión digital gratuita!</h2>
-    <p>Explora el juego desde tu celular, tablet o computadora. ¡Aprende música de forma divertida!</p>
-      <br/>
+    <br/>
+    <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Explora el juego desde tu computadora o <a style="color: var(--accent); font-weight: bolder;" href="https://play.google.com/store/apps/details?id=com.americapixelgames.musicalpath">dispositivo móvil. (Android)</a> </p>
       <a target="_blank" href="https://www.youtube.com/watch?v=a2musNj58J0" class="btn">Ver Trailer ▶️</a> &nbsp;
       <a href="#explora" class="btn btn2">Jugar 🎲</a>
+      <br/>
+      <br/>
+      <strong>¡Aprende música de forma divertida!</strong>
+      <br/>
       <br/>
       <img onclick="window.open(`https://americapixelgames.com/`, '_blank')" src="./../images/america.png" width="100px" alt="" style="cursor: pointer; ">
       <!-- 👇 Avatar Image -->
       <div class="avatar-wrapper">
         <!-- 💬 Speech bubble -->
-        <div class="speech-bubble">¡Hola, ya probaste <strong style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-transform: uppercase; color: var(--accent);">el camino musical</strong>?!</div>
+        <div class="speech-bubble" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">¡Hola, ya probaste <strong style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; text-transform: uppercase; color: var(--accent);">el camino musical</strong>?!</div>
         <!-- 🧑 Avatar -->
         <img src="./../images/avatar.png" alt="Avatar diciendo hola" class="avatar-hi" />
       </div>
@@ -169,8 +173,10 @@
 
 
   <footer>
-    <img width="250" style="margin: -55px 0;" src="./../images/logos/doradeogomez.png" alt="Logo Musical Path" class="logo" />
-    <p>Hecho con ❤️ por José Alejandro Gómez Castro</p>
+    <a href="https://josegomez-dev.github.io/catarsismusical/welcome.html" target="_blank" class="logo-link">
+      <img width="250" style="margin: -55px 0;" src="./../images/logos/doradeogomez.png" alt="Logo Musical Path" class="logo" />
+    </a>
+    <p>Hecho con ❤️ por <a style="color: var(--accent)" href="https://www.linkedin.com/in/josealejandrogomezcastro/">José Alejandro Gómez Castro</a></p>
     <div class="social">
       <a href="https://wa.me/50662402974" target="_blank"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.facebook.com/profile.php?id=61553836722791" target="_blank"><i class="fab fa-facebook"></i></a>
@@ -213,19 +219,22 @@
         <p>Este libro acompaña el juego e introduce conceptos como geometría sagrada musical, escalas y juegos para improvisar.</p>
         <img src="./../images/eBook.jpeg" style="width:100%; border-radius:10px; margin-top:1rem;" />
         <p class="pdt-note">Disponible en formato digital y físico.</p>
-        <a href="https://online.pubhtml5.com/sllt/aukj/" target="_blank" class="btn">Descargar eBook Gratis</a> 
+        <a style="color: var(--primary);" href="https://online.pubhtml5.com/sllt/aukj/" target="_blank" class="btn">Descargar eBook Gratis</a> &nbsp;&nbsp;
+        <a href="#" onclick="sendWhatsAppOrder('Libro: Improvisación musical basada en cuerdas (Empirismo y Mnemotecnia): La músicaes geometría en el tiempo.')" class="btn" style="background-color: #25d366; color: white; margin-top: 0.5rem;">Comprar por WhatsApp</a>
         `,
         `
         <h2>👕 Camiseta Oficial</h2>
         <p>Una camiseta original con emociones musicales. Disponible en tallas para niños, jóvenes y adultos.</p>
         <img src="./../images/black-shirt.png" style="width:100%; border-radius:10px; margin-top:1rem;" />
         <p class="pdt-note">Disponible en varias tallas y colores.</p>
-        <a href="https://catarsismusical.bigcartel.com/" target="_blank" class="btn">Ir a tienda en linea</a>  
+        <a style="color: var(--primary);" href="https://catarsismusical.bigcartel.com/" target="_blank" class="btn">Ir a tienda en linea</a> &nbsp;&nbsp;
+        <a href="#" onclick="sendWhatsAppOrder('Camiseta Oficial')" class="btn" style="background-color: #25d366; color: white; margin-top: 0.5rem;">Comprar por WhatsApp</a>
         `,
         `
         <div>
           <h2>🎬 Trailer del Juego</h2>
           <p>¡Explora el universo del Camino Musical con este video!</p>
+          <img src="./../images/box.png" style="width:100%; border-radius:10px; margin-top:1rem;" />
           <iframe src="https://www.youtube.com/embed/a2musNj58J0"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -458,6 +467,19 @@
       });
     });
 
+  </script>
+
+  <script>
+    function sendWhatsAppOrder(productName) {
+      const qty = document.getElementById('whatsappQty')?.value || 1;
+      const phone = "50662402974"; // Your WhatsApp number
+      const message = `Hola, quiero comprar: *${productName}*, cantidad: ?. Por favor, envíenme más información.`;
+
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${phone}?text=${encodedMessage}`;
+
+      window.open(whatsappURL, "_blank");
+    }
   </script>
 
 

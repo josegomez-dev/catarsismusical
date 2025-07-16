@@ -640,7 +640,7 @@ z-index: 0;
 }
 
 .project-card__thumb {
-  width: 133px;
+  width: 173px;
   height: 269px;
   border-radius: 0.45rem;
   object-fit: cover;
@@ -659,6 +659,7 @@ z-index: 0;
   overflow: auto;
   box-shadow: 0 4px 10px rgba(250, 250, 250, 0.9);
   border: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .project-card__btn {
   padding: 0.55rem 1.3rem;
