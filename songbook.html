@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cancionero - Biblioteca Musical Interactiva</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #151b2e;
+            --bg-card: #1a2235;
+            --bg-hover: #1f2840;
+            --accent-primary: #6366f1;
+            --accent-secondary: #8b5cf6;
+            --accent-tertiary: #ec4899;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: #2d3548;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #0f1629 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .controls {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-md);
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+
+        .search-box {
+            position: relative;
+            animation: searchGlow 3s infinite alternate;
+            z-index: 10;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.15rem 1.25rem;
+            background: var(--bg-card);
+            border: 2px solid transparent;
+            border-radius: 14px;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 0 1px var(--border-color);
+        }
+
+        .search-input.typing {
+            color: var(--accent-secondary);
+            font-style: italic;
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.25), inset 0 0 0 2px var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        @keyframes searchGlow {
+            0% {
+                filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.1));
+                transform: scale(1);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.25));
+                transform: scale(1.01);
+            }
+        }
+
+        .search-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.625rem;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+        }
+
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-btn {
+            padding: 0.4rem 0.875rem;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-primary);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-color: transparent;
+            color: white;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Colorful vibe filter buttons */
+        .filter-btn.vibe-filter.active {
+            background: var(--vibe-bg);
+            color: var(--vibe-text);
+            border-color: var(--vibe-text);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Colorful backing track filter buttons */
+        .filter-btn.backing-filter.active {
+            background: var(--option-bg);
+            color: var(--option-text);
+            border-color: var(--option-text);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .sort-select {
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sort-select:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        .sort-select:hover {
+            border-color: var(--accent-primary);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.875rem 1.25rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        .stats-info {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .stats-count {
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .clear-filters {
+            padding: 0.4rem 1rem;
+            background: transparent;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .clear-filters:hover {
+            border-color: var(--accent-tertiary);
+            color: var(--accent-tertiary);
+            transform: translateY(-2px);
+        }
+
+        .songbook-list {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+
+        .song-item {
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        .song-item:last-child {
+            border-bottom: none;
+        }
+
+        .song-row {
+            display: grid;
+            grid-template-columns: 2fr 2.5fr 0.8fr 60px;
+            gap: 1rem;
+            padding: 0.875rem 1.25rem;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .song-row:hover {
+            background: var(--bg-hover);
+        }
+
+
+
+        .song-main {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .song-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .song-artist {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            float: auto;
+        }
+
+        .song-vibe {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            width: fit-content;
+            margin-top: 0.25rem;
+        }
+
+        .backing-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .backing-indicator.available {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .backing-indicator.unavailable {
+            background: rgba(100, 116, 139, 0.15);
+            color: var(--text-muted);
+            display: none;
+        }
+
+        .expand-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        .song-row.expanded {
+            background: var(--bg-hover);
+        }
+
+        .song-row.expanded .expand-icon {
+            transform: rotate(180deg);
+            color: var(--accent-primary);
+        }
+
+        .song-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease, opacity 0.4s ease;
+            padding: 0 1.25rem;
+            opacity: 0;
+            background: var(--bg-hover);
+        }
+
+        .song-details.expanded {
+            max-height: 200px;
+            padding: 0 1.25rem 1.25rem 1.25rem;
+            opacity: 1;
+        }
+
+        .fact-content {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            background: rgba(99, 102, 241, 0.05);
+            border-left: 3px solid var(--accent-primary);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 0.5rem;
+        }
+
+        .fact-icon {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .fact-text {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        .tag.genre {
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--accent-primary);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .tag.vibe {
+            background: rgba(139, 92, 246, 0.15);
+            color: var(--accent-secondary);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .backing-status-full {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.875rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .backing-status-full.available {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .backing-status-full.unavailable {
+            background: rgba(100, 116, 139, 0.15);
+            color: var(--text-muted);
+            border: 1px solid rgba(100, 116, 139, 0.3);
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: currentColor;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .no-results-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .no-results-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .no-results-hint {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .song-row {
+                grid-template-columns: 2fr 1.4fr 60px;
+                gap: 0.75rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .controls {
+                padding: 1.25rem;
+            }
+
+            .filters {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 0.75rem;
+                text-align: center;
+            }
+
+            .song-row {
+                grid-template-columns: 1fr auto auto;
+                gap: 0.5rem;
+                padding: 1rem 0.75rem;
+            }
+
+            .song-main {
+                min-width: 0;
+                overflow: hidden;
+            }
+
+            .song-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 0.85rem;
+            }
+
+            .song-artist {
+                font-size: 0.75rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .song-vibe {
+                display: inline-block;
+                font-size: 0.6rem;
+                padding: 0.2rem 0.4rem;
+            }
+
+            .backing-indicator {
+                display: flex;
+                width: 28px;
+                height: 28px;
+                font-size: 0.9rem;
+            }
+
+            .details-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* please add some shine effect on the strong name and artist */
+        .strong-name-artist {
+            font-weight: 700;
+            color: var(--accent-primary);
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.2rem;
+            letter-spacing: 0.10em;
+            background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shine 2s linear infinite;
+
+        }
+
+        /* Modal Styles - Copied & Adapted from voting.html */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 26, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-backdrop.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dedication-modal {
+            background: var(--bg-card);
+            border: 1px solid #ef4444;
+            /* Red border for danger action */
+            border-radius: 20px;
+            width: 90%;
+            max-width: 450px;
+            padding: 2rem;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            text-align: center;
+        }
+
+        .modal-backdrop.active .dedication-modal {
+            transform: translateY(0);
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn-cancel {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-cancel:hover {
+            background: var(--bg-hover);
+        }
+
+        .btn-confirm {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            box-shadow: 0 4px 6px rgba(239, 68, 68, 0.2);
+        }
+
+        .btn-confirm:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(239, 68, 68, 0.3);
+        }
+
+        /* Playlist Modal Styles */
+        .playlist-modal {
+            background: var(--bg-card);
+            border: 2px solid var(--accent-primary);
+            border-radius: 20px;
+            width: 95%;
+            max-width: 600px;
+            max-height: 85vh;
+            padding: 2rem;
+            transform: translateY(30px) scale(0.95);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .modal-backdrop.active .playlist-modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .playlist-modal-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .playlist-modal-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            margin-top: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .playlist-modal-emoji {
+            font-size: 3rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        .playlist-modal-songs {
+            overflow-y: auto;
+            flex: 1;
+            padding-right: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .playlist-modal-songs::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .playlist-modal-songs::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+            border-radius: 4px;
+        }
+
+        .playlist-modal-songs::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        .playlist-modal-songs::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        .modal-song-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .modal-song-item:hover {
+            background: var(--bg-hover);
+            border-color: var(--accent-primary);
+            transform: translateX(4px);
+        }
+
+        .modal-song-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .modal-song-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .modal-song-artist {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .modal-close-icon {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .modal-close-icon:hover {
+            color: var(--text-primary);
+            background: var(--bg-hover);
+            border-color: var(--accent-primary);
+        }
+
+        @keyframes selectPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+                border-color: var(--accent-primary);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(99, 102, 241, 0);
+                border-color: var(--accent-secondary);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+                border-color: var(--accent-primary);
+            }
+        }
+
+        .playlist-card.animating {
+            animation: selectPulse 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Playlist Carousel Styles */
+        .playlist-section {
+            margin-bottom: 2rem;
+        }
+
+        .playlist-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            box-shadow: inset 0 0 20px rgba(99, 102, 241, 0.05);
+            height: 300px;
+        }
+
+        .carousel-wrapper::before,
+        .carousel-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 80px;
+            height: 100%;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .carousel-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, var(--bg-secondary) 0%, transparent 100%);
+        }
+
+        .carousel-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, var(--bg-secondary) 0%, transparent 100%);
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .playlist-carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+        }
+
+        .carousel-nav-btn:hover {
+            background: var(--bg-hover);
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .carousel-nav-btn.prev {
+            left: 1rem;
+        }
+
+        .carousel-nav-btn.next {
+            right: 1rem;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            z-index: 20;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border-color);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.3, 0.0, 0.6, 1);
+            border: 1px solid var(--text-muted);
+            will-change: transform, background-color, box-shadow;
+        }
+
+        .dot:hover {
+            background: var(--text-secondary);
+            transform: scale(1.25);
+        }
+
+        .dot.active {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            transform: scale(1.4);
+            box-shadow: 0 0 12px rgba(99, 102, 241, 0.6), 0 0 24px rgba(99, 102, 241, 0.3);
+            animation: dotPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes dotPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 12px rgba(99, 102, 241, 0.6), 0 0 24px rgba(99, 102, 241, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 18px rgba(99, 102, 241, 0.8), 0 0 32px rgba(99, 102, 241, 0.5);
+            }
+        }
+
+        .playlist-card {
+            position: absolute;
+            width: 220px;
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 2px solid var(--border-color);
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.3s ease,
+                border-color 0.3s ease,
+                filter 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            text-align: center;
+            will-change: transform, opacity, filter;
+            z-index: 1;
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.6);
+            left: 50%;
+            top: 45%;
+        }
+
+        .playlist-card:hover {
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+        }
+
+        .playlist-card-emoji {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        .playlist-card-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .playlist-card-count {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-wrapper {
+                height: 250px;
+            }
+
+            .playlist-card {
+                width: 180px;
+                padding: 1rem;
+            }
+
+            .playlist-card-emoji {
+                font-size: 2rem;
+            }
+
+            .playlist-card-name {
+                font-size: 0.85rem;
+            }
+
+            .carousel-nav-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+
+            .carousel-dots {
+                bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Mi Cancionero</h1>
+            <p class="subtitle">Tu biblioteca musical personal, organizada y lista para compartir</p>
+        </header>
+
+        <!-- Playlist Carousel Section -->
+        <div class="playlist-section">
+            <label class="playlist-label">🎼 Musica en vivo para eventos con <strong class="strong-name-artist">José
+                    Alejandro Gómez Castro</strong></label>
+            <div class="carousel-wrapper">
+                <button class="carousel-nav-btn prev" id="prevBtn" onclick="scrollCarousel(-1)">‹</button>
+                <div class="carousel-container">
+                    <div class="playlist-carousel" id="playlistCarousel"></div>
+                </div>
+                <button class="carousel-nav-btn next" id="nextBtn" onclick="scrollCarousel(1)">›</button>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+
+            <div class="filters">
+                <div class="filter-group" style="grid-column: 1 / -1;">
+                    <label class="filter-label">Selecciona para filtrar por generos</label>
+                    <div class="filter-options" id="unifiedFilters"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-box" style="margin-bottom: 1.5rem;">
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por título o artista...">
+        </div>
+
+        <div class="stats">
+            <div class="stats-info">
+                Mostrando <span class="stats-count" id="displayedCount">0</span> de <span class="stats-count"
+                    id="totalCount">0</span> canciones
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <select class="sort-select" id="sortSelect">
+                    <option value="artist">🎤 Por Artista</option>
+                    <option value="alphabetical">📝 Alfabético</option>
+                    <option value="vibe">🎵 Por Ambiente</option>
+                    <option value="backing-track">🎹 Con Pista Primero</option>
+                </select>
+                <button class="clear-filters" id="clearFilters">Limpiar Filtros</button>
+            </div>
+        </div>
+
+        <div class="songbook-list" id="songbookList"></div>
+    </div>
+
+    <!-- Playlist Songs Modal -->
+    <div class="modal-backdrop" id="playlistModalBackdrop" onclick="closePlaylistModal(event)">
+        <div class="playlist-modal" onclick="event.stopPropagation()">
+            <button class="modal-close-icon" onclick="closePlaylistModal()">✕</button>
+            <div class="playlist-modal-header" id="playlistModalHeader">
+                <!-- Emoji and Title injected here -->
+            </div>
+            <div class="playlist-modal-songs" id="playlistModalSongs">
+                <!-- Songs injected here -->
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-cancel" onclick="closePlaylistModal()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import shared data -->
+    <script src="consts/song-facts.js"></script>
+    <script src="consts/artist-flags.js"></script>
+    <script src="consts/songs.js"></script>
+    <script src="consts/categories.js"></script>
+
+    <script>
+        // Use songs from shared data
+        const songs = SONGS;
+
+        // State management
+        let activeFilters = {
+            vibe: [],
+            backingTrack: []
+        };
+        let searchQuery = '';
+
+        let currentSort = 'artist'; // alphabetical, artist, vibe, backing track
+
+        // Carousel state management
+        let carouselState = {
+            currentSlide: 0,
+            autoScrollInterval: null,
+            isAutoScrolling: true,
+            totalSlides: PLAYLISTS.length
+        };
+
+        // Initialize playlist carousel
+        function initializePlaylistCarousel() {
+            const carousel = document.getElementById('playlistCarousel');
+
+            carousel.innerHTML = PLAYLISTS.map((playlist, index) => {
+                const activeSongs = playlist.songIds.length;
+
+                return `
+                    <div class="playlist-card" 
+                         id="playlist-card-${index}"
+                         onclick="handlePlaylistClick(${index}, '${playlist.id}')"
+                         data-bg="${playlist.bgColor}">
+                        <div class="playlist-card-emoji">${playlist.emoji}</div>
+                        <div class="playlist-card-name">${playlist.name}</div>
+                        <div class="playlist-card-count">${activeSongs} canciones</div>
+                    </div>
+                `;
+            }).join('');
+
+            // Initialize carousel dots
+            initializeCarouselDots();
+
+            // Start auto-scroll
+            startAutoScroll();
+
+            // Update scroll position
+            updateCarouselScroll();
+        }
+
+        function initializeCarouselDots() {
+            const dotsContainer = document.getElementById('carouselDots');
+            const maxDots = carouselState.totalSlides;
+
+            dotsContainer.innerHTML = Array(maxDots).fill(0).map((_, index) => `
+                <div class="dot ${index === carouselState.currentSlide ? 'active' : ''}" 
+                     onclick="goToSlide(${index})" 
+                     data-slide="${index}"></div>
+            `).join('');
+        }
+
+        function updateCarouselScroll() {
+            const carousel = document.getElementById('playlistCarousel');
+            if (!carousel || carousel.children.length === 0) return;
+
+            const total = carouselState.totalSlides;
+            const current = carouselState.currentSlide;
+
+            Array.from(carousel.children).forEach((card, i) => {
+                let diff = i - current;
+
+                // Account for looping
+                if (diff > Math.floor(total / 2)) diff -= total;
+                if (diff < -Math.floor(total / 2)) diff += total;
+
+                // Set positions based on diff
+                if (diff === 0) {
+                    // Center active card
+                    const bgColor = card.getAttribute('data-bg');
+                    card.style.transform = 'translate(-50%, -50%) scale(1)';
+                    card.style.zIndex = '10';
+                    card.style.opacity = '1';
+                    card.style.pointerEvents = 'auto';
+                    card.style.borderColor = bgColor || 'var(--accent-primary)';
+                    card.style.backgroundColor = bgColor ? `${bgColor}30` : 'var(--bg-hover)';
+                    card.style.boxShadow = `0 10px 30px ${bgColor ? bgColor + '60' : 'rgba(99,102,241,0.5)'}`;
+                    card.style.filter = 'none';
+                } else if (diff === -1 || diff === 1) {
+                    // Side thumbnails
+                    const translateX = diff === -1 ? '-140%' : '40%';
+                    const rotateY = diff === -1 ? '15deg' : '-15deg';
+                    card.style.transform = `translate(${translateX}, -50%) scale(0.75) perspective(600px) rotateY(${rotateY})`;
+                    card.style.zIndex = '5';
+                    card.style.opacity = '0.7';
+                    card.style.pointerEvents = 'auto';
+                    card.style.borderColor = 'var(--border-color)';
+                    card.style.backgroundColor = 'var(--bg-card)';
+                    card.style.boxShadow = 'none';
+                    card.style.filter = 'grayscale(40%)';
+                } else if (diff === -2 || diff === 2) {
+                    // Further side thumbnails
+                    const translateX = diff === -2 ? '-210%' : '110%';
+                    const rotateY = diff === -2 ? '25deg' : '-25deg';
+                    card.style.transform = `translate(${translateX}, -50%) scale(0.55) perspective(600px) rotateY(${rotateY})`;
+                    card.style.zIndex = '3';
+                    card.style.opacity = '0.3';
+                    card.style.pointerEvents = 'auto'; // allow clicking
+                    card.style.borderColor = 'var(--border-color)';
+                    card.style.backgroundColor = 'var(--bg-card)';
+                    card.style.boxShadow = 'none';
+                    card.style.filter = 'grayscale(70%)';
+                } else {
+                    // Hidden cards
+                    const translateX = diff < 0 ? '-300%' : '200%';
+                    card.style.transform = `translate(${translateX}, -50%) scale(0.4)`;
+                    card.style.zIndex = '1';
+                    card.style.opacity = '0';
+                    card.style.pointerEvents = 'none';
+                }
+            });
+
+            updateDots();
+        }
+
+        function updateDots() {
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                if (index === carouselState.currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function scrollCarousel(direction) {
+            // Stop auto-scroll when user manually scrolls
+            stopAutoScroll();
+
+            const total = carouselState.totalSlides;
+            carouselState.currentSlide = (carouselState.currentSlide + direction + total) % total;
+
+            updateCarouselScroll();
+
+            // Resume auto-scroll after 5 seconds of inactivity
+            setTimeout(() => {
+                if (!carouselState.isAutoScrolling) {
+                    startAutoScroll();
+                }
+            }, 2000);
+        }
+
+        function goToSlide(slideIndex) {
+            // Stop auto-scroll when user clicks a dot
+            stopAutoScroll();
+
+            carouselState.currentSlide = slideIndex;
+            updateCarouselScroll();
+
+            // Resume auto-scroll after 5 seconds of inactivity
+            setTimeout(() => {
+                if (!carouselState.isAutoScrolling) {
+                    startAutoScroll();
+                }
+            }, 2000);
+        }
+
+        function autoScrollCarousel() {
+            const total = carouselState.totalSlides;
+            carouselState.currentSlide = (carouselState.currentSlide + 1) % total;
+            updateCarouselScroll();
+        }
+
+        function startAutoScroll() {
+            if (!carouselState.isAutoScrolling) {
+                carouselState.isAutoScrolling = true;
+                carouselState.autoScrollInterval = setInterval(autoScrollCarousel, 2500); // Auto-scroll every 2.5 seconds
+            }
+        }
+
+        function stopAutoScroll() {
+            carouselState.isAutoScrolling = false;
+            if (carouselState.autoScrollInterval) {
+                clearInterval(carouselState.autoScrollInterval);
+            }
+        }
+
+        function handlePlaylistClick(index, playlistId) {
+            if (carouselState.currentSlide !== index) {
+                // Not centered, just scroll to it
+                goToSlide(index);
+                return;
+            }
+
+            // It is centered, open the modal
+            openPlaylistModal(playlistId);
+        }
+
+        function openPlaylistModal(playlistId) {
+            const playlist = getPlaylistById(playlistId);
+            if (!playlist) return;
+
+            const modalBackdrop = document.getElementById('playlistModalBackdrop');
+            const header = document.getElementById('playlistModalHeader');
+            const songsContainer = document.getElementById('playlistModalSongs');
+
+            // Setup Header
+            header.innerHTML = `
+                <div class="playlist-modal-emoji">${playlist.emoji}</div>
+                <h2>${playlist.name}</h2>
+                <p class="subtitle" style="margin-top: 0.5rem;">${playlist.description || playlist.songIds.length + ' canciones'}</p>
+            `;
+
+            // Setup Songs list
+            const playlistSongs = songs.filter(song => playlist.songIds.includes(song.id));
+
+            if (playlistSongs.length === 0) {
+                songsContainer.innerHTML = `<div class="no-results" style="padding: 2rem;"><div class="no-results-text">No hay canciones en esta playlist</div></div>`;
+            } else {
+                songsContainer.innerHTML = playlistSongs.map((song, index) => {
+                    const vibeData = getVibeById(song.vibe);
+                    const vibeDisplay = vibeData ? `${vibeData.emoji} ` : '';
+
+                    return `
+                        <div class="modal-song-item" style="animation: fadeInUp 0.4s ease-out ${index * 0.05}s both;">
+                            <div class="modal-song-info">
+                                <div class="modal-song-title">${vibeDisplay}${song.title}</div>
+                                <div class="modal-song-artist">${song.artist} ${ARTIST_FLAGS[song.artist] || ''}</div>
+                            </div>
+                            <div class="backing-indicator ${song.backingTrack ? 'available' : 'unavailable'}" style="width: 24px; height: 24px; font-size: 0.8rem;">
+                                ${song.backingTrack ? '✓' : '✕'}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            modalBackdrop.classList.add('active');
+            stopAutoScroll(); // ensure carousel stops auto-scrolling
+        }
+
+        function closePlaylistModal(event) {
+            // If event is passed and the target isn't the backdrop, ignore
+            if (event && event.target.id !== 'playlistModalBackdrop') return;
+
+            const modalBackdrop = document.getElementById('playlistModalBackdrop');
+            modalBackdrop.classList.remove('active');
+
+            // Resume scroll if it was scrolling
+            setTimeout(() => {
+                if (!carouselState.isAutoScrolling) {
+                    startAutoScroll();
+                }
+            }, 1000);
+        }
+
+
+
+        // Initialize filters
+        function initializeFilters() {
+            const container = document.getElementById('unifiedFilters');
+            const sortSelect = document.getElementById('sortSelect');
+
+            // 1. Render Vibe Filters
+            // Using VIBES array from categories.js
+            const vibeHtml = VIBES.map(vibe => {
+                const isActive = activeFilters.vibe.includes(vibe.id);
+                return `
+                    <button class="filter-btn ${isActive ? 'active' : ''}" 
+                            onclick="toggleFilter('vibe', '${vibe.id}')"
+                            style="flex: 1 1 auto; ${isActive ? `background-color: ${vibe.bgColor}; border-color: ${vibe.textColor}; color: ${vibe.textColor};` : ''}">
+                        ${vibe.emoji} ${vibe.name}
+                    </button>
+                `;
+            }).join('');
+
+            // 2. Render Backing Track Filters
+            const backingHtml = `
+                <button class="filter-btn ${activeFilters.backingTrack.includes('available') ? 'active' : ''}"
+                        onclick="toggleFilter('backingTrack', 'available')"
+                        style="flex: 1 1 auto;"
+                        data-type="backing">
+                    🎤 Con Pista
+                </button>
+                <button class="filter-btn ${activeFilters.backingTrack.includes('unavailable') ? 'active' : ''}"
+                        onclick="toggleFilter('backingTrack', 'unavailable')"
+                        style="flex: 1 1 auto;"
+                        data-type="backing">
+                    🎸 Acústico
+                </button>
+            `;
+
+            container.innerHTML = vibeHtml;
+
+            // Sort listener
+            sortSelect.addEventListener('change', (e) => {
+                currentSort = e.target.value;
+                renderSongs();
+            });
+        }
+
+        function toggleFilter(type, value) {
+            const index = activeFilters[type].indexOf(value);
+
+            if (index === -1) {
+                activeFilters[type].push(value);
+            } else {
+                activeFilters[type].splice(index, 1);
+            }
+            
+            if (type === 'vibe') {
+                const searchInput = document.getElementById('searchInput');
+                if (typeof isTyping !== 'undefined' && isTyping) {
+                    isTyping = false;
+                    clearTimeout(typingTimeout);
+                    searchInput.classList.remove('typing');
+                }
+                if (activeFilters.vibe.length > 0) {
+                    const vibeNames = activeFilters.vibe.map(v => {
+                        const vData = getVibeById(v);
+                        return vData ? vData.name : v;
+                    }).join(', ');
+                    searchInput.value = vibeNames;
+                    searchQuery = vibeNames;
+                } else {
+                    searchInput.value = '';
+                    searchQuery = '';
+                }
+            }
+
+            // Re-render filters to show active state
+            initializeFilters();
+
+            // Filter songs
+            renderSongs();
+            
+            checkAndResumeTypewriter();
+        }
+
+        function getSortedSongs(songsToSort) {
+            const sorted = [...songsToSort];
+            switch (currentSort) {
+                case 'alphabetical':
+                    return sorted.sort((a, b) => a.title.localeCompare(b.title));
+                case 'artist':
+                    return sorted.sort((a, b) => a.artist.localeCompare(b.artist));
+                case 'vibe':
+                    return sorted.sort((a, b) => {
+                        const vibeA = getVibeById(a.vibe)?.name || a.vibe;
+                        const vibeB = getVibeById(b.vibe)?.name || b.vibe;
+                        return vibeA.localeCompare(vibeB);
+                    });
+                default:
+                    return sorted;
+            }
+        }
+
+        function filterSongs() {
+            return songs.filter(song => {
+                // Search filter
+                const vibeData = getVibeById(song.vibe);
+                const vibeName = vibeData ? vibeData.name.toLowerCase() : song.vibe.toLowerCase();
+                
+                let matchesSearch = true;
+                if (searchQuery.trim() !== '') {
+                    const searchTerms = searchQuery.split(',').map(t => t.trim().toLowerCase()).filter(t => t);
+                    matchesSearch = searchTerms.length === 0 || searchTerms.some(term => 
+                        song.title.toLowerCase().includes(term) ||
+                        song.artist.toLowerCase().includes(term) ||
+                        vibeName.includes(term)
+                    );
+                }
+
+                // Vibe filter
+                const matchesVibe = activeFilters.vibe.length === 0 ||
+                    activeFilters.vibe.includes(song.vibe);
+
+                // Backing track filter
+                // Note: values are 'available' (true) and 'unavailable' (false)
+                const matchesBackingTrack = activeFilters.backingTrack.length === 0 ||
+                    (activeFilters.backingTrack.includes('available') && song.backingTrack) ||
+                    (activeFilters.backingTrack.includes('unavailable') && !song.backingTrack);
+
+                return matchesSearch && matchesVibe && matchesBackingTrack;
+            });
+        }
+
+
+
+        function renderSongs() {
+            const list = document.getElementById('songbookList');
+            let filteredSongs = filterSongs();
+
+            // Apply sorting
+            filteredSongs = getSortedSongs(filteredSongs);
+
+            // Update stats
+            document.getElementById('displayedCount').textContent = filteredSongs.length;
+            document.getElementById('totalCount').textContent = songs.length;
+
+            if (filteredSongs.length === 0) {
+                list.innerHTML = `
+                    <div class="no-results">
+                        <div class="no-results-icon">🎸</div>
+                        <div class="no-results-text">No se encontraron canciones</div>
+                        <div class="no-results-hint">Intenta ajustar tus filtros o búsqueda</div>
+                    </div>
+                `;
+                return;
+            }
+
+            list.innerHTML = filteredSongs.map(song => {
+                const vibeData = getVibeById(song.vibe);
+                const vibeDisplay = vibeData ? `${vibeData.emoji} ${vibeData.name}` : song.vibe;
+                const vibeStyle = vibeData ? `style="color: ${vibeData.textColor}"` : '';
+                const songFact = getSongFact(song.id);
+
+                return `
+                <div class="song-item" id="song-${song.id}">
+                    <div class="song-row" ${songFact ? 'onclick="toggleSongDetails(this)"' : ''} style="${songFact ? 'cursor: pointer;' : 'cursor: default;'}">
+                        <div class="song-main">
+                            <div class="song-title">${song.title}</div>
+                            <div class="song-vibe" ${vibeStyle}>${vibeDisplay}</div>
+                        </div>
+                        <div class="song-artist">${song.artist} ${ARTIST_FLAGS[song.artist] || ''}</div>
+                        <div class="backing-indicator ${song.backingTrack ? 'available' : 'unavailable'}">
+                            ${song.backingTrack ? '✓' : '✕'}
+                        </div>
+                        ${songFact ? `
+                        <div class="expand-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                        ` : `
+                        <div class="expand-icon" style="opacity: 0; pointer-events: none;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"></svg>
+                        </div>
+                        `}
+                    </div>
+                    ${songFact ? `
+                    <div class="song-details">
+                        <div class="fact-content">
+                            <div class="fact-icon">💡</div>
+                            <div class="fact-text">"${songFact}"</div>
+                        </div>
+                    </div>
+                    ` : ''}
+                </div>
+            `;
+            }).join('');
+        }
+
+        // Search Input listeners
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderSongs();
+        });
+
+        // Typewriter effect
+        const searchExamples = ["Luis Miguel", "Soda Stereo", "Boleros", "Joan Sebastian", "Rock Latino", "Trova"];
+        let typeWriterIndex = 0;
+        let charIndex = 0;
+        let isTyping = true;
+        let typingTimeout;
+
+        function typeWriter() {
+            if (!isTyping) return;
+
+            const currentExample = searchExamples[typeWriterIndex];
+
+            if (charIndex < currentExample.length) {
+                searchInput.value = currentExample.substring(0, charIndex + 1);
+                searchInput.classList.add('typing');
+                searchQuery = searchInput.value;
+                renderSongs();
+                charIndex++;
+                typingTimeout = setTimeout(typeWriter, 150);
+            } else {
+                typingTimeout = setTimeout(eraseWriter, 2500);
+            }
+        }
+
+        function eraseWriter() {
+            if (!isTyping) return;
+
+            const currentExample = searchExamples[typeWriterIndex];
+
+            if (charIndex > 0) {
+                searchInput.value = currentExample.substring(0, charIndex - 1);
+                searchQuery = searchInput.value;
+                renderSongs();
+                charIndex--;
+                typingTimeout = setTimeout(eraseWriter, 80);
+            } else {
+                typeWriterIndex = (typeWriterIndex + 1) % searchExamples.length;
+                typingTimeout = setTimeout(typeWriter, 600);
+            }
+        }
+
+        function checkAndResumeTypewriter() {
+            if (activeFilters.vibe.length === 0 && 
+                activeFilters.backingTrack.length === 0 && 
+                searchInput.value.trim() === '' &&
+                document.activeElement !== searchInput) {
+                if (!isTyping) {
+                    isTyping = true;
+                    typeWriterIndex = 0;
+                    charIndex = 0;
+                    clearTimeout(typingTimeout);
+                    typingTimeout = setTimeout(typeWriter, 1000);
+                }
+            }
+        }
+
+        searchInput.addEventListener('focus', () => {
+            if (isTyping) {
+                isTyping = false;
+                clearTimeout(typingTimeout);
+                searchInput.value = '';
+                searchQuery = '';
+                searchInput.classList.remove('typing');
+                renderSongs();
+            }
+        });
+
+        searchInput.addEventListener('blur', () => {
+            checkAndResumeTypewriter();
+        });
+
+        document.getElementById('clearFilters').addEventListener('click', () => {
+            activeFilters = {
+                vibe: [],
+                backingTrack: []
+            };
+            searchQuery = '';
+            document.getElementById('searchInput').value = '';
+
+            // Re-initialize all filters to clear all styling
+            initializeFilters();
+            initializePlaylistCarousel();
+
+            renderSongs();
+            
+            checkAndResumeTypewriter();
+        });
+
+        function toggleSongDetails(rowElement) {
+            const detailsElement = rowElement.nextElementSibling;
+            rowElement.classList.toggle('expanded');
+            if (rowElement.classList.contains('expanded')) {
+                rowElement.style.borderBottomColor = 'transparent';
+                detailsElement.classList.add('expanded');
+            } else {
+                rowElement.style.borderBottomColor = 'var(--border-color)';
+                detailsElement.classList.remove('expanded');
+            }
+        }
+
+        // Initialize
+        initializeFilters();
+        initializePlaylistCarousel();
+        renderSongs();
+
+        // Start typewriter on load
+        setTimeout(typeWriter, 2000);
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', () => {
+            stopAutoScroll();
+        });
+
+        // Pause auto-scroll when user hovers over carousel
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        if (carouselWrapper) {
+            carouselWrapper.addEventListener('mouseenter', () => {
+                stopAutoScroll();
+            });
+
+            carouselWrapper.addEventListener('mouseleave', () => {
+                setTimeout(() => {
+                    if (!carouselState.isAutoScrolling) {
+                        startAutoScroll();
+                    }
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>
