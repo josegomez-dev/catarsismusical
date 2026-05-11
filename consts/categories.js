@@ -200,7 +200,7 @@ const PLAYLISTS = [
     },
     {
         id: 'tradicional-costarricense-playlist',
-        name: '🇨Tradicional Costarricense',
+        name: 'Tradicional Costarricense',
         emoji: '🇨🇷',
         description: 'Lo mejor de la música nacional',
         bgColor: '#1d4ed8',
@@ -218,7 +218,7 @@ const PLAYLISTS = [
     },
     {
         id: 'salsa-playlist',
-        name: '🕺 Salsa pa\' bailar',
+        name: 'Salsa pa\' bailar',
         emoji: '🕺',
         description: 'La mejor salsa para sacarle fuego a la pista',
         bgColor: '#b45309',
@@ -227,7 +227,7 @@ const PLAYLISTS = [
     },
     {
         id: 'serenatas-madre-playlist',
-        name: '👑 Serenatas para la madre',
+        name: 'Serenatas para la madre',
         emoji: '👑',
         description: 'Las mejores canciones para la reina de la casa',
         bgColor: '#9d174d',

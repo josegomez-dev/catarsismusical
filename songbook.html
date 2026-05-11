@@ -18,17 +18,17 @@
         }
 
         :root {
-            --bg-primary: #0a0e1a;
-            --bg-secondary: #151b2e;
-            --bg-card: #1a2235;
-            --bg-hover: #1f2840;
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --bg-card: #242424;
+            --bg-hover: #2d2d2d;
             --accent-primary: #ceb68e;
             --accent-secondary: #ffc107;
             --accent-tertiary: #d4af37;
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
-            --border-color: #2d3548;
+            --border-color: #333333;
             --success: #10b981;
             --warning: #f59e0b;
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -38,7 +38,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, rgba(10, 14, 26, 0.75) 0%, rgba(15, 22, 41, 0.85) 100%), url('images/songbook-bg.jpg');
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.85) 0%, rgba(30, 30, 30, 0.95) 100%), url('images/songbook-bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -113,18 +113,18 @@
 
         .search-input:focus {
             outline: none;
-            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.25), inset 0 0 0 2px var(--accent-primary);
+            box-shadow: 0 8px 30px rgba(206, 182, 142, 0.3), inset 0 0 0 2px var(--accent-primary);
             transform: translateY(-2px);
         }
 
         @keyframes searchGlow {
             0% {
-                filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.1));
+                filter: drop-shadow(0 0 8px rgba(206, 182, 142, 0.2));
                 transform: scale(1);
             }
 
             100% {
-                filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.25));
+                filter: drop-shadow(0 0 16px rgba(255, 193, 7, 0.4));
                 transform: scale(1.01);
             }
         }
@@ -325,10 +325,11 @@
             font-weight: 600;
             padding: 0.25rem 0.5rem;
             border-radius: 4px;
-            background: rgba(139, 92, 246, 0.15);
-            border: 1px solid rgba(139, 92, 246, 0.3);
+            background: rgba(206, 182, 142, 0.1);
+            border: 1px solid rgba(206, 182, 142, 0.3);
             width: fit-content;
             margin-top: 0.25rem;
+            color: var(--accent-primary);
         }
 
         .backing-indicator {
@@ -410,15 +411,15 @@
         }
 
         .tag.genre {
-            background: rgba(99, 102, 241, 0.15);
+            background: rgba(206, 182, 142, 0.1);
             color: var(--accent-primary);
-            border: 1px solid rgba(99, 102, 241, 0.3);
+            border: 1px solid rgba(206, 182, 142, 0.3);
         }
 
         .tag.vibe {
-            background: rgba(139, 92, 246, 0.15);
+            background: rgba(255, 193, 7, 0.1);
             color: var(--accent-secondary);
-            border: 1px solid rgba(139, 92, 246, 0.3);
+            border: 1px solid rgba(255, 193, 7, 0.3);
         }
 
         .backing-status-full {
@@ -592,8 +593,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 14, 26, 0.8);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
             z-index: 1000;
             display: flex;
             justify-content: center;
@@ -1020,6 +1021,79 @@
             color: var(--text-muted);
         }
 
+        /* Share Buttons & Toast */
+        .share-card-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            z-index: 2;
+            opacity: 0;
+        }
+
+        .playlist-card:hover .share-card-btn {
+            opacity: 1;
+        }
+
+        .share-card-btn:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            transform: scale(1.1);
+        }
+
+        .share-modal-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--accent-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .share-modal-btn:hover {
+            background: var(--bg-hover);
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 3000;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            pointer-events: none;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
         @media (max-width: 768px) {
             .carousel-wrapper {
                 height: 250px;
@@ -1047,11 +1121,20 @@
             .carousel-dots {
                 bottom: 0.5rem;
             }
+
+            .share-card-btn {
+                opacity: 1; /* Always visible on mobile */
+                width: 28px;
+                height: 28px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">¡Enlace copiado al portapapeles!</div>
+
     <div class="container">
         <header>
             <div class="header-logo-wrapper" style="position: relative; display: inline-block; margin-bottom: 0.5rem;">
@@ -1165,6 +1248,9 @@
                          id="playlist-card-${index}"
                          onclick="handlePlaylistClick(${index}, '${playlist.id}')"
                          data-bg="${playlist.bgColor}">
+                        <button class="share-card-btn" onclick="sharePlaylist(event, '${playlist.id}')" title="Compartir playlist">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                        </button>
                         <div class="playlist-card-emoji">${playlist.emoji}</div>
                         <div class="playlist-card-name">${playlist.name}</div>
                         <div class="playlist-card-count">${activeSongs} canciones</div>
@@ -1342,6 +1428,10 @@
                 <div class="playlist-modal-emoji">${playlist.emoji}</div>
                 <h2>${playlist.name}</h2>
                 <p class="subtitle" style="margin-top: 0.5rem;">${playlist.description || playlist.songIds.length + ' canciones'}</p>
+                <button class="share-modal-btn" onclick="sharePlaylist(event, '${playlist.id}')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                    Compartir Playlist
+                </button>
             `;
 
             // Setup Songs list
@@ -1586,6 +1676,7 @@
         const searchInput = document.getElementById('searchInput');
 
         searchInput.addEventListener('input', (e) => {
+            typewriterDisabled = true;
             searchQuery = e.target.value;
             renderSongs();
         });
@@ -1595,6 +1686,7 @@
         let typeWriterIndex = 0;
         let charIndex = 0;
         let isTyping = true;
+        let typewriterDisabled = false;
         let typingTimeout;
 
         function typeWriter() {
@@ -1632,6 +1724,7 @@
         }
 
         function checkAndResumeTypewriter() {
+            if (typewriterDisabled) return;
             if (activeFilters.vibe.length === 0 &&
                 activeFilters.backingTrack.length === 0 &&
                 searchInput.value.trim() === '' &&
@@ -1647,6 +1740,7 @@
         }
 
         searchInput.addEventListener('focus', () => {
+            typewriterDisabled = true;
             if (isTyping) {
                 isTyping = false;
                 clearTimeout(typingTimeout);
@@ -1694,6 +1788,60 @@
         initializeFilters();
         initializePlaylistCarousel();
         renderSongs();
+
+        // Check for URL parameters
+        function checkUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const playlistId = urlParams.get('playlist');
+            if (playlistId) {
+                // Wait a moment for things to settle
+                setTimeout(() => {
+                    openPlaylistModal(playlistId);
+                }, 800);
+            }
+        }
+
+        function sharePlaylist(event, playlistId) {
+            if (event) event.stopPropagation();
+            
+            const shareUrl = `${window.location.origin}${window.location.pathname}?playlist=${playlistId}`;
+            
+            // Try modern clipboard API first
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(shareUrl).then(() => {
+                    showToast();
+                }).catch(err => {
+                    console.error('Error copying to clipboard: ', err);
+                    fallbackCopy(shareUrl);
+                });
+            } else {
+                fallbackCopy(shareUrl);
+            }
+        }
+
+        function fallbackCopy(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast();
+            } catch (err) {
+                console.error('Fallback copy failed', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        checkUrlParams();
 
         // Start typewriter on load
         setTimeout(typeWriter, 2000);
