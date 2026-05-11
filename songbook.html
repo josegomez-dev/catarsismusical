@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&family=Merriweather:ital,wght@0,400;0,900;1,400;1,900&display=swap"
         rel="stylesheet">
     <style>
         * {
@@ -22,9 +22,9 @@
             --bg-secondary: #151b2e;
             --bg-card: #1a2235;
             --bg-hover: #1f2840;
-            --accent-primary: #6366f1;
-            --accent-secondary: #8b5cf6;
-            --accent-tertiary: #ec4899;
+            --accent-primary: #ceb68e;
+            --accent-secondary: #ffc107;
+            --accent-tertiary: #d4af37;
             --text-primary: #f8fafc;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
@@ -38,7 +38,10 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, var(--bg-primary) 0%, #0f1629 100%);
+            background: linear-gradient(135deg, rgba(10, 14, 26, 0.75) 0%, rgba(15, 22, 41, 0.85) 100%), url('images/songbook-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: var(--text-primary);
             min-height: 100vh;
             padding: 2rem;
@@ -268,6 +271,9 @@
             overflow: hidden;
             box-shadow: var(--shadow-md);
             animation: fadeInUp 0.6s ease-out 0.3s both;
+            max-height: 60vh;
+            overflow-y: auto;
+            margin-bottom: 5rem;
         }
 
         .song-item {
@@ -833,11 +839,11 @@
         }
 
         .playlist-label {
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
+            font-family: 'Merriweather', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: 1.15rem;
+            color: var(--accent-primary);
             margin-bottom: 1rem;
             display: block;
         }
@@ -1048,14 +1054,19 @@
 <body>
     <div class="container">
         <header>
-            <h1>🎵 Mi Cancionero</h1>
-            <p class="subtitle">Tu biblioteca musical personal, organizada y lista para compartir</p>
+            <div class="header-logo-wrapper" style="position: relative; display: inline-block; margin-bottom: 0.5rem;">
+                <img src="images/logos/catarsis.png" alt="Catarsis Musical" style="width: 220px; height: auto;">
+                <img src="images/avatar.png" alt="José Alejandro"
+                    style="position: absolute; bottom: -5px; right: -15px; width: 75px; height: 75px; border-radius: 50%; border: 3px solid var(--accent-primary); box-shadow: 0 4px 15px rgba(0,0,0,0.5); object-fit: cover;">
+            </div>
+            <p class="subtitle">Biblioteca musical personal, organizada y lista para compartir</p>
         </header>
 
         <!-- Playlist Carousel Section -->
         <div class="playlist-section">
-            <label class="playlist-label">🎼 Musica en vivo para eventos con <strong class="strong-name-artist">José
-                    Alejandro Gómez Castro</strong></label>
+            <label class="playlist-label">Música en vivo para serenatas y eventos <br /> con &nbsp; <strong
+                    class="strong-name-artist" style="font-weight: 900; font-size: 2.5rem;"> José Alejandro Gómez
+                    Castro</strong></label>
             <div class="carousel-wrapper">
                 <button class="carousel-nav-btn prev" id="prevBtn" onclick="scrollCarousel(-1)">‹</button>
                 <div class="carousel-container">
@@ -1429,7 +1440,7 @@
             } else {
                 activeFilters[type].splice(index, 1);
             }
-            
+
             if (type === 'vibe') {
                 const searchInput = document.getElementById('searchInput');
                 if (typeof isTyping !== 'undefined' && isTyping) {
@@ -1455,7 +1466,7 @@
 
             // Filter songs
             renderSongs();
-            
+
             checkAndResumeTypewriter();
         }
 
@@ -1482,11 +1493,11 @@
                 // Search filter
                 const vibeData = getVibeById(song.vibe);
                 const vibeName = vibeData ? vibeData.name.toLowerCase() : song.vibe.toLowerCase();
-                
+
                 let matchesSearch = true;
                 if (searchQuery.trim() !== '') {
                     const searchTerms = searchQuery.split(',').map(t => t.trim().toLowerCase()).filter(t => t);
-                    matchesSearch = searchTerms.length === 0 || searchTerms.some(term => 
+                    matchesSearch = searchTerms.length === 0 || searchTerms.some(term =>
                         song.title.toLowerCase().includes(term) ||
                         song.artist.toLowerCase().includes(term) ||
                         vibeName.includes(term)
@@ -1621,8 +1632,8 @@
         }
 
         function checkAndResumeTypewriter() {
-            if (activeFilters.vibe.length === 0 && 
-                activeFilters.backingTrack.length === 0 && 
+            if (activeFilters.vibe.length === 0 &&
+                activeFilters.backingTrack.length === 0 &&
                 searchInput.value.trim() === '' &&
                 document.activeElement !== searchInput) {
                 if (!isTyping) {
@@ -1663,7 +1674,7 @@
             initializePlaylistCarousel();
 
             renderSongs();
-            
+
             checkAndResumeTypewriter();
         });
 
