@@ -4,17 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Cancionero - Biblioteca Musical Interactiva</title>
+    <title>Música en vivo para serenatas y eventos con José Alejandro Gómez Castro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&family=Merriweather:ital,wght@0,400;0,900;1,400;1,900&display=swap"
         rel="stylesheet">
+
+    <meta name="whatsapp:url" content="https://josegomez-dev.github.io/catarsismusical/">
+    <meta name="whatsapp:phone" content="+506 6240 2974">
+    <meta name="whatsapp:title" content="Música en vivo para serenatas y eventos con José Alejandro Gómez Castro">
+    <meta name="whatsapp:description"
+        content="Explora nuestra colección seleccionada, filtra por género o artista y encuentra la canción ideal para cada ocasión.">
+    <meta name="whatsapp:image" content="https://josegomez-dev.github.io/catarsismusical/images/songbook-bg-text.png">
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
         }
 
         :root {
@@ -38,7 +50,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, rgba(15, 15, 15, 0.85) 0%, rgba(30, 30, 30, 0.95) 100%), url('images/songbook-bg.jpg');
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.85) 0%, rgba(30, 30, 30, 0.65) 100%), url('images/songbook-bg.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -273,7 +285,7 @@
             animation: fadeInUp 0.6s ease-out 0.3s both;
             max-height: 60vh;
             overflow-y: auto;
-            margin-bottom: 5rem;
+            margin-bottom: 2rem;
         }
 
         .song-item {
@@ -1123,9 +1135,475 @@
             }
 
             .share-card-btn {
-                opacity: 1; /* Always visible on mobile */
+                opacity: 1;
+                /* Always visible on mobile */
                 width: 28px;
                 height: 28px;
+            }
+        }
+
+        /* ===== ORIGINAL SONGS LIBRARY ===== */
+        .orig-section {
+            margin-top: 3rem;
+            margin-bottom: 0;
+        }
+
+        .orig-section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .orig-section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .orig-section-sub {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.15rem;
+        }
+
+        .orig-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .orig-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .orig-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* YouTube embed thumbnail wrapper */
+        .orig-yt-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            cursor: pointer;
+        }
+
+        .orig-yt-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Lazy-load thumbnail overlay */
+        .orig-yt-thumb {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .orig-yt-play-btn {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 0, 0, 0.88);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, background 0.2s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .orig-yt-thumb:hover .orig-yt-play-btn {
+            background: #ff0000;
+            transform: scale(1.12);
+        }
+
+        .orig-yt-play-btn svg {
+            fill: #fff;
+            margin-left: 5px;
+        }
+
+        /* Spotify-only placeholder */
+        .orig-spotify-wrap {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #1a2a1a 0%, #0d1a0d 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .buttons-trio-los-gomez {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+        }
+
+
+        #trioLosGomez a {
+            color: var(--accent-primary);
+            background-color: #0a0a0a;
+            border-color: var(--accent-primary);
+            border-width: 1px;
+            border-style: solid;
+            padding: 0.5rem 0.8rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        #trioLosGomez a:hover {
+            color: var(--accent-secondary);
+            background-color: #0a0a0a;
+            cursor: pointer;
+        }
+
+        #trioLosGomez a:visited {
+            color: var(--accent-secondary);
+            background-color: #0a0a0a;
+        }
+
+        #trioLosGomez a:active {
+            color: var(--accent-secondary);
+            background-color: #0a0a0a;
+        }
+
+        .orig-spotify-icon {
+            width: 56px;
+            height: 56px;
+            background: #1DB954;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .orig-spotify-icon svg {
+            fill: #fff;
+        }
+
+        .orig-spotify-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            letter-spacing: 0.05em;
+        }
+
+        /* Card body */
+        .orig-card-body {
+            padding: 1rem 1.1rem 1.1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .orig-song-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .orig-song-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .orig-card-actions {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: auto;
+            padding-top: 0.75rem;
+        }
+
+        .orig-btn {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .orig-btn-yt {
+            background: rgba(255, 0, 0, 0.12);
+            color: #ff4444;
+            border: 1px solid rgba(255, 0, 0, 0.25);
+        }
+
+        .orig-btn-yt:hover {
+            background: #ff0000;
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .orig-btn-spotify {
+            background: rgba(29, 185, 84, 0.12);
+            color: #1DB954;
+            border: 1px solid rgba(29, 185, 84, 0.25);
+        }
+
+        .orig-btn-spotify:hover {
+            background: #1DB954;
+            color: #fff;
+            border-color: transparent;
+        }
+
+        /* ===== FULL-WIDTH FOOTER ===== */
+        .site-footer {
+            background: linear-gradient(135deg, #f5c518 0%, #e6b800 40%, #ffd700 100%);
+            padding: 3.5rem 0 0;
+            margin-top: 4rem;
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo-img {
+            height: 75px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .footer-desc {
+            font-size: 0.9rem;
+            color: #3a3a1a;
+            line-height: 1.6;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            background: rgba(0, 0, 0, 0.12);
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-social-link:hover {
+            background: #1a1a1a;
+            color: #f5c518;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .footer-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 2px;
+        }
+
+        .footer-text {
+            font-size: 0.88rem;
+            color: #3a3a1a;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-link-item a {
+            color: #2a2a0a;
+            text-decoration: none;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .footer-link-item a:hover {
+            color: #000;
+            transform: translateX(4px);
+        }
+
+        .footer-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.1rem;
+            background: rgba(0, 0, 0, 0.12);
+            border: 1.5px solid rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            color: #1a1a1a;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            margin-top: 0.5rem;
+            width: fit-content;
+        }
+
+        .footer-cta-btn:hover {
+            background: #1a1a1a;
+            color: #f5c518;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .footer-divider {
+            border: 0;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.18);
+            margin: 2rem 0 1.5rem;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: #3a3a1a;
+            background: rgba(0, 0, 0, 0.08);
+            padding: 1.25rem 2rem;
+            max-width: 100%;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom-links a {
+            color: #3a3a1a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: #000;
+        }
+
+        @media (max-width: 768px) {
+            .footer-inner {
+                padding: 0 1.25rem;
+            }
+
+            .footer-grid {
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem 1.25rem;
+            }
+
+            .orig-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1140,9 +1618,13 @@
             <div class="header-logo-wrapper" style="position: relative; display: inline-block; margin-bottom: 0.5rem;">
                 <img src="images/logos/catarsis.png" alt="Catarsis Musical" style="width: 220px; height: auto;">
                 <img src="images/avatar.png" alt="José Alejandro"
-                    style="position: absolute; bottom: -5px; right: -15px; width: 75px; height: 75px; border-radius: 50%; border: 3px solid var(--accent-primary); box-shadow: 0 4px 15px rgba(0,0,0,0.5); object-fit: cover;">
+                    style="position: absolute; bottom: -5px; right: -15px; height: 75px; object-fit: cover;">
             </div>
-            <p class="subtitle">Biblioteca musical personal, organizada y lista para compartir</p>
+            <p style="text-align: center; color: var(--accent-primary);">
+                Explora nuestra colección seleccionada, filtra por género o artista y encuentra la canción ideal para
+                cada
+                ocasión.
+            </p>
         </header>
 
         <!-- Playlist Carousel Section -->
@@ -1189,9 +1671,180 @@
                 <button class="clear-filters" id="clearFilters">Limpiar Filtros</button>
             </div>
         </div>
-
         <div class="songbook-list" id="songbookList"></div>
-    </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- ORIGINAL SONGS LIBRARY -->
+    <section class="orig-section" id="originalSongs">
+        <div class="orig-section-header">
+            <div>
+                <div class="orig-section-title">🎼 Canciones Originales</div>
+                <div class="orig-section-sub">Composiciones propias — escúchalas en YouTube o Spotify</div>
+            </div>
+        </div>
+        <div class="orig-grid" id="origGrid">
+            <!-- Tarjetas generadas por JS -->
+        </div>
+    </section>
+
+
+    <!-- TRIO LOS GOMEZ LIBRARY -->
+    <section class="orig-section" id="trioLosGomez">
+        <div class="orig-section-header">
+            <div>
+                <div class="orig-section-title">🎸 TRIO LOS GÓMEZ</div>
+                <div class="orig-section-sub">Tres generaciones unidas por la música</div>
+            </div>
+        </div>
+        <!-- add website, entrevistas y canciones -->
+        <div class="buttons-trio-los-gomez">
+            <a href="https://josegomez-dev.github.io/triolosgomez/" target="_blank">Sitio Web Trio Los Gomez</a>
+            <a href="https://www.youtube.com/watch?v=XJcNnIthPWI&list=RDXJcNnIthPWI&start_radio=1"
+                target="_blank">Dedicatoria para el Día de las Madres</a>
+            <a href="https://www.youtube.com/watch?v=nrbvsI2syYo&list=RDnrbvsI2syYo&start_radio=1"
+                target="_blank">Dedicatoria para el Día del Padre</a>
+        </div>
+        <br>
+        <div id="trioLosGomezGrid">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vD4I_BA1Pnk"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/FdW1qmGLl9c"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+    </section>
+
+    <!-- SITE FOOTER (full-width, outside container) -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <!-- Col 1: Catarsis Musical -->
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img class="footer-logo-img" src="images/logos/doradeogomez.png"
+                                alt="Catarsis Musical Logo">
+                            <span>Catarsis Musical</span>
+                        </div>
+                        <p class="footer-desc">
+                            Un ecosistema artístico y educativo para expandir la conciencia, facilitar el aprendizaje
+                            musical y apoyar la improvisación libre y la composición nacional costarricense.
+                        </p>
+                    </div>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/profile.php?id=61553836722791" target="_blank"
+                            class="footer-social-link" title="Facebook">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" />
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@catarsismusical" target="_blank" class="footer-social-link"
+                            title="YouTube">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.516 0-9.387.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.507 9.387.507 9.387.507s7.517 0 9.387-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                        <a href="https://medium.com/@catarsismusical" target="_blank" class="footer-social-link"
+                            title="Medium">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zm3.04 0c0 3.25-.34 5.9-1 5.9s-.66-2.65-.66-5.9.3-5.9.66-5.9 1 2.65 1 5.9z" />
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/50662402974" target="_blank" class="footer-social-link" title="WhatsApp">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.022-.014-.508-.25-.588-.29-.08-.039-.127-.059-.178.026-.052.085-.205.26-.25.3-.043.04-.087.046-.178.006-.09-.045-.378-.14-1.21-.214-.648-.058-1.086-.174-1.213-.223-.127-.049-.232-.173-.34-.3-.108-.127-.375-.5-.49-.7-.115-.2-.174-.325-.262-.488-.088-.162-.044-.249.006-.29.04-.032.079-.085.127-.138.049-.053.059-.092.09-.15.03-.058.016-.111-.006-.15-.022-.039-.178-.429-.245-.589-.064-.15-.13-.13-.178-.13-.045-.002-.097-.002-.15-.002-.052 0-.138.019-.21.09-.072.072-.276.27-.276.657 0 .387.283.762.323.812.04.05 1.144 1.748 2.77 2.455.388.169.69.27.925.34.39.124.744.107 1.023.066.31-.046.96-.393 1.096-.773.137-.38.137-.707.096-.773-.04-.066-.127-.1-.21-.144zm-5.46-9.082C7.912 5.2 4.5 8.613 4.5 12.822c0 1.348.35 2.662 1.012 3.821L4.5 20.3l3.794-1.04a8.28 8.28 0 0 0 3.718.862c4.78 0 8.5-3.813 8.5-8.022s-3.72-8.022-8.5-8.022zm0 14.722a6.945 6.945 0 0 1-3.518-.956l-.252-.152-2.26.62.63-2.202-.167-.265c-.71-1.13-1.08-2.433-1.08-3.77 0-3.666 3.013-6.65 6.645-6.65 3.633 0 6.65 2.984 6.65 6.65 0 3.667-3.017 6.65-6.648 6.65z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: La Academia -->
+                <div class="footer-col">
+                    <h4 class="footer-title">La Academia</h4>
+                    <p class="footer-text">
+                        Aprende y perfecciona tu técnica con clases de guitarra presenciales o virtuales para todos los
+                        niveles:
+                    </p>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="academy.html">🎸 Clases Presenciales</a></li>
+                        <li class="footer-link-item"><a href="academy.html">🎼 Cursos e Improvisación</a></li>
+                    </ul>
+                    <a href="academy.html" class="footer-cta-btn">
+                        <span>Ver Cursos</span>
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Col 3: Juegos de Mesa -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Juegos de Mesa</h4>
+                    <p class="footer-text">
+                        Aprende grados musicales de forma lúdica con nuestro juego <b>El Camino Musical</b>:
+                    </p>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="games.html">📦 Versión Física</a></li>
+                        <li class="footer-link-item"><a href="https://josegomez-dev.github.io/MusicalPath/"
+                                target="_blank">💻 Versión Digital para PC</a></li>
+                    </ul>
+                    <a href="games.html" class="footer-cta-btn">
+                        <span>Ver Juegos</span>
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Col 4: El Estudio & Libro -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Estudio</h4>
+                    <p class="footer-text">
+                        <b>Trascendencia Musical</b>: Grabación, arreglos y producción audiovisual.
+                    </p>
+                    <ul class="footer-links">
+                        <li class="footer-link-item"><a href="studio.html">🎙️ Producción y Arreglos</a></li>
+                    </ul>
+                    <a href="studio.html" class="footer-cta-btn">
+                        <span>Ver Estudio</span>
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+        </div><!-- /.footer-inner -->
+
+        <div class="footer-bottom">
+            <div class="footer-inner"
+                style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; width:100%;">
+                <p>Copyright &copy; <span id="footerYear">2026</span> Catarsis Musical. Todos los derechos reservados.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="index.html">Inicio</a>
+                    <a href="academy.html">Academia</a>
+                    <a href="games.html">Juegos</a>
+                    <a href="studio.html">Estudio</a>
+                    <a href="mailto:josegomez.dev@gmail.com">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Playlist Songs Modal -->
     <div class="modal-backdrop" id="playlistModalBackdrop" onclick="closePlaylistModal(event)">
@@ -1216,8 +1869,131 @@
     <script src="consts/categories.js"></script>
 
     <script>
+        // =====================================================
+        // ORIGINAL SONGS LIBRARY DATA
+        // Agrega tus links de YouTube (youtubeId) y Spotify (spotifyUrl)
+        // youtubeId: el ID del video de YouTube (ejemplo: 'dQw4w9WgXcQ')
+        //            Si la cancion no tiene video, deja null
+        // spotifyUrl: URL completa al track en Spotify
+        // =====================================================
+        const ORIGINAL_SONGS = [
+            {
+                title: 'Vivir sin miedo',
+                description: 'Canción por la paz • Folclore latinoamericano',
+                youtubeId: 't0GeJv1ATc4',             // Ejemplo: 'dQw4w9WgXcQ'
+                spotifyUrl: 'https://open.spotify.com/intl-es/track/6Re2iix658yMlh9QNuTe8B'              // Reemplaza con tu URL de Spotify
+            },
+            {
+                title: 'Cimarrona',
+                description: 'Guitarra y voz • Fusión Rock/Merengue',
+                youtubeId: 'QLDt9HwhQsY',
+                spotifyUrl: 'https://open.spotify.com/intl-es/album/2RmVuJveA2SnH96wRdB3vI'
+            },
+            {
+                title: 'Treasure Island',
+                description: 'Rockabilly • Instrumental',
+                youtubeId: null,
+                spotifyUrl: 'https://open.spotify.com/intl-es/album/4cm8GbKWxDVl2dvY1WrVQV'
+            },
+            {
+                title: 'Eres tú',
+                description: 'Cumbia • Guitarra, voz y acordeón',
+                youtubeId: '3lkcOthyMcE',
+                spotifyUrl: 'https://open.spotify.com/intl-es/album/3nCuBcDIkChk9PPZvv2TEH'
+            },
+            {
+                title: 'Bailando con tradición',
+                description: 'Hip Hop • Folclore Latinoamericano',
+                youtubeId: null,
+                spotifyUrl: 'https://open.spotify.com/intl-es/album/4cm8GbKWxDVl2dvY1WrVQV'
+            },
+            {
+                title: 'Mi desgracia',
+                description: 'Bolero • Guitarra, requinto y voz',
+                youtubeId: null,
+                spotifyUrl: 'https://open.spotify.com/intl-es/album/5sBUcYpwXtDxzuzw6jduy9'
+            },
+            {
+                title: 'Salu Nanu',
+                description: 'Salsa • Guitarra, voz y teclados',
+                youtubeId: null,
+                spotifyUrl: 'https://open.spotify.com/intl-es/album/2PC8LJMulAfVyVcxiNC4vU'
+            },
+        ];
+
+        // Render de la biblioteca de canciones originales
+        function renderOriginalSongs() {
+            const grid = document.getElementById('origGrid');
+            if (!grid) return;
+            grid.innerHTML = ORIGINAL_SONGS.map((song, i) => {
+                const mediaHtml = song.youtubeId
+                    ? `<div class="orig-yt-wrap">
+                            <div class="orig-yt-thumb"
+                                 style="background-image:url('https://img.youtube.com/vi/${song.youtubeId}/mqdefault.jpg')"
+                                 onclick="loadYouTubePlayer(this, '${song.youtubeId}')"
+                                 id="yt-thumb-${i}">
+                                <div class="orig-yt-play-btn">
+                                    <svg width="24" height="24" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                                </div>
+                            </div>
+                       </div>`
+                    : `<div class="orig-spotify-wrap">
+                            <div class="orig-spotify-icon">
+                                <svg width="30" height="30" viewBox="0 0 24 24">
+                                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                                </svg>
+                            </div>
+                            <span class="orig-spotify-label">Solo en Spotify</span>
+                       </div>`;
+
+                const ytBtn = song.youtubeId
+                    ? `<a href="https://youtube.com/watch?v=${song.youtubeId}" target="_blank" class="orig-btn orig-btn-yt">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.516 0-9.387.507a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.507 9.387.507 9.387.507s7.517 0 9.387-.507a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            YouTube
+                       </a>`
+                    : '';
+
+                return `
+                <div class="orig-card">
+                    ${mediaHtml}
+                    <div class="orig-card-body">
+                        <div class="orig-song-title">${song.title}</div>
+                        <div class="orig-song-meta">${song.description || ''}</div>
+                        <div class="orig-card-actions">
+                            ${ytBtn}
+                            <a href="${song.spotifyUrl}" target="_blank" class="orig-btn orig-btn-spotify">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                                Spotify
+                            </a>
+                        </div>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        // Carga lazy el iframe de YouTube al hacer click en el thumbnail
+        function loadYouTubePlayer(thumbEl, videoId) {
+            const wrap = thumbEl.closest('.orig-yt-wrap');
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            wrap.innerHTML = '';
+            wrap.appendChild(iframe);
+        }
+
+        // Update copyright year dynamically
+        try {
+            document.getElementById('footerYear').textContent = new Date().getFullYear();
+        } catch (e) {
+            console.error(e);
+        }
+
         // Use songs from shared data
         const songs = SONGS;
+
+        // Render original songs library
+        renderOriginalSongs();
 
         // State management
         let activeFilters = {
@@ -1803,9 +2579,9 @@
 
         function sharePlaylist(event, playlistId) {
             if (event) event.stopPropagation();
-            
+
             const shareUrl = `${window.location.origin}${window.location.pathname}?playlist=${playlistId}`;
-            
+
             // Try modern clipboard API first
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(shareUrl).then(() => {
